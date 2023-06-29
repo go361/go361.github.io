@@ -1,23 +1,703 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>思考之室</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="思考之室">
+<meta property="og:url" content="http://example.com/page/5/index.html">
+<meta property="og:site_name" content="思考之室">
+<meta property="og:locale">
+<meta property="article:author" content="go2chess">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="思考之室" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
 
-{% block title %}{{ config.title }}{% if theme.index_with_subtitle and config.subtitle %} - {{config.subtitle }}{% endif %}{% endblock %}
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-{% block page_class %}
-  {% if is_home() %}page-home{% endif -%}
-{% endblock %}
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
-{% block content %}
-  <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-    {% endfor %}
-  </section>
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">思考之室</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Diary/2019-08-14【】《诗云》勾起的回忆与思考" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/29/Diary/2019-08-14%E3%80%90%E3%80%91%E3%80%8A%E8%AF%97%E4%BA%91%E3%80%8B%E5%8B%BE%E8%B5%B7%E7%9A%84%E5%9B%9E%E5%BF%86%E4%B8%8E%E6%80%9D%E8%80%83/" class="article-date">
+  <time class="dt-published" datetime="2023-06-29T13:48:06.884Z" itemprop="datePublished">2023-06-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>昨晚读了刘慈欣的一个短篇小说《诗云》，回忆起读研究生期间和舍友激烈争论“计算机能否战胜人”的场景。往事如烟，曾经的“赌局”亦随风而过。<br>##技术是反诗意的<br>小说《诗云》讲的是一个可以穿越十一维空间的神族挑战人类唐诗的故事。<br>在神族心中，他们的技术是可以超越一切的。可是当神汲取并融合了整个汉语的数据库以及关于地球历史的所有知识后，他沉默了。接下来他进一步利用基因技术把自己映射成为人类李白的样子，用纯能制造出了李白写诗用的书案和笔墨纸砚，甚至造出了烈酒并痛饮至烂醉如泥，但还是没能写出一首诗来。随后的两个月中神周游了整个地球，浪迹山水之间，饱览美景之后，依然没有作出像样的唐诗。<br>继而，神换了另外一种思路——暴力穷举，用量子计算机试便所有汉字的所有组合，写出所有的诗词；然后使用基于量子多态叠加原理的量子存储器结合传统存储技术永久保存这些诗作，终结诗词艺术。<br>故事中的人类则坚信唐诗是一种技术力量无法超越的艺术。<br>其中涉及到数量级的计算时采用了围棋来举例：粗略来说棋盘的状态数是3的361次幂，即10的172次幂，可是整个宇宙中的全部原子数只有10的80次幂个。利用神所掌握的最先进的技术来储存穷举出来的唐诗的话，共需要10的57次幂个原子……几乎是整个太阳系的物质量。<br>故事临近结束时，作为中介和旁观者的恐龙代表大牙仰头对着诗云大声问：“智慧生命的精华和本质，真的是技术所无法触及的吗？”<br>看完小说，准备睡觉，读研期间与宿舍同学争论的场景在脑海中涌现出来，久久不能隐去。<br>##对赌：机器人能战胜乒乓球国手吗？<br>争论源于舍友推荐我们观看的一个四翼无人机视频，视频中无人机可以自主追踪并触碰到测试人员抛向空中的乒乓球。视频观看完毕后舍友提出一个设想“用无人机跟人打乒乓球，无人机采用把每个球都打回去的策略，就可以赢得比赛”，然后我俩就该问题激烈争论了将近一个小时………</p>
+<p>一开始，双方都凭感觉来设想问题的复杂性，主要是算法复杂度，就是说机器人从“对方击球后”开始判断球离开对方球拍的初始速度、旋转以及位置，计算球的飞行轨迹，到做出还击（当然要确保是合法击球，把打到对方球台）所需要的时间，当然还会涉及球从本方球台弹起后，选择在空中哪个点击球，怎样击球的问题。</p>
+<p>双方的共同前提是随着科技的发展可以实现电脑打赢人，争论的焦点归结于在未来什么时候可以实现的问题上。也就是说机器人什么时候上述整个过程会比人做出相应的判断与击球更快、更准、更狠。我的观点是至少需要五十年，室友说绝对不需要那么久。争了几句后，我说要不咱们打个赌，五十年后看输赢。不料舍友却说：“50年后我认不认识你还不一定呢，怎么赌？”<br>这话听得我很不爽，当时就插入一个小支线的争论。<br>我说“你说这话就不爱听了，咱们一个宿舍的舍友，这样说多伤感情啊！“<br>“我没觉得有什么不合适。”<br>“要是50年后，咱们要是都能彼此记得，那时多么美好的感觉呀，你咋能这样说？”<br>插曲之后，话题继续…</p>
+<p>接下来我抛出自己的判断：“网球项目比乒乓球项目简单些，网球项目要想让机器人在乒乓球项目上打赢人，必须要先在网球项目上打赢人。”双方在这一点上也达成共识。可我依旧坚持50年内机器人打不赢国家乒乓球高手。<br>舍友争论说：“你觉得不能短时间内实现的关键点在于哪里？”<br>“乒乓球的速度和旋转，以及对方发不出台的短球时机器人怎么回击。”<br>舍友拿导弹拦截和子弹飞行速度来反驳，我一时想不出来说什么，胡乱说：“你知道乒乓球有多重吗？怎么能拿导弹和子弹来类比？”（言下之意想说的是乒乓球的旋转会涉及到复杂的气体力学等）<br>他反问：“那你知道乒乓球多重吗？你也不知道吧？”<br>“2.8克左右。”<br>争论的过程中他在网上开始查乒乓球的重量，结果查出来是2.7克，他承认说：“这一点你是对的。”然后双方继续。<br>我拿人的进化来指出人脑及人体的精细控制和复杂性佐证，他用摩尔定律来反驳。他开始以18个月为周期来算50年内计算机性能的提升，我反驳说目前CPU工艺制成是20nm摩尔定律可能即将失效，他检索后结果显示可能在2020年后，每3年性能翻一翻，然后，算出2的16次方。来代表50年后计算机的性能是现在的倍数。并且引用霍金的一本书来对比人的进化速度，和计算机性能的提升。<br>我指出用电脑解决问题所需要建立模型的复杂性，以及时间复杂度。现在这个模型的复杂度很难衡量，继而两个人把话题引申到国际象棋领域，继深蓝战胜卡斯帕罗夫后，N多国象高手败给电脑已是不争事实。<br>“中国象棋领域人类也即将被电脑战胜，但围棋中电脑战胜人类高手还需要相当长的时间。”<br>“中国象棋领域人已经输给电脑了！”舍友立即予以反驳。<br>于是两人开始各自从网络上查询相关的资料，他找到的是  中国象棋关于人机对战的一个页面，我找的是知乎上的相关问题的回答。当时查询的结果表明，中国象棋方面许银川对战电脑保持和棋记录；普通的围棋软件只相当于业余4段水平。</p>
+<p>我引用国象中目前电脑穷尽了10个子以下盘面的各种情况，以及策梅洛定理（Zermelo’s theorem）——在二人的有限游戏中，如果双方皆拥有完全的资讯，并且运气因素并不牵涉在游戏中，那先行或后行者当一必有一方有必胜&#x2F;必不败的策略。（这里我的思路和《诗云》中神暴力穷举唐诗的思路如出一辙，我觉得只有得到一个计算好并储存下来的状态表，可以用于随时查询任意状态下的最佳策略，这样才算破解了一个游戏。）<br>他听后也立即说，这是用空间复杂性（存储）来换取时间复杂性（节省时间）是最笨的算法，实际上不需要那么做。<br>我坚持认为“实际的比赛中规则都是要限时间的，不可能让电脑无限极算，而职业棋手则有着较为灵敏的知觉和丰富的经验。”<br>两个人争得也累了，开始互相圆场，彼此找台阶下。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/29/Diary/2019-08-14%E3%80%90%E3%80%91%E3%80%8A%E8%AF%97%E4%BA%91%E3%80%8B%E5%8B%BE%E8%B5%B7%E7%9A%84%E5%9B%9E%E5%BF%86%E4%B8%8E%E6%80%9D%E8%80%83/" data-id="cljh7toc2004fkghnd9r19ixg" data-title="" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Diary/2019-05-09【生活速写】参加同事婚礼有感" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/29/Diary/2019-05-09%E3%80%90%E7%94%9F%E6%B4%BB%E9%80%9F%E5%86%99%E3%80%91%E5%8F%82%E5%8A%A0%E5%90%8C%E4%BA%8B%E5%A9%9A%E7%A4%BC%E6%9C%89%E6%84%9F/" class="article-date">
+  <time class="dt-published" datetime="2023-06-29T13:48:06.880Z" itemprop="datePublished">2023-06-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>关系是一种建构，如果没有得到维持和改善，就会随着时间而衰退。我们不能简单地期望爱情关系会像建筑物那样保持自身的稳定，我们有责任创造我们爱情关系的最佳状态。<br>[——《社会心理学》p430]]</p>
+</blockquote>
+<p>工作以来参加过三位同事的婚礼，都在我结婚之前。今天是第四次，也是婚后第一次。<br>##叙事<br>10:40分到酒店时，迎宾处和宴会厅的人寥寥无几，两个摄影师正忙着拍摄制作婚礼纪念影像的素材。随着新郎新娘的亲朋好友们陆续到来，迎宾厅及宴会厅瞬间热闹了起来，有的聊婚礼现场的布置，有的聊家乡的婚礼习俗。<br>“迎宾台布景上面酒店的广告看起来似乎不太和谐”<br>“应该把广告拆下来或者把布景布置的高一些挡住那些广告”<br>“车队应该是从……出发，然后……”<br>新郎新娘到达酒店后，大家纷纷至宴会厅就座，婚礼正式开始。是典型的套路：司仪上场、新郎上场、新娘在父亲的陪伴下出场、新郎迎接新娘、伴娘送上结婚戒指、新郎新娘互戴戒指、双方父母上场、新郎新娘敬改口茶、两位父亲致辞、新郎致辞、新娘抛手捧花、礼成开宴。<br>##感悟<br>有多少人还记得自己在婚礼上的承诺和誓言呢？新郎一句“只要你不离，我一定不弃！”不禁使我想起了近日生活中的点点滴滴，有些后悔没让妻子前来参加。恰如面向党旗重温入党誓词能使人铭记入党的初衷，参加婚礼能让人回忆当初走进婚姻的决心以及曾经许下的诺言。婚礼现场不仅是新郎新娘的幸福时刻，同样是已婚夫妻建构亲密关系的绝佳情境。<br>金庸借《鸳鸯刀》中林玉龙之口说：“不吵架的夫妻便不是真夫妻。”这话大体上是不错的，来自不同家庭的两个人，在诸多方面都会持有不同的观点和态度，行为模式也必然有着不小的差异，要想凡事都达成默契不争吵，通常来说需要相当长的磨合期，直至两个人都真正成熟起来——更深入地认识自身以及对方的信念、判断、态度、言语习惯和行为模式，爱伴侣和子女胜过爱自己。<br>记得我和妻子认识之前，大表哥曾说过“不要在意人样儿长哩好不好，要找个能过日子才中。”什么是过日子？说开来无非是彼此陪伴，相互理解支持，共同为家庭的幸福而努力奋斗，尽力使家中的物质条件一年比一年好，精神生活一年比一年丰富。<br>##书摘<br>《社会心理学》社会关系篇“吸引与亲密：喜欢他人与爱他人”一章，作者在后记“经营爱情”中写道：现代生活的两个事实似乎无可辩驳：其一，亲密而持久的婚姻关系是幸福生活的标志。其二，亲密而持久的婚姻关系正在减少。<br>关于如何付出努力以防止爱情的衰退，作者给出了如下的建议：</p>
+<ul>
+<li>每天挤出时间来聊聊当天发生的事情；</li>
+<li>克制自己的唠叨，不争吵，袒露自己并倾听对方的感伤、关注和梦想；</li>
+<li>努力使婚姻关系达到理想的完美境界，伴侣双方都能够自由地给予和获取，能够共同作出决策并一起享受生活。</li>
+</ul>
+<p><strong>愿天下有情人终成眷属，努力使婚姻关系达到理想的完美境界！</strong><br>[2019-05-09]]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/29/Diary/2019-05-09%E3%80%90%E7%94%9F%E6%B4%BB%E9%80%9F%E5%86%99%E3%80%91%E5%8F%82%E5%8A%A0%E5%90%8C%E4%BA%8B%E5%A9%9A%E7%A4%BC%E6%9C%89%E6%84%9F/" data-id="cljh7toc2004ckghnhosab65x" data-title="" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2017-12-30【】 Lead your life" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/29/2017-12-30%E3%80%90%E3%80%91%20Lead%20your%20life/" class="article-date">
+  <time class="dt-published" datetime="2023-06-29T13:48:06.331Z" itemprop="datePublished">2023-06-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+</blockquote>
+<p><strong>“每一个人就是一个世界，这个世界是随他而生，随他而灭的。每一块墓碑下面，都躺着一部整个世界的历史。”</strong><br>[——亨利•海涅]]</p>
+<p>[•]<br>[高中时的日记]<br>[本科时的博客]<br>[工作后的总结]<br>[生活中的随感]<br>[公众号的更新]<br>[•]<br>追寻写作路上的足迹，几度雄心壮志，几度无疾而终，致使自己的认知、思考水平至今仍在低层次徘徊，无实质性进步。分析起来，共有三个经历使得我对写作念念不忘的，现分述如下。<br>###1、《师友杂忆》<br>“既到老不忘，则可确证其为余生命中之重要部分，务求叙述真实，亦属余对生命之自惜。”钱穆在80岁高龄，历时5年著述成书。<br>2010年特有的心境下，拜读大师《师友杂忆》一书，感触颇多，头脑中首次萌生系统地回顾自己成长历程的想法。八年眨眼一瞬而过，试想50年后，我会如何回顾这一生呢？<br>###2、《最后一课》<br>2013年初，观看李开复推荐的演讲“兰迪 波许教授的最后一课”，在讲座结尾处兰迪揭示了至关重要的两点。</p>
+<ul>
+<li>“关键不在于如何达成梦想，而是如何无悔度过人生，如果你正确引领你的一生，因缘自有报应，梦想自会实现。（It’s not about how to achieve your dreams.  It’s about how to lead your life.  If you lead your life the right way, the karma will take care of itself.  The dreams will come to you.  )</li>
+<li>“这场演讲不是为你们准备的，而是留给我孩子们的叮嘱。”（The talk’s not for you guys, it’s for my kids.  )</li>
+</ul>
+<p>2017年12月重温这一演讲时，糖豆已近三周岁，思考自己当下的生活，脑海中不止一次地设想如下场景:儿女在今后成长过程中遇到困惑，问:“爸，您像我这么大的时候是什么样子，都在做什么？”我该作何回答。<br>###3、《奇特的一生》<br>”看来应当由每个人自己来制定自己的时间使用法，但不管怎样都应当深思一下自己的生活在怎样度过。“<br>大四时曾用博客粗略记录自己的生活，工作后用Excel记了3年时间账(2010-2012)，2016年3月研二下学期进入课题研究的关键阶段，阅读书籍《奇特的一生》后，开始实践其中的时间记录法，持续记录至今。<br>##行动计划<br><strong>持续写作可以达到三个目的:1.提升认知能力；2.增强生命体验；3.明晰前进方向。</strong>通过写作将生命各阶段的感悟体会存盘:<br>( <strong>P</strong>resent ):生活感悟<br>( <strong>L</strong>earn )：知识积累<br>( <strong>R</strong>ead )：阅读心得<br>( <strong>T</strong>ools )：工具应用<br>( <strong>G</strong>ame )：休闲娱乐<br>( <strong>M</strong>emory )：成长经历<br>[2017-12-30 22:13:22&#96;&#96;&#96;</p>
+<pre><code class="]]">
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/29/2017-12-30%E3%80%90%E3%80%91%20Lead%20your%20life/" data-id="cljh7toau0003kghna4wtfj3l" data-title="" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-LifeReview/2023-01-03【岁末盘点】我的2022" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/03/LifeReview/2023-01-03%E3%80%90%E5%B2%81%E6%9C%AB%E7%9B%98%E7%82%B9%E3%80%91%E6%88%91%E7%9A%842022/" class="article-date">
+  <time class="dt-published" datetime="2023-01-02T21:23:42.000Z" itemprop="datePublished">2023-01-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%80%9F%E5%86%99/">生活速写</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/03/LifeReview/2023-01-03%E3%80%90%E5%B2%81%E6%9C%AB%E7%9B%98%E7%82%B9%E3%80%91%E6%88%91%E7%9A%842022/">2022岁末盘点</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="时间序"><a href="#时间序" class="headerlink" title="时间序"></a>时间序</h2><p>简单来说今年可划分为以下几个阶段：</p>
+<ol>
+<li>春节期间妻子带糖豆到单位过年；（2月中旬）</li>
+<li>节后工作上忙于年度工作筹划、训练转型研讨会等工作；（5月初）</li>
+<li>五一假期因不规律饮食导致慢性胃炎，5月中旬做胃镜后休假11天；</li>
+<li>回到工作岗位后，参加巡线任务，埋下复燃中国象棋热情的苗头；两次和姜武州的对局起了推波助澜的作用；</li>
+<li>暑假期间，妻子带糖豆到单位避暑；（7月份）</li>
+<li>工作中，开始接手处理支部党务工作；</li>
+<li>十一假期归队后两天隔离，11月份隔离8天，12月份休假后隔离8天。</li>
+</ol>
+<p>22年整体是比较随性的一年，除了2月份在朋友圈中扬言国际象棋要升到1600分之外，再没有为自己制定其它明确的目标。</p>
+<h1 id="工作（1697h）"><a href="#工作（1697h）" class="headerlink" title="工作（1697h）"></a>工作（1697h）</h1><p>以工作的视角来看，22年整体上是一个过渡的年份。自21年10月份以来，整个人都在紧张忙碌地熟悉、适应新岗位工作事务——年度考核与奖励表彰（训练成绩综合登记），年初各项工作筹划（撰写了训练及保障工作计划），春节后开始忙于为配合11#楼改造施工开展的信道代通工作，紧接着是创新发展研讨会，下半年研讨提出机房布局更改方案并落实控制台搬迁，同步接手支部党务工作，年底考核与奖励表彰。经历一个完整的工作年度后，大概是因为奖励表彰工作中的一些细节吧，在11月底到12月初那段时间，感觉自己对新岗位的工作热情已消退殆尽，工作积极性大减。雪上加霜的是，休假申请因各种奇葩的事由被再三延迟，最终休完假经8天隔离生活后，还完全没有一丁点儿工作状态。</p>
+<p>家属来队：1月26日-2月4日；2月10日-2月11日；7月4日-8日，11日-15日，18日-22日，25日-29日；10月4日。<br>#生活<br>1月22日安装移动宽带后，春节后下载“电锯惊魂”系列电影8~9、《斯巴达克斯》1-4季，2月19日夸张地开启了新的一轮观看影视剧模式，断断续续一直到3月底才刹住车。</p>
+<p>##睡眠（2719h）</p>
+<p>##运动（118h）</p>
+<p>##家庭（1064h）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Activity type		|Group		|	Duration		|Percent</span><br><span class="line">f_Family	|	Family		|	788	|	9.72%</span><br><span class="line">f_Education	|	Family		|	167	|	2.07%</span><br><span class="line">f_OurLoving	|	Family		|	107	|	1.33%</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">### 子女教育</span><br><span class="line">#### 1. 讲故事（65h）</span><br><span class="line">自21年9月糖豆入小学开始，在小妞的建议下开始有计划地定期带他们去市图书馆，正是这个契机开启了我们全家的《哈利波特》之旅。</span><br><span class="line">先是妻子从图书馆借回来了《哈利波特与魔法石》每天晚上睡前给糖豆讲上半个小时左右（偶尔周末休息时由我讲解），到十一国庆节时我们已经读完了《哈利波特与密室》，开始《哈利波特与阿兹卡班》的讲读。</span><br><span class="line">国庆节放假期间小妞提议购买整套的《哈利波特》，我欣然同意，经过两次退书的波折，最终还是在京东凤凰新华书店旗舰店买到了合适的版本。10月中旬结束《阿兹卡班》的讲读后，11月初由我承担《火焰杯》的主讲，我周内工作日的晚上我们开启了线上讲故事模式——通过微信语音或者视频给糖豆讲故事。《火焰杯》的篇幅差不多是前面三本书加起来的厚度，讲解过程断续进行了三个月，一直1月23日临近春节时才讲完了整个故事。</span><br><span class="line">春节后，2月14日起开始讲解第5册《哈利波特与凤凰社》，讲解共11个小时后暂时中断。因为新的学期里，糖豆晚上写作业用时逐渐变长，晚上睡觉前已没有大段的时间用来听故事。作为替代，小妞新购买了《米小圈》系列带拼音的读物，供糖豆俩睡前自主阅读。</span><br><span class="line">####2.从国际象棋到围棋（41h）</span><br><span class="line">糖豆俩自18年04月开始在我的带领下开始学习国际象棋，20年1月疫情期间参加了超玥国际象棋入门班网课，20年9月幼儿园大班开学后由我开始断续地教他们一些战术和简单残局知识。2020年11月28日第一次参加线上比赛，赢得女子国际大师姚岚一堂在线课程。2021年2月报名参加了北京君修李炎凯老师周六全新网课（￥945），4月18日和妻子一起带糖豆到黄石智联国际象棋俱乐部观摩学习，10月6日，前往武汉参加国际象棋锦标赛，女儿以4胜1和获得女子无级组第一名，儿子也取得了3胜1和1负的好成绩。 *（//：这个比赛原本是7月16日报名的，结果因为武汉断续出现零星新冠病例，一直延迟到国庆节才举办。）*</span><br><span class="line">糖豆俩21年9月入小学后，在学校开设的特色体育课中选择了围棋，自国际象棋的学习暂告一段落，逐步转为围棋练习。课余时间用于围棋学习共38小时，其中最有趣的是21年12月17日与22年1月3日，小家庭四口人在一起的四人联棋玩法。</span><br><span class="line">####3. 作业辅导（28h）</span><br><span class="line">其它用于子女教育的时间约42小时，除了陪上羽毛球和钢琴课，全部用于作业辅导。印象深刻的是为小孩儿讲解平行四边形的判定，平行四边形与梯形的区别，长方形和正方形的特殊性，角度的测量。</span><br></pre></td></tr></table></figure>
+
+
+
+<p>#成长<br>##阅读（313h）</p>
+<p>《跃迁》：5.5h，21年11月-22年1月<br>《我们仨》：4.5h，22年1月<br>《全球通史》：41.5h，22年2月-22年8月<br>《哈利波特与凤凰社》：26.5h，22年2月-22年3月<br>《哈利波特与混血王子》：18.25h，22年3月<br>《哈利波特与死亡圣器》：24.4h，22年3月27日-4月9日<br>《象棋人生》：6h，22年6月<br>《人生五大问题》：4h，22年7月<br>《教子有方》：9h，22年10月<br>《中国近代史新编》：14h，22年10月-11月<br>《浮生六记》：<br>《认知心理学》：11h，22年11月<br>《一本书读懂台湾是》9.7h，22年11月<br>《中国思想史（钱穆）》13.3h，22年11月<br>《人生十论》6.6h，22年11月<br>《文化与教育》12.5h，22年12月<br>《百年孤独》22h，22年12月<br>《世界简史》12.5h，22年12月<br>##写作（29h）<br>##工具技能（74h）：<br>其中Python离线环境配置与复习用时19小时，</p>
+<p>#休闲娱乐（855h）</p>
+<ul>
+<li>国际象棋（240h）：其中实战对局114小时，战术练习36小时，线上课堂22小时，自学开局18.7小时，战略与中局19.6小时，残局8小时，视频直播10h。</li>
+<li>新闻资讯（172h）：</li>
+<li>影视（138h）：看完纪录片《再说长江》，重温电影《肖申克的救赎》、《让子弹飞》和电视剧《斯巴达克斯》1-4，看完电视剧《底线》、《穆桂英挂帅》。</li>
+<li>象棋（140h）：实战对局72.5小时，其中线上对局47.5小时，线下对局27小时；理论学习26.5小时，学完《象棋中局提高捷径》；观看B站在线视频36小时。</li>
+<li>够级（90h）</li>
+<li>围棋（20h）</li>
+<li>听播客（10h）</li>
+<li>其它（28h）</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/01/03/LifeReview/2023-01-03%E3%80%90%E5%B2%81%E6%9C%AB%E7%9B%98%E7%82%B9%E3%80%91%E6%88%91%E7%9A%842022/" data-id="cljh7toco006skghnbdc14k4g" data-title="2022岁末盘点" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/timetrack/" rel="tag">timetrack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" rel="tag">生活经历</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Python/2022-12-03离线配置IDE环境" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/12/03/Python/2022-12-03%E7%A6%BB%E7%BA%BF%E9%85%8D%E7%BD%AEIDE%E7%8E%AF%E5%A2%83/" class="article-date">
+  <time class="dt-published" datetime="2022-12-03T10:19:03.000Z" itemprop="datePublished">2022-12-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%80%9F%E5%86%99/">生活速写</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/12/03/Python/2022-12-03%E7%A6%BB%E7%BA%BF%E9%85%8D%E7%BD%AEIDE%E7%8E%AF%E5%A2%83/">2205-2210生活盘点</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="如何离线安装python包"><a href="#如何离线安装python包" class="headerlink" title="如何离线安装python包"></a>如何离线安装python包</h1><p>b、下载安装对应版本的.whl压缩包<br>       前往pip官方源<a target="_blank" rel="noopener" href="https://pypi.org/%E6%88%96%E5%9B%BD%E5%86%85pip%E6%BA%90">https://pypi.org/或国内pip源</a> <a target="_blank" rel="noopener" href="https://pypi.tuna.tsinghua.edu.cn/simple/">https://pypi.tuna.tsinghua.edu.cn/simple/</a> 进行手动下载对应包的.whl文件，这里推荐使用国内pip源（后者）进行下载，下载速度较快。<br>       由于whl是深度学习依赖包对应的压缩包，在其中包含了py文件，以及经过编译的pyd文件，因此可以直接进行安装，安装命令为：</p>
+<p>pip install *.whl</p>
+<p>c、下载安装.tar.gz或.zip源码包<br>在pypi的官网或者国内源pypi包中有些并不包含whl压缩包，但一般会有.tar.gz或者.zip的源码包，对于下载的源码包需要通过解压后得到的setup.py进行编译再安装，编译的命令为：</p>
+<p>python setup.py build</p>
+<p>安装的命令为：</p>
+<p>python setup.py install<br>————————————————<br>版权声明：本文为CSDN博主「RussellEven」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39444746/article/details/96564379">https://blog.csdn.net/weixin_39444746/article/details/96564379</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/12/03/Python/2022-12-03%E7%A6%BB%E7%BA%BF%E9%85%8D%E7%BD%AEIDE%E7%8E%AF%E5%A2%83/" data-id="cljh7toda009gkghnd3xmh15x" data-title="2205-2210生活盘点" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/timetrack/" rel="tag">timetrack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" rel="tag">生活经历</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Diary/2022-11-29【】重启象棋之旅" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/29/Diary/2022-11-29%E3%80%90%E3%80%91%E9%87%8D%E5%90%AF%E8%B1%A1%E6%A3%8B%E4%B9%8B%E6%97%85/" class="article-date">
+  <time class="dt-published" datetime="2022-11-29T12:45:50.000Z" itemprop="datePublished">2022-11-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%80%9F%E5%86%99/">生活速写</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/29/Diary/2022-11-29%E3%80%90%E3%80%91%E9%87%8D%E5%90%AF%E8%B1%A1%E6%A3%8B%E4%B9%8B%E6%97%85/">22年象棋生活</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>春节期间组织了小范围的象棋比赛，为今年的象棋生活买下伏笔。</p>
+<p>原计划五一期间再组织一次比赛的，购买了棋局及一些入门书籍作为比赛的奖品</p>
+<p>棋行天下 象棋特级国际大师李来群传奇人生	¥24.10 	2022&#x2F;4&#x2F;13<br>象棋竞赛规则（2020版）	¥22.60 	2022&#x2F;4&#x2F;13<br>象棋中局提高捷径	¥21.00 	2022&#x2F;4&#x2F;13<br>国际象棋裁判手册（2020版）	¥37.20 	2022&#x2F;4&#x2F;13<br>象棋人生：象棋名人轶事	¥36.00 	2022&#x2F;4&#x2F;13</p>
+<p>21年5月底，跟进外出的途中尝试下载了“天天象棋”，开始网络对局<br>CxrJym：211局（46.5%），业3-2<br>10月26日，Go2Chess开启：171局（58.5%），业5-1<br>B站有观看记录的视频是自8月15日开始，关注了<strong>四郎讲棋</strong>和<strong>银川讲棋</strong>两个博主，看了大约300个左右视频。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/29/Diary/2022-11-29%E3%80%90%E3%80%91%E9%87%8D%E5%90%AF%E8%B1%A1%E6%A3%8B%E4%B9%8B%E6%97%85/" data-id="cljh7tocb005bkghn6975cjf7" data-title="22年象棋生活" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/timetrack/" rel="tag">timetrack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" rel="tag">生活经历</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Read/2022-11-28【R】中国思想史&amp;人生哲学" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/28/Read/2022-11-28%E3%80%90R%E3%80%91%E4%B8%AD%E5%9B%BD%E6%80%9D%E6%83%B3%E5%8F%B2&%E4%BA%BA%E7%94%9F%E5%93%B2%E5%AD%A6/" class="article-date">
+  <time class="dt-published" datetime="2022-11-28T10:58:01.000Z" itemprop="datePublished">2022-11-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Reading/">Reading</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/28/Read/2022-11-28%E3%80%90R%E3%80%91%E4%B8%AD%E5%9B%BD%E6%80%9D%E6%83%B3%E5%8F%B2&%E4%BA%BA%E7%94%9F%E5%93%B2%E5%AD%A6/">读钱穆《中国思想史》和《人生十论》</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>[《诏问山中何所有赋诗以答》]<br>[问我何所有，山中唯白云。]<br>[只堪自怡悦，不堪持赠君。]<br>[陶弘景]]</p>
+</blockquote>
+<p>自11月6日隔离生活起，开启了新一段的读书旅程。原以是为隔离三天，只准备了《中国近代史新编》和《浮生六记》两本十月份没读完的书，进度分别为50%和35%；实际上隔离了八天，读完《中国近代史新编》后，利用相对集中的自由时间读完《认知心理学》，又开启了《一本书读懂台湾史》的阅读。结束隔离时，单位年终检查已经开始了，这意味着工作进入相对轻松的阶段。</p>
+<p>隔离之后，连续两个周末都处于封闭管理的静默状态，19日早晨醒得比较早，05:00时洗漱好开始阅读《中国思想史》一书，接下来连续五天内用时13小时读完。正如2019年读《中国通史》的感觉，春秋时代的百家争鸣是中国思想史上最璀璨的篇章。全书读下来，除了春秋战国时代之外，印象最深的要属书目收尾处讲解“孙中山”的一节。</p>
+<blockquote>
+<p>严格来讲，近五十年来，中国亦并无所谓思想界。只有孙中山一人，他终身从事革命的实际工作，固不该专以思想家目之。但中山先生实有他独特的一套思想，他不仅堪当这一百年来近代中国唯一的一个思想家，而且无疑地他仍将是此后中国思想新生首先一个领导人。<br>马克思以物质为历史的重心是不对的。社会问题才是历史的重心。<br>人类求生存，才是社会进化的原因。阶级斗争，不是社会进化的原因，而是社会当进化时发生的一种病症。<br>孙中山的《三民主义》，应该是近代中国新生唯一的启示。若我们把一个人的生命作比喻，民族主义是其人之精神与灵魂，民权主义是骨骼，民生主义是血肉。三者缺一不可。</p>
+</blockquote>
+<p>读完《中国思想史》后，又相继在三天内用时9个小时阅读了钱穆大师的《人生十论》，这本书读来是自己的内心趋于平和，与今年七月至十月间的急躁形成鲜明对比。<br>钱穆认为，人生是“事业”与“性情”的一体两面，奉劝大家，“莫要太看重了外面事业，而忽略了内部性情。”</p>
+<blockquote>
+<p>性情不是天生的，需注意后天培养。从个人言，各该当心不断自修自养。从大群言，我们要认识中国人性情来培养我们自己的性情，从中国的文学与艺术中多所采撷，来帮助自己作人生的修养。</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/28/Read/2022-11-28%E3%80%90R%E3%80%91%E4%B8%AD%E5%9B%BD%E6%80%9D%E6%83%B3%E5%8F%B2&%E4%BA%BA%E7%94%9F%E5%93%B2%E5%AD%A6/" data-id="cljh7tods00cmkghnevxx1pkd" data-title="读钱穆《中国思想史》和《人生十论》" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BD%93%E4%BC%9A/" rel="tag">体会</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%98%85%E8%AF%BB/" rel="tag">阅读</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Diary/2022-11-13【】S夜谈" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/13/Diary/2022-11-13%E3%80%90%E3%80%91S%E5%A4%9C%E8%B0%88/" class="article-date">
+  <time class="dt-published" datetime="2022-11-13T14:57:38.000Z" itemprop="datePublished">2022-11-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%80%9F%E5%86%99/">生活速写</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/13/Diary/2022-11-13%E3%80%90%E3%80%91S%E5%A4%9C%E8%B0%88/">S成长会夜谈（11月）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>给孩子们讲完故事，顺手打开微信，发现S老师在直播，点进来听了差不多40分钟。</p>
+</blockquote>
+<p>#S成长会夜谈（11月）<br>##<br>权利<br>利益关系，<br>价值，</p>
+<h2 id="姜利桉"><a href="#姜利桉" class="headerlink" title="姜利桉"></a>姜利桉</h2><p>道德绑架，<br>好学生思维在职场是不合适的……</p>
+<h2 id="kate卡特"><a href="#kate卡特" class="headerlink" title="kate卡特"></a>kate卡特</h2><p>英语辅导机构老师，转型主播的想法，<br>建议在原有机构扩大影响力，可以适当考虑跨过机构单独对接家长上课<br>##Mary<br>博士生导师的选择，因考二外换导师<br><strong>志向</strong> VS 短线操作</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/13/Diary/2022-11-13%E3%80%90%E3%80%91S%E5%A4%9C%E8%B0%88/" data-id="cljh7toc90056kghn89jobu83" data-title="S成长会夜谈（11月）" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/timetrack/" rel="tag">timetrack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" rel="tag">生活经历</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Reflect/2022-11-13【】象棋，围棋还是国象？" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/13/Reflect/2022-11-13%E3%80%90%E3%80%91%E8%B1%A1%E6%A3%8B%EF%BC%8C%E5%9B%B4%E6%A3%8B%E8%BF%98%E6%98%AF%E5%9B%BD%E8%B1%A1%EF%BC%9F/" class="article-date">
+  <time class="dt-published" datetime="2022-11-13T11:39:16.000Z" itemprop="datePublished">2022-11-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Reflect/">Reflect</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/13/Reflect/2022-11-13%E3%80%90%E3%80%91%E8%B1%A1%E6%A3%8B%EF%BC%8C%E5%9B%B4%E6%A3%8B%E8%BF%98%E6%98%AF%E5%9B%BD%E8%B1%A1%EF%BC%9F/">象棋、围棋还是国象？</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="象棋、围棋还是国象？"><a href="#象棋、围棋还是国象？" class="headerlink" title="象棋、围棋还是国象？"></a>象棋、围棋还是国象？</h1><p>前面分别用三篇文字回忆了下棋的一些经历，自从开始带儿子学国象之后心中一直在思索着三种棋的差异，以及如何选择其中的一种作为长期的兴趣爱好来系统地学习，进一步培养成家庭项目作为和孩子们的共同语言。<br>选择国象的起点是18年3月份的一个周末，我和妻子在黄冈市区步行街附近逛街，恰好碰到卖国际象棋的，勾起了我心中封存已久的国象记忆，果断买了一副，给家中还不识字的糖豆俩玩。<br>20年疫情期间在家，费劲心思想教会他们双象杀王，<br>21年4月国象黄石之行后，对黄石市国象氛围的浓厚深感羡慕，如果黄冈市也有相应的培训机构，说不定真的就让孩子们在国象这个项目上继续发展了。<br>21年6月左右受黄石袁老师邀请报名了武汉二十四城国际象棋等级赛，后来因为疫情的原因，10月6日比赛才得以顺利进行，女儿获得了女子无级组第一名。<br>21年9月份开学之后，糖豆俩进入小学阶段的学习，学校开设的特色体育课中有围棋、象棋等，唯独没有国象，和妻子权衡之下为糖豆俩报名了围棋。经过一个学期的学习，掌握了基本的规则，课堂中实战基本以吃子游戏为主，在我业余的辅导下勉强可以下整盘对局了。<br>糖豆涉足象棋是在22年年初，没想到春季开学时糖糖的班主任老师把他从围棋班推荐到了象棋班。于是妹妹学习的同时也顺带教会了哥哥。<br>22年暑假糖豆俩参加了黄冈市围棋等级赛，共计6轮的比赛，妹妹前面4盘都输了，最后两盘赢下来，哥哥则是赢下第3盘和第5盘，顺利晋级。</p>
+<h2 id="三种棋的比较——个人之见"><a href="#三种棋的比较——个人之见" class="headerlink" title="三种棋的比较——个人之见"></a>三种棋的比较——个人之见</h2><p>三种棋里，围棋规则最简单，但要入门需要花费的时间最多，这是毫无疑问的，一盘棋没有一个小时基本上是下不完的。并且要教小孩子的话，他们很难明白围地盘论输赢这个概念，比这个更难的是地与势的辩证关系。形势判断同样也比较困难。不像象棋和国象，这两种棋以将死对方的王为目的，相对比较容易理解，形势判断上也相对容易些。</p>
+<p>如果按对局中开局、中局和残局三个阶段来比较。首先说开局，围棋的开局阶段相对是最短的，通常对局很快就会脱谱进入复杂的中局战斗阶段；中局阶段，三种棋差不多主要是搏杀战斗，围棋棋盘大、落点多，也最复杂；残局阶段，围棋方面是收官，高手看来收官阶段变化比较少，如果两人不出失误的话，基本上是在中局就分出了胜负，象棋和国象残局阶段对落子的精确度要求更高，残局理论也相对复杂一些。<br>从对局的结果方面来说，围棋除了三劫循环等极特殊情况，因为贴目的关系每局都能分出胜负，中国象棋最容易和棋，国际象棋由于兵的升变，和棋的面要小一些。</p>
+<h3 id="自学难易程度"><a href="#自学难易程度" class="headerlink" title="自学难易程度"></a>自学难易程度</h3><p>资料方面：国象最为完备（包括英文方面书籍），围棋次之，象棋最差。象棋原创性的教材少之又少。<br>软件开发：国象最完备，象棋次之，围棋最少。<br><strong>国内人群基数</strong>：象棋最多，围棋次之，国象最少。<br>网络对局便捷性：象棋最佳，国象次之，围棋最难。主要原因是手机屏幕不够大，不易操作。<br>记录与复盘：国象和象棋差不多，国象因为代数记谱法比象棋略容易；围棋因为棋盘太大，一盘棋手数较多，记谱最难，加上中局变化多，想精确复盘也比较难。</p>
+<p>年底糖豆俩就要满8周岁了，感觉上如果再不定下来一个方向的话，想要他俩的棋艺有长足的进步就会比较困难了。</p>
+<p>[2022-11-13 天马山脚下]]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/13/Reflect/2022-11-13%E3%80%90%E3%80%91%E8%B1%A1%E6%A3%8B%EF%BC%8C%E5%9B%B4%E6%A3%8B%E8%BF%98%E6%98%AF%E5%9B%BD%E8%B1%A1%EF%BC%9F/" data-id="cljh7toe200dykghnh84obmv6" data-title="象棋、围棋还是国象？" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Game/" rel="tag">Game</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A8%B1%E4%B9%90/" rel="tag">娱乐</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Reflect/2022-11-08【思索】202205-202210" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/08/Reflect/2022-11-08%E3%80%90%E6%80%9D%E7%B4%A2%E3%80%91202205-202210/" class="article-date">
+  <time class="dt-published" datetime="2022-11-08T13:07:32.000Z" itemprop="datePublished">2022-11-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%80%9F%E5%86%99/">生活速写</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/08/Reflect/2022-11-08%E3%80%90%E6%80%9D%E7%B4%A2%E3%80%91202205-202210/">2205-2210生活盘点</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>2022年11月5日，黄冈市黄州区检测出阳性病例，6日09:30单位组织专车前往家属临时来对楼隔离，8日下载安装坚果云、MarkEditor，同步“写作”文件夹后，构思写作本文。上次隔离是在国庆节之后，8号9号两天时间内用8小时读完了《教子有方》一书。</p>
+</blockquote>
+<p>自2019年11月份休假后，生活上经历了两个阶段的变化：一是19年12月至21年09月为期22个月的“帮工生活”，体验了一名机关普通办事员的工作日常；二是新岗位代理办公室主任，感受从一名普通员工到肩负一定行政管理责任的转变。两个阶段的生活已分别在“2022-01-16帮工生活”和“2022-04-11生活盘点”两篇文字中做了大体上的回顾，基本上是沿用之前的模板，以timetrack的时间记录为依据做分块的描述。这种盘点方法的优点是记叙比较详细、有数据支撑，缺点是不易体现思想的变化和事情的缘由。</p>
+<p>对比《教子有方》中讲解志向一章，反思过往——大学毕业后按定向分配就业至今已十四年有余，发现自己大多数年月里都处于一种随遇而安的状态，甚至于有些阶段连一个明确的小目标都没有，更谈不上什么远大志向和理想了。这样的生活状态导致了一个很严重的问题，那就是整个人要么处于一种无所事事的信步漫游状态，要么处于另一种打鸡血状态。在前一种状态里，整个人体现出一种颓废感，生活了无生趣，找不到人生的意义；在后一种状态中，往往是为了生活、工作中的紧急事务忙忙碌碌，或者是为了一时兴起的想法奋起直追。两种状态形成了某种循环往复的周期规律，大体上随着工作的紧张程度起伏变化。颓废期间的典型生活表现是消耗很多时间精力用于刷影视剧、打游戏、报复性地一局又一局地下没有深度思考的棋等，时间久了，内心向善的一面会琢磨着要找点儿有意义的事儿做；鸡血状态中往往是毫无作息规律地忙于临时事务或短期目标，过不了多久，体力精力消耗殆尽，内心恶魔的一面怂恿着说即便那么拼命也改变不了命运（做不到阶层的跃迁），还不如佛系一些，适当放纵一下自我。这两种状态都没有很好地把握住度，结果就是常立志，也常常自己打脸。</p>
+<p>下面是几个阶段的生活模式：</p>
+<ul>
+<li><p>大学期间打开“War3”这个潘多拉魔盒之后，数不清浪费了多少时光才最终勉强追评了宿舍中大高个子和舍长他们，后来转战DOTA又在刚工作的头三年中虚度了大好青春。12年下半年休假期间开始认真考虑婚恋问题，13年从即时战略DOTA过度到网页游戏“寻梦神仙道”后才逐渐刹住了游戏的脚步。</p>
+</li>
+<li><p>读研期间，偶然在微信上看到吴清源大师逝世的消息，点燃了我对于围棋的渴望和激情，于15年6月研一暑假开始学习围棋，持续至18年6月。</p>
+</li>
+<li><p>18年初定的计划是 数学英语编程三项并进，结果每一项否没达到预期的目的，年度精力分散于备战一建项目管理考试与阅读杂书上，主动请缨以“这些年我的阅读生活”为题做了分享交流。19年继续在阅读上花费了不少时间，在好书推荐会上为大家介绍了《奇特的一生》。</p>
+</li>
+</ul>
+<p>[2022-11-08 初稿]]<br>[2022-11-13 修改]]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/08/Reflect/2022-11-08%E3%80%90%E6%80%9D%E7%B4%A2%E3%80%91202205-202210/" data-id="cljh7toe300e0kghn17dj7eh3" data-title="2205-2210生活盘点" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/timetrack/" rel="tag">timetrack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" rel="tag">生活经历</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/4/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/6/">weiter &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Kategorien</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Memory/">Memory</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OurLove/">OurLove</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Reading/">Reading</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Reflect/">Reflect</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%80%9F%E5%86%99/">生活速写</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%9B%B8%E6%BF%A1%E4%BB%A5%E6%B2%AB/">相濡以沫</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%82%B2%E5%84%BF/">育儿</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Game/" rel="tag">Game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOS/" rel="tag">IOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT/" rel="tag">IT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PC/" rel="tag">PC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Word/" rel="tag">Word</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timetrack/" rel="tag">timetrack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B9%A6%E6%91%98/" rel="tag">书摘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90/" rel="tag">书籍推荐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%93%E4%BC%9A/" rel="tag">体会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A8%B1%E4%B9%90/" rel="tag">娱乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%84%9F%E6%83%B3/" rel="tag">感想</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F/" rel="tag">游戏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" rel="tag">生活经历</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%82%B2%E5%84%BF/" rel="tag">育儿</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%85%E8%AF%BB/" rel="tag">阅读</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Game/" style="font-size: 10px;">Game</a> <a href="/tags/IOS/" style="font-size: 11.11px;">IOS</a> <a href="/tags/IT/" style="font-size: 13.33px;">IT</a> <a href="/tags/Linux/" style="font-size: 13.33px;">Linux</a> <a href="/tags/PC/" style="font-size: 10px;">PC</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Word/" style="font-size: 10px;">Word</a> <a href="/tags/timetrack/" style="font-size: 15.56px;">timetrack</a> <a href="/tags/%E4%B9%A6%E6%91%98/" style="font-size: 17.78px;">书摘</a> <a href="/tags/%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90/" style="font-size: 14.44px;">书籍推荐</a> <a href="/tags/%E4%BD%93%E4%BC%9A/" style="font-size: 10px;">体会</a> <a href="/tags/%E5%A8%B1%E4%B9%90/" style="font-size: 10px;">娱乐</a> <a href="/tags/%E6%84%9F%E6%83%B3/" style="font-size: 16.67px;">感想</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 13.33px;">游戏</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12.22px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" style="font-size: 20px;">生活经历</a> <a href="/tags/%E8%82%B2%E5%84%BF/" style="font-size: 10px;">育儿</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 18.89px;">阅读</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12/">December 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03/">March 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11/">November 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07/">July 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06/">June 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05/">May 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04/">April 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03/">March 2008</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/06/29/Tools/2020-02-15%E3%80%90T%E3%80%91%E5%9B%B4%E6%A3%8B%E5%AD%A6%E4%B9%A0%E5%B7%A5%E5%85%B7%E5%8F%8A%E8%B5%84%E6%BA%90/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/29/Read/%E7%8E%8B%E5%AE%B6%E6%A0%8B/%E3%80%8A%E8%A5%BF%E6%B8%B8%E7%95%85%E6%83%B3%E6%9B%B2%E3%80%8B2019-09-13/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/29/Read/%E7%8E%8B%E5%AE%B6%E6%A0%8B/%E3%80%8AB%E9%9D%A2%E8%A5%BF%E6%B8%B8%E3%80%8B2019-09-13/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/29/Read/%E4%B9%A6%E6%91%98/2018-04-12%E3%80%90%E3%80%91%E3%80%8A%E7%BF%BB%E8%BD%AC%E8%AF%BE%E5%A0%82%E7%9A%84%E5%8F%AF%E6%B1%97%E5%AD%A6%E9%99%A2%E3%80%8B/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/29/Read/%E4%B9%A6%E6%91%98/2017-07-08%E3%80%90R%E3%80%91%E4%B9%A6%E7%9B%AE%E5%88%97%E8%A1%A8%E2%80%942013/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 go2chess<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,23 +1,680 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>思考之室</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="思考之室">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="思考之室">
+<meta property="og:locale">
+<meta property="article:author" content="go2chess">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="思考之室" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
 
-{% block title %}{{ config.title }}{% if theme.index_with_subtitle and config.subtitle %} - {{config.subtitle }}{% endif %}{% endblock %}
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-{% block page_class %}
-  {% if is_home() %}page-home{% endif -%}
-{% endblock %}
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
-{% block content %}
-  <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-    {% endfor %}
-  </section>
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">思考之室</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Python/2018-05-21【】网络爬虫开发实战" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/29/Python/2018-05-21%E3%80%90%E3%80%91%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/" class="article-date">
+  <time class="dt-published" datetime="2023-06-29T13:48:08.093Z" itemprop="datePublished">2023-06-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>#[《Python3网络爬虫开发实战》]<br>[崔庆才·著]<br>[人民邮电出版社]<br>[2018年4月第1版]<br>#第二章 爬虫基础<br>###2.1.3 HTTP和HTTPS<br>目前广泛使用的是HTTP1.1版本。<br>HTTPS的安全基础是SSL，通过它传输的内容都是经过SSL加密的。<br>有些网站虽然使用了HTTPS协议，但还是会被浏览器提示不安全，通常是因为其CA证书不是被CA机构信任的，爬取这样的站点，就需要设置忽略证书的选项，否则会提示SSL链接错误（例如12306）。<br>###2.1.4 HTTP请求过程<br>Chrome中 右击并选择“检查”项，打开开发者工具。<br>Network页面下方出现的条目代表请求和接收响应的过程，点击第一个网络请求，可以看到General、Response Headers、Request Headers等更详细的信息。<br>写爬虫时，大部分时候都需要设定请求头。如果要构造POST请求，需要使用正确的Conten-Type，并了解各种请求库的各个参数设置时使用的是哪种Conten-Type，不然可能会导致POST提交后无法正常响应。<br><strong>常见的响应状态码及错误原因（P85）</strong><br>CSS选择器的语法规则（P91）<br>#第三章<br>##requests<br>Session用于维持会话（P133）<br>证书错误的解决办法（P135）：verif参数设置为False即可。<br>由于绝大部分的HTML文本都包含了换行符，所以在运用正则进行匹配的时候尽量加上 re.S修饰符，以免出现匹配不到的问题。</p>
+<p>#第五章<br>##<br><strong>Redis</strong><br><a target="_blank" rel="noopener" href="https://github.com/MicrosoftArchive/redis/releases">https://github.com/MicrosoftArchive/redis/releases</a><br><a target="_blank" rel="noopener" href="https://github.com/uglide/RedisDesktopManager/releases">https://github.com/uglide/RedisDesktopManager/releases</a><br>##5.3MongoDB<br>有一些数据库名是保留的，可以直接访问这些有特殊作用的数据库。</p>
+<ul>
+<li><strong>admin</strong>： 从权限的角度来看，这是”root”数据库。要是将一个用户添加到这个数据库，这个用户自动继承所有数据库的权限。一些特定的服务器端命令也只能从这个数据库运行，比如列出所有的数据库或者关闭服务器。</li>
+<li><strong>local:</strong> 这个数据永远不会被复制，可以用来存储限于本地单台服务器的任意集合</li>
+<li><strong>config</strong>: 当Mongo用于分片设置时，config数据库在内部使用，用于保存分片的相关信息。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/29/Python/2018-05-21%E3%80%90%E3%80%91%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/" data-id="cljh7tod6008ukghn3tqogab7" data-title="" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Python/2017-12-13【P】Python之路" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/29/Python/2017-12-13%E3%80%90P%E3%80%91Python%E4%B9%8B%E8%B7%AF/" class="article-date">
+  <time class="dt-published" datetime="2023-06-29T13:48:08.080Z" itemprop="datePublished">2023-06-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>##Python : 20171020——<br>累计学习时长:88h<br>###《父与子的编程之旅》<br><em>2017年10月20日至11月10日，持续3个星期，累计约32小时学完该书。</em></p>
+<p>该书通俗易懂，以孩子能接受的方式、通过一个个简单的小程序进行讲解，实现了一些简单的GUI界面，运用Pygame模块实现了反弹球和滑雪者游戏，最终给出了Python Battle下的吃豆人游戏，并鼓励读者写出能打败CircleAI的机器人(如何实现最佳策略呢？这是一个十分值得深思的问题)。<br>###《核心编程》11.19-12.5<br>###“网易云课堂” 约17小时<br>Python入门课(by老男孩):<br>IDE平台:  PyCharm 2017.3，通过学弟帮助获得在校学生免费注册文件。该环境下”Ctrl+鼠标左键点击“即可快速跳转至相应类型或函数的源代码处，使用起来极其方便!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/29/Python/2017-12-13%E3%80%90P%E3%80%91Python%E4%B9%8B%E8%B7%AF/" data-id="cljh7tod5008rkghn4dt4ai4r" data-title="" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Python/2017-11-20【】与小卡特一起学Python" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/29/Python/2017-11-20%E3%80%90%E3%80%91%E4%B8%8E%E5%B0%8F%E5%8D%A1%E7%89%B9%E4%B8%80%E8%B5%B7%E5%AD%A6Python/" class="article-date">
+  <time class="dt-published" datetime="2023-06-29T13:48:08.062Z" itemprop="datePublished">2023-06-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>#《与小卡特一起学Python》1<br>##推荐序-陈俊<br>作者说在自己孩子8岁时教他编程，只为培养他专一求精的精神。<br>现代孩子的通病:什么都玩一下，兴趣广泛，但对哪个都不通。不通非常致命，因为不通孩子就无法建立自信，没有自信就很容易躲避困难，然后又更不自信，如此恶性循环。没有自信作为基础，孩子很难发挥自己的能力，形成自己的特长。所以说从小能有一个特长，有一个专注的、足够突出的拿手项目，对孩子的发展非常重要。<br>至于学编程会不会变成IT民工命，我想这其实是个”伪命题“。现在少年MBA、少年领导力、情商培训很火，不是说它们没有作用，但管理能力和情商在成长的过程中可以潜移默化地培养，而具备一项专业的技能才是立身之本。<br>##前言<br>编程(programming)就是告诉计算机要做什么。<br><strong>为什么学编程</strong></p>
+<ul>
+<li>不论作为业余爱好还是作为职业，编程都会很有意思，都会让你很有收获。</li>
+<li>如果你对计算机感兴趣，想更多地了解它到底是怎么工作的，想知道怎们才能让它做你想做的事情。</li>
+<li>如今计算机已经无处不在，工作中、学习中、生活中都黄有可能使用计算机。学习编程能让你从总体上更好地了解计算机。<br><strong>为什么选用Python语言</strong></li>
+<li>最初创建Python语言的出发点就是为了便于学习。Python程序是最易读、最容易编写，也是最容易理解的。</li>
+<li>Python是免费的，可以下载到很多用Python编写的模块。</li>
+<li>Python是开源软件，并且可以在各种不同的计算机上运行。</li>
+<li>Python非常适合学习编程，全世界每天都有成千上万的这也人士在使用这种语言。包括NASA、Google这些机构的程序员。<br><strong>怎样使用本书</strong></li>
+<li>**验证例子:**通过自己动手编程你可以学到的东西多得多。</li>
+<li>**输入程序:**通过亲手输入程序，培养对编程的一种感觉。</li>
+<li>**做习题:**尽可能多地多做些习题，做题之前千万别看答案，除非你实在做不出来了。</li>
+</ul>
+<p>##1 基础知识<br><strong>IDLE交互模式</strong><br>从IDLE启动Python，IDLE是一个Python shell，可以通过输入文本与程序交互。在交互模式中，只需键入变量名就可以显示这个变量的值，而不必使用print。<br><strong>语法错误告警</strong><br>THere’s an error in your program:invalid syntax.<br><strong>变量命名规则:</strong></p>
+<ul>
+<li>可以有字母、数字和下划线（_）；</li>
+<li>必须以字母或下划线开头，不能以数字开头；</li>
+<li>变量名区分大小写；</li>
+<li>变量名中不能有空格。<br><strong>长字符串</strong><br>三重引号字符串，可以得到一个跨多行的字符串。<br><strong>变量赋值</strong><br>程序可以在任何时间对变量重新赋值(把标签贴在新东西上)。<br>**Tips: **编程中最常见的bug就是改变了不该改变的变量，或者尽管改变的变量无误，但是改变的时机不对。</li>
+</ul>
+<p>##2 基本数学运算<br><strong>整除：</strong><br>Python2中整除操作符为： &#x2F;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="built_in">print</span> <span class="number">3</span>/<span class="number">2</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line">&gt;&gt;&gt;<span class="built_in">print</span> <span class="number">3.0</span>/<span class="number">2</span></span><br><span class="line"><span class="number">1.5</span></span><br></pre></td></tr></table></figure>
+<p>Python3中整除操作符为： &#x2F;&#x2F;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="built_in">print</span> <span class="number">3</span>/<span class="number">2</span></span><br><span class="line"><span class="number">1.5</span></span><br><span class="line">&gt;&gt;&gt;<span class="built_in">print</span> <span class="number">3</span>//<span class="number">2</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><strong>指数——自乘为一个幂</strong><br>Python用 ** 表示指数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="built_in">print</span> <span class="number">3</span>**<span class="number">5</span></span><br><span class="line"><span class="number">243</span></span><br></pre></td></tr></table></figure>
+<p><strong>取余——求余数</strong><br>Python取余操作符为百分号（%）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="built_in">print</span> <span class="number">7</span>%<span class="number">3</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><strong>自增和自减</strong><br>+&#x3D;、-&#x3D;</p>
+<p>##3 数据类型<br><strong>改变类型</strong><br>Pyhton实际上并没有把一个东西从一种类型“转换”为另一种类型。它只是由原来的东西创建一个新的东西，而且这个新的东西正是你想要的类型。<br>float() 从一个字符串或整数创建一个新的浮点数；<br>int() 从一个字符串或浮点数创建一个新的整数，实际上是去掉小数部分；<br>str() 从一个数创建一个新的字符串；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">float</span>(<span class="number">58</span>)</span><br><span class="line"><span class="number">58.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">int</span>(-<span class="number">58.98</span>)</span><br><span class="line">-<span class="number">58</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">int</span>(<span class="number">58.98</span>)</span><br><span class="line"><span class="number">58</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="string">&#x27;58.98&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="built_in">float</span>(a)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c = <span class="built_in">str</span>(b + <span class="number">1</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b</span><br><span class="line"><span class="number">58.98</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c</span><br><span class="line"><span class="string">&#x27;59.98&#x27;</span></span><br></pre></td></tr></table></figure>
+<p><strong>舍入误差</strong><br>所有的计算机语言中浮点数都存在舍入误差(roundoff error)，例如:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">0.1</span>+<span class="number">0.2</span></span><br><span class="line"><span class="number">0.30000000000000004</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="number">0.1</span>+<span class="number">0.2</span>)</span><br><span class="line"><span class="number">0.30000000000000004</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></table></figure>
+<p><strong>使用type()查看变量的类型</strong></p>
+<p>##4 输入输出<br><strong>打印input()提示语的简便方法</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">someName =<span class="built_in">input</span> (<span class="string">&quot;Enter your name: &quot;</span>)</span><br><span class="line">fahrenheit = <span class="built_in">float</span>(<span class="built_in">input</span>(<span class="string">&quot;Please Enter :&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>Python3中使用input()<br>Python3中使用print()时，要打印的内容必须被包含在一对括号中。</p>
+<p>##5 条件与循环<br><strong>缩进</strong><br>在Python中，编写代码时缩进是必不可少的一部分。缩进回告诉Python代码块从哪里开始到哪里结束。Python中的管理是缩进4个空格。<br><strong>关系运算符</strong><br>&#x3D;&#x3D;、&lt;、&gt;、&lt;&#x3D;、&gt;&#x3D;、!&#x3D;<br><strong>与或非:</strong> and  or  not<br><strong>计数循环</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">range</span>(<span class="number">5</span>)</span><br><span class="line"><span class="built_in">range</span>(<span class="number">0</span>, <span class="number">5</span>)</span><br><span class="line"><span class="keyword">for</span> lopper <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">3</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello&quot;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line">Hello</span><br><span class="line">Hello</span><br></pre></td></tr></table></figure>
+<p><strong>条件循环</strong>: while</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">someInput = <span class="built_in">input</span>(<span class="string">&quot;Type 3 to continue, anything else to qiut&quot;</span>)</span><br><span class="line"><span class="keyword">while</span> someInput == <span class="string">&quot;3&quot;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Thanks,Type 3 to continue, anything else to quit&quot;</span>)</span><br><span class="line">    someInput = <span class="built_in">input</span>()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;That&#x27;s not 3, so I&#x27;m quiting now&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>跳出循环</strong></p>
+<ul>
+<li>continue: 直接跳到本层循环的下一次迭代</li>
+<li>break: 跳出本层循环</li>
+</ul>
+<p>##6 注释风格<br>大多数程序员都是费了一番周折才领悟到注释的重要性，他们回头看自己写的程序，甚至是昨天写的程序时，可能完全看不明白，尽管写程序时很明白，但是等以后再看程序时，很可能对原先的想法一头雾水。<br>##7 列表<br>列表使用中括号来指出从哪里开始到哪里结束，用逗号分隔列表内的各项。<br>列表可以包含Python能储存的任何类型的数据，数字、字符串、对象，其他列表等，并不要求列表中的元素是同种类型。<br>列表索引从 0 开始。可以用索引来修改元素，但是不能用索引向列表增加元素。<br><strong>列表中增加元素</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">friends=[]</span><br><span class="line">friends.append(<span class="number">123</span>)</span><br><span class="line"><span class="built_in">print</span> (friends)</span><br><span class="line">&gt;&gt;&gt;[<span class="number">123</span>]</span><br><span class="line">friends.extend([<span class="string">&#x27;p&#x27;</span>, <span class="string">&#x27;q&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span> (friends)</span><br><span class="line">&gt;&gt;&gt;[<span class="number">123</span>, <span class="string">&#x27;p&#x27;</span>, <span class="string">&#x27;q&#x27;</span>]</span><br><span class="line">friends.insert(<span class="number">2</span>, <span class="string">&#x27;r&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span> (friends)</span><br><span class="line">&gt;&gt;&gt;[<span class="number">123</span>, <span class="string">&#x27;p&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, <span class="string">&#x27;q&#x27;</span>]</span><br><span class="line">friends.append([<span class="string">&#x27;s&#x27;</span>, <span class="string">&#x27;t&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span> (friends)</span><br><span class="line">&gt;&gt;&gt;[<span class="number">123</span>, <span class="string">&#x27;p&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, <span class="string">&#x27;q&#x27;</span>, [<span class="string">&#x27;s&#x27;</span>, <span class="string">&#x27;t&#x27;</span>]]</span><br></pre></td></tr></table></figure>
+<p><strong>列表中删除元素：</strong><br>remove() 从列表中删除你指定的元素<br>del 利用索引从列表中删除元素<br>pop() 从列表中取出一个元素，括号里没有参数时，返回最后一个元素，并把它从列表中删除。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(friends)</span><br><span class="line">&gt;&gt;&gt;[<span class="number">123</span>, <span class="string">&#x27;p&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, <span class="string">&#x27;q&#x27;</span>, [<span class="string">&#x27;s&#x27;</span>, <span class="string">&#x27;t&#x27;</span>]]</span><br><span class="line">friends.remove(<span class="string">&#x27;r&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(friends)</span><br><span class="line">&gt;&gt;&gt;[<span class="number">123</span>, <span class="string">&#x27;p&#x27;</span>, <span class="string">&#x27;q&#x27;</span>, [<span class="string">&#x27;s&#x27;</span>, <span class="string">&#x27;t&#x27;</span>]]</span><br><span class="line"><span class="keyword">del</span> friends[<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(friends)</span><br><span class="line">&gt;&gt;&gt;[<span class="number">123</span>, <span class="string">&#x27;q&#x27;</span>, [<span class="string">&#x27;s&#x27;</span>, <span class="string">&#x27;t&#x27;</span>]]</span><br><span class="line"><span class="keyword">if</span> <span class="string">&#x27;q&#x27;</span> <span class="keyword">in</span> friends:</span><br><span class="line">    <span class="built_in">print</span> (friends.index(<span class="string">&#x27;q&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(friends)</span><br><span class="line">&gt;&gt;&gt;<span class="number">1</span></span><br><span class="line">&gt;&gt;&gt;[<span class="number">123</span>, <span class="string">&#x27;q&#x27;</span>, [<span class="string">&#x27;s&#x27;</span>, <span class="string">&#x27;t&#x27;</span>]]</span><br><span class="line">lastLetter = friends.pop()</span><br><span class="line"><span class="built_in">print</span>(lastLetter)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="string">&#x27;s&#x27;</span>, <span class="string">&#x27;t&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(friends)</span><br><span class="line">&gt;&gt;&gt;[<span class="number">123</span>, <span class="string">&#x27;q&#x27;</span>]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>列表排序</strong><br>sort() 在原地修改列表<br>revers() 列表中元素逆置，顺序颠倒过来<br>sorted() 得到列表的一个有序副本，而不影响原列表的顺序<br><strong>元组——不可改变的列表</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">my_tupl = (<span class="string">&quot;red&quot;</span>, <span class="string">&quot;green&quot;</span>, <span class="string">&quot;blue&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>##8 字典<br>Python字典将两个东西关联在一起：键key、值value。<br>字典中的键只可以使用不可变类型（布尔、整数、浮点数、字符串和元组）。<br>列表中的元素用索引访问，字典中的条目是用键来访问。<br>keys()方法列出字典中所有的键<br>values()方法列出字典中所有的值<br>del 删除一个条目<br>clear() 删除所有条目<br>in 确定某个键在字典中是否存在</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">phoneNumber = &#123;&#125;</span><br><span class="line">phoneNumber[<span class="string">&#x27;John&#x27;</span>] = <span class="string">&quot;555-1234&quot;</span></span><br><span class="line">phoneNumber[<span class="string">&#x27;Mary&#x27;</span>] = <span class="string">&quot;444-4321&quot;</span></span><br><span class="line">phoneNumber[<span class="string">&#x27;Tomas&#x27;</span>] = <span class="string">&quot;333-6789&quot;</span></span><br><span class="line"><span class="built_in">print</span>(phoneNumber)</span><br><span class="line">&gt;&gt;&gt;&#123;<span class="string">&#x27;John&#x27;</span>: <span class="string">&#x27;555-1234&#x27;</span>, <span class="string">&#x27;Mary&#x27;</span>: <span class="string">&#x27;444-4321&#x27;</span>, <span class="string">&#x27;Tomas&#x27;</span>: <span class="string">&#x27;333-6789&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(phoneNumber[<span class="string">&#x27;Mary&#x27;</span>])</span><br><span class="line">&gt;&gt;&gt;<span class="number">444</span>-<span class="number">4321</span></span><br><span class="line"><span class="built_in">print</span>(phoneNumber.keys())</span><br><span class="line">&gt;&gt;&gt;dict_keys([<span class="string">&#x27;John&#x27;</span>, <span class="string">&#x27;Mary&#x27;</span>, <span class="string">&#x27;Tomas&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(phoneNumber.values())</span><br><span class="line">&gt;&gt;&gt;dict_values([<span class="string">&#x27;555-1234&#x27;</span>, <span class="string">&#x27;444-4321&#x27;</span>, <span class="string">&#x27;333-6789&#x27;</span>])</span><br><span class="line"><span class="keyword">del</span> phoneNumber[<span class="string">&#x27;Mary&#x27;</span>]</span><br><span class="line">&gt;&gt;&gt;&#123;<span class="string">&#x27;John&#x27;</span>: <span class="string">&#x27;555-1234&#x27;</span>, <span class="string">&#x27;Tomas&#x27;</span>: <span class="string">&#x27;333-6789&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(phoneNumber)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Mary&#x27;</span> <span class="keyword">in</span> phoneNumber)</span><br><span class="line">&gt;&gt;&gt;<span class="literal">False</span></span><br><span class="line">phoneNumber.clear()</span><br><span class="line"><span class="built_in">print</span>(phoneNumber)</span><br><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>对值的排序输出可以按以下方式实现：</strong><br>字典的查找是单向的，只能用键去查找值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> <span class="built_in">sorted</span>(phoneNumbers.values()):</span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> phoneNumbers.keys():</span><br><span class="line">        <span class="keyword">if</span> phoneNumbers[key] == value:</span><br><span class="line">            <span class="built_in">print</span> (key, phoneNumbers[key])</span><br></pre></td></tr></table></figure>
+
+<p>##函数<br>要把程序分成较小的部分，主要有三种方法:函数、对象、模块。<br>函数是可以完成某个功能的代码块，就像是代码的积木，可以反复使用。<br>def中的代码并不是主程序的一部分，所以程序运行时会跳过这一部分。函数调用时才运行函数里的代码，如果定义一个函数而不调用它，函数里的代码永远也不会运行。<br>**传参:**使用多个参数时，要用逗号来分隔。如果函数有超过5到6个参数，应该考虑把所有参数集中到一个列表中，然后把这个列表传递到函数。<br><strong>变量作用域</strong><br>对于函数而言，函数内的名字只是在函数运行时才会创建。Python在函数运行时会创建新的名字在函数内使用，当函数完成时会把他们删除。在函数运行结束时，其中的所有名字都不存在。<br>如果在函数中使用主程序中定义的变量名，Python允许你使用这个变量，但是如果函数的任何部分试图改变这个变量，Python会创建一个新的局部变量。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">calculateTax</span>(<span class="params">price, tax_rate</span>):</span><br><span class="line">    total = price + (price * tax_rate)</span><br><span class="line">    totalPrice = <span class="number">200</span></span><br><span class="line">    <span class="built_in">print</span>(totalPrice)</span><br><span class="line"><span class="comment">##    print price</span></span><br><span class="line">    <span class="keyword">return</span> total</span><br><span class="line"></span><br><span class="line">totalPrice = <span class="number">0</span></span><br><span class="line">totalPrice = calculateTax(<span class="number">30</span>, <span class="number">0.06</span>)</span><br><span class="line"><span class="comment">##    print global price</span></span><br><span class="line"><span class="built_in">print</span>(totalPrice)</span><br><span class="line">&gt;&gt;&gt;<span class="number">200</span></span><br><span class="line"><span class="number">31.8</span></span><br></pre></td></tr></table></figure>
+<p>##对象<br>对象可以把函数和数据收集在一起，把程序中的各部分描述为自包含的单元。<br>一个对象的特征成为属性，动作(能够对对象做的操作)称为方法<br>对象的创建分为两步:第一步，定义类(勾画蓝图，并不会真的创建一个对象)；第二步，使用类来创立一个对象(实例化)。<br>属性并不属于类，它们属于各个实例。<br>**初始化对象:**创建类定义时，可以定义一个特殊的方法，<strong>init</strong>()，只要创建这个类的一个新实例，就会运行这个方法，还可以向该方法传递参数。<br><strong>特殊方法:</strong><strong>str</strong>()告诉Python打印(print)一个对象时具体显示什么内容。默认显示</p>
+<ul>
+<li>实例在那里定义</li>
+<li>类名</li>
+<li>存储实例的内存位置<br>如果你希望print为对象显示其他内容，可以定义自己的__str__()，它会覆盖内置的__str__()方法。<br>**self:**self参数会告诉方法哪个对象调用它(实例引用)<br>**代码桩pass:**可以使用pass关键字作为一个占位符。</li>
+</ul>
+<p>##模块<br>包含模块的Python关键字 import。<br>导入命名空间:from module  import  name( 用 * 号则可以把所有名字导入我们的命名空间)。</p>
+<ul>
+<li><strong>time模块</strong><br>time模块中的sleep()函数可以用来增加一个延迟，单位是秒。</li>
+<li><strong>datetime</strong><br>处理日期、时间以及日期或时间之差。</li>
+<li><strong>random模块</strong><br>ramdom.randint(0, 100)<br>random.random()得到一个介于0和1之间的随机数。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/29/Python/2017-11-20%E3%80%90%E3%80%91%E4%B8%8E%E5%B0%8F%E5%8D%A1%E7%89%B9%E4%B8%80%E8%B5%B7%E5%AD%A6Python/" data-id="cljh7tod4008okghn26un29yj" data-title="" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Notes/2022-11-09【W】写作流程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/29/Notes/2022-11-09%E3%80%90W%E3%80%91%E5%86%99%E4%BD%9C%E6%B5%81%E7%A8%8B/" class="article-date">
+  <time class="dt-published" datetime="2023-06-29T13:48:07.897Z" itemprop="datePublished">2023-06-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>新建文件，默认是创建文档的日期命名，需在后面加上【】，方括号内注明文字的类别，方括号后面是文章的详细标题。<br>例如 2022-11-09【W】写作流程</li>
+<li>不要轻易更改文章的文件名，一般情况下更改文件的title即可。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/29/Notes/2022-11-09%E3%80%90W%E3%80%91%E5%86%99%E4%BD%9C%E6%B5%81%E7%A8%8B/" data-id="cljh7tod0008akghn87o46qdi" data-title="" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Notes/2022-11-09【R】Scalers文章通读记录整理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/29/Notes/2022-11-09%E3%80%90R%E3%80%91Scalers%E6%96%87%E7%AB%A0%E9%80%9A%E8%AF%BB%E8%AE%B0%E5%BD%95%E6%95%B4%E7%90%86/" class="article-date">
+  <time class="dt-published" datetime="2023-06-29T13:48:07.881Z" itemprop="datePublished">2023-06-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="001-2014第一篇：新的开始"><a href="#001-2014第一篇：新的开始" class="headerlink" title="[001]2014第一篇：新的开始"></a><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/debut" title="[001]2014第一篇：新的开始">[001]2014第一篇：新的开始</a></h4><p>这是一个新的开始，我不知道这终将会把我带向何处，但是我会把每个脚步坚实地走下去。——写在前面<br>2014年将会写一系列的文章，内容涉及英语学习、口译训练、论文科研、求职经验教训、产品行业、学术杂想以及其他。这个选题倒不是说自己做出了什么成绩，而是对自己从求学到求职这一阶段所经历的事情——更多是教训的总结。同时这些文章若能对读者有一些价值，那将倍感荣幸。笔耕不辍是我追求的生活状态。</p>
+<h2 id="英语词汇部分系列文章"><a href="#英语词汇部分系列文章" class="headerlink" title="英语词汇部分系列文章"></a>英语词汇部分系列文章</h2><p> <a target="_blank" rel="noopener" href="http://www.scalerstalk.com/vocabulary">[007]任务驱动，自由生长——谈英语词汇学习中的几个问题</a><br>我们把词汇学习的问题化为归一个目标：即认识足够多的单词，以保证在阅读或者其他被动接收场景时不产生偏差；掌握足够多的单词，以便在表达时自由或者相对自由地进行阐述。<br>我们在学习中需要做的都将围绕这个目标开展，下面以需要注意的问题为主线展开。<br><strong>1. 了解自己目前的词汇情况，评估需要采取的学习策略，是词汇学习的一个基本点。</strong>（测试网站：<a target="_blank" rel="noopener" href="http://www.shanbay.com/vocabtest/">扇贝</a>）<br><strong>2. 根据学习目标，选择学习策略与方法。任务驱动&amp;自由生长</strong><br><strong>3. 任务驱动型的学习策略需要注意为词汇构建语境场景</strong><br><strong>4. 自由生长型的学习策略需要注意词汇的难度与梯度</strong><br><strong>5. 谈一下两种策略的选择搭配问题</strong></p>
+<h4 id="005-自由生长策略的操作方式——关于英语词汇学习中的几个问题（四）"><a href="#005-自由生长策略的操作方式——关于英语词汇学习中的几个问题（四）" class="headerlink" title="[005]自由生长策略的操作方式——关于英语词汇学习中的几个问题（四）"></a><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/005">[005]自由生长策略的操作方式——关于英语词汇学习中的几个问题（四）</a></h4><p>在了解局部化的结构后，需要选择合适的材料用于词汇的自由生长。英语学习的各个专项互联互通性较高，阅读、听力、翻译均可以作为新鲜词汇的来源。在选择材料时，要注意所选材料所带来的词汇的难度应该循序渐进，难度不宜过大，梯度不宜过高。<br><strong>第一</strong>，选择略难度大一些的材料，可以是考试阅读题目、新闻听力稿、报刊或网站新闻。关于阅读、听力具体操作将会在对应部分具体介绍。<br><strong>第二</strong>，在整体的层面对材料进行理解，同时对于生词，猜测其含义并观察其用法。例如，如果这个是经济类材料，不要当作在应付考试，而是你在读一份具有信息量的报告，尝试理解作者在向你表达什么。这样做的目的是在大脑里建立一个语境场，潜移默化。<br><strong>第三</strong>，评估你的理解程度。可以根据材料的情况，选择复述或者做题（如果你是用阅读理解材料着手）。复述需要保证你能简明扼要地把要点说清楚，做题就把题目都做对即可。<br><strong>第四</strong>，对不认识的生词逐一查词典看解释。由于这是处于词汇学习阶段，我们在这个阶段的学习只要查清楚这个单词的基本意思，以及在本语境中的意思即可。如果是在阅读、写作阶段，可以增加扩展，这会以后续详细论述。<br><strong>第五</strong>，根据目前的情况，挑选出重点吸纳与学习的词，进行语境重构。语境重构就是网络上所谓的“脑补”，想一想这个词可能在什么时候会出现，或者自己什么时候能用上，激活大脑的连接。如果英语不好想，笔者个人认为用中文想想也行。<br><strong>第六</strong>，整理词汇，并尽可能地使用。可以选用一些带单词本的软件进行记录，以便后续复习。在能用到英语的环境中，尽量地使用你学会到的词汇。</p>
+<h4 id="006-两种策略的选择搭配问题——关于英语词汇学习中的几个问题（五）"><a href="#006-两种策略的选择搭配问题——关于英语词汇学习中的几个问题（五）" class="headerlink" title="[006]两种策略的选择搭配问题——关于英语词汇学习中的几个问题（五）"></a><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/006">[006]两种策略的选择搭配问题——关于英语词汇学习中的几个问题（五）</a></h4><p>1）学习者通过文章第一部分（回复002可以查看）中已经了解到自己的词汇情况。<br>2）根据学习目标确认学习重点。学习目标可大致区分为重要型与紧急型。<br>3）重要型学习目标在开始初期建议以任务驱动为主策略，在时间允许的情况下对学习目标的词汇进行全面覆盖，即扫一遍。之后以自由生长策略为主，贯穿在学习目标的各个专项的学习与训练中。<br>4）紧急型学习目标通常为临阵磨枪式的。<br>总结一下，词汇学习就是在了解自己基本情况的基础上，结合大量猛火力密集（任务驱动型）与细水长流模式（自由生长型）两种策略的特点，实现词汇的不断增长。</p>
+<h2 id="英语口语练习纲要系列文章"><a href="#英语口语练习纲要系列文章" class="headerlink" title="英语口语练习纲要系列文章"></a>英语口语练习纲要系列文章</h2><p>英语口语能力成长路径合辑 ：<a target="_blank" rel="noopener" href="http://www.scalerstalk.com/spoken">[021]一名IT从业者的英语口语能力成长路径</a></p>
+<h3 id="开篇"><a href="#开篇" class="headerlink" title="开篇"></a>开篇</h3><p> <a target="_blank" rel="noopener" href="http://www.scalerstalk.com/008">[008]英语口语能力成长路径之开篇</a></p>
+<ol>
+<li><strong>当我们谈论口语是，我们在谈论什么？</strong></li>
+<li><strong>我的发音不是很好，我能怎么办？</strong></li>
+<li><strong>说英语时，我不知道要说啥，我能怎么办？</strong></li>
+</ol>
+<h3 id="第一部分-怎么看待口语"><a href="#第一部分-怎么看待口语" class="headerlink" title="第一部分 怎么看待口语"></a>第一部分 怎么看待口语</h3><h4 id="一、文艺装腔：当我们谈论口语时，我们在谈论什么"><a href="#一、文艺装腔：当我们谈论口语时，我们在谈论什么" class="headerlink" title="一、文艺装腔：当我们谈论口语时，我们在谈论什么"></a>一、文艺装腔：当我们谈论口语时，我们在谈论什么</h4><p><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/009">[009]当我们谈论口语时，我们在谈论什么？</a><br>缺了口语的英语世界，就像一部黑白无声有码的电影，你说能感受到多少美。<br>口语不是什么大不了的事情，她就是像我们身边的一个朋友一样，我们接触，了解，掌握，并使用这项技能，能给我们带来不一样的感官与变化的世界。</p>
+<h4 id="二、内核、管道、发音表达：口语的结构化要素分析"><a href="#二、内核、管道、发音表达：口语的结构化要素分析" class="headerlink" title="二、内核、管道、发音表达：口语的结构化要素分析"></a>二、内核、管道、发音表达：口语的结构化要素分析</h4><p> <a target="_blank" rel="noopener" href="http://www.scalerstalk.com/010">[010]当我们谈论口语时，我们在谈论什么？（二）</a><br>在这里，我把口语拆解成两方面的元素：<br><strong>一个是发音表达</strong>，即感性层面，听上去怎样，听起来怎样；<br><strong>另一个是内核</strong>，即理性层面，听了后你怎样，听完你感觉怎样。<br>当你在开始说英语的时候，给人留下怎样的第一印象，就是发音表达做的事情。<br>内核就是我们的底子，我们的储备，或者说我们的脑子里的货，是决定了我们在什么场景下会说出什么话来的前提。<br>再说一下流利，流利一般是我们在对于熟悉的领域会出现的状况，即对于某个问题有思考，或者有一些材料已经胸有成竹，这样一般会呈现出比较流利的状态。<br> <a target="_blank" rel="noopener" href="http://www.scalerstalk.com/011">[011]当我们谈论口语时，我们在谈论什么？（三）</a><br>从内核里生成，经过管道处理，并适当地表达呈现的能力，称作叫口语能力，或者表达能力。<br><img src="/./_image/309672646.jpg"><br>图1中可以看到三大模块的逻辑关系。最大的圆代表每个人感知到的世界。红色的圆形代表内核，矩形代表口语表达，即上文提到的两个部分。这有点像操作系统的内核模式与用户模式。管道是内心与外界沟通的方式，我们需要显式地处理内核的输出，以保证口语表达的得体、合理、合适。如果对比我前面提出的三个问题，你会发现我重点对应到内核与口语表达模块。那管道呢？我会在翻译口译部分详细论述。</p>
+<h4 id="三、测一测口语：口语能力的衡量体系"><a href="#三、测一测口语：口语能力的衡量体系" class="headerlink" title="三、测一测口语：口语能力的衡量体系"></a>三、测一测口语：口语能力的衡量体系</h4><p> <a target="_blank" rel="noopener" href="http://www.scalerstalk.com/012">[012]当我们谈论口语时，我们在谈论什么？（四）</a><br>通俗的说，内核就是你肚子里有没有货；管道就是你知道怎么组织好货，包装好货；发音表达就是你拿出的货色给人看到底是什么样子。<br>口语能力的高低，也即所说的口语好不好，是三个要素的综合评判。<br>说到这里，问题一的答案已经出来了，我给了三个方面的因素，告诉了它们之间的关系，但是我没有给一个确切的明确结果。我没有告知三个方面的因素的比例占比，我也没有告知哪个绝对更加重要。因为这个不重要，而他们都很重要。</p>
+<h4 id="四、口语训练的一些原则"><a href="#四、口语训练的一些原则" class="headerlink" title="四、口语训练的一些原则"></a>四、口语训练的一些原则</h4><p><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/013">[013]不需要外教，不需要英语思维，照样强大口语能力</a><br>以观点的形式，介绍一下我在口语训练中的战术：<br><strong>1.若客观环境有限，口语能力训练不需要过分依靠外国友人、甚至语伴的作用。</strong><br>a)破除学习者潜意识里，口语不好是因为没有老外作为练习对象的幻象。<br>b)破除自己在与老外练习时，产生出自己口语很好的幻象。<br><strong>2.不排斥中英文实时转换的思维方式，只要能帮助你提高表达效率，可以接受。</strong><br>为什么这样做？<br><strong>一是</strong>，我认为语义是脱离语言的，与语言无关的，作为中国人，多数时候它的承载语言是中文，可仅仅是承载语言而已。<br><strong>二是</strong>，心理上更容易接受一点。非英语环境的学习者应该能理解吧。<br><strong>三是</strong>，只要把转换的速度优化的足够好，这个解决方案也是可以接受的。这个就是后续口译翻译部分会涉及到的。</p>
+<h3 id="第二部分-练习口语说什么"><a href="#第二部分-练习口语说什么" class="headerlink" title="第二部分 练习口语说什么"></a>第二部分 练习口语说什么</h3><h4 id="014-演讲与辩论是口语能力成长的必经之路"><a href="#014-演讲与辩论是口语能力成长的必经之路" class="headerlink" title="[014]演讲与辩论是口语能力成长的必经之路"></a><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/014">[014]演讲与辩论是口语能力成长的必经之路</a></h4><p>口语能力一方面要求你的货多，另外一方面就是知道怎么说。货多就可以随机应变处事不惊，知道怎么说就可以自由选择采取灵活方式，把自己想表达的传递出去。<br>**怎么丰富自己的语义，怎么让自己有货？<br>**<strong>输出倒逼输入：</strong>你需要有机会能让你大量地阐述内容，以推动你对于源的需求，同时生成强大的动力，迫使你不断地积累。<br><strong>结论：</strong>演讲与辩论是推动学习者对内容积累的有效手段，是英语口语能力成长的必经之路。<br>当你演讲了，当你辩论了，当你感受到你自己对知识的极度渴求后，剩下的事情就自然水到渠成了。你会开始选择领域并关注，可能从你感兴趣的开始。于是你会去阅读查找这个领域的各方面的知识，会产生很多的问题，带着问题去寻找答案，最终有的找到了答案有的没找到。但是经历过这个不断积累的过程，你会看到自己在“货”这方面，终于是有进步的了。</p>
+<h4 id="015-打通语义，无节操利用翻译与口译强化口语能力"><a href="#015-打通语义，无节操利用翻译与口译强化口语能力" class="headerlink" title="[015]打通语义，无节操利用翻译与口译强化口语能力"></a><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/015">[015]打通语义，无节操利用翻译与口译强化口语能力</a></h4><p>怎么转换速度优化的问题？<br>现在回到问题。对于想表达的意思，而不知道怎么说的情况，采用两种方式解决：<br><strong>1.打通各个语义之间的关联，换用自己已经掌握的方法表达。</strong><br>打通各个语义之间的关联就是说，一个意思我不会说，我换一种说法，而且这种说法的表达我比较熟悉，可以用英语恰当地表达出来。<br><strong>2.无节操地利用翻译、口译来强化自己的表达能力</strong><br>先说翻译。翻译对于口语来说，有点像一个大定理下假定前提的小定理。即，给定了你源的内容，你怎么样做表达？<br>再说口译。口译有点像空中加油，或者在服务不下线的情况下更新部署。这个时候，给定的“源”是动态的，而且需要实时地输出，属于“在线算法”。</p>
+<h3 id="第三部分：同学，练练你的发音"><a href="#第三部分：同学，练练你的发音" class="headerlink" title="第三部分：同学，练练你的发音"></a>第三部分：同学，练练你的发音</h3><h4 id="017-重新出发，改造我们的英语发音"><a href="#017-重新出发，改造我们的英语发音" class="headerlink" title="[017]重新出发，改造我们的英语发音"></a><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/017">[017]重新出发，改造我们的英语发音</a></h4><p>在前面的文章中，除了管道与内核模块外，还有一个发音表达的问题。<br>发音表达因为是最外在的层面，所以最容易引人注视，也最受人关注，这就像漂亮的妹子总是有人追的道理。但是发音也是一个相对不是那么重要的模块，因为只要你的发音能够被人听懂，那就可以算过关了，而且我的观察是老外对中国人的语音的纠错能力比我们想象的要强，甚至如果你仅能以非连续的方式蹦出词组，我们的国际友人也可以帮你自动脑补。<br>所以对于发音的追求，就看个人意志了。如果想改造我们的发音，那可以继续往下读。<br><strong>端正心态，发音很重要，但是也没有那么重要。</strong></p>
+<h4 id="018-稳扎稳打，一篇文章搞定英语发音基本面"><a href="#018-稳扎稳打，一篇文章搞定英语发音基本面" class="headerlink" title="[018]稳扎稳打，一篇文章搞定英语发音基本面"></a><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/018">[018]稳扎稳打，一篇文章搞定英语发音基本面</a></h4><p>亲测有效的方法：用一篇英文，模仿透彻到家，解决发音大部分问题，搞定发音基本面。</p>
+<h4 id="019-回归基础，精雕细琢，让发音涅槃重生"><a href="#019-回归基础，精雕细琢，让发音涅槃重生" class="headerlink" title="[019]回归基础，精雕细琢，让发音涅槃重生"></a><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/019">[019]回归基础，精雕细琢，让发音涅槃重生</a></h4><p><strong>回归基础</strong>：就是重新学习一遍全部的英语音素，你会发现很多以前没有注意到和发现的细节。<br><strong>精雕细琢</strong>：就是在你说英语的时候，平衡地兼顾每一个细小的发音的点。</p>
+<h4 id="020-练习发音时的几个注意要点，让你走的更远"><a href="#020-练习发音时的几个注意要点，让你走的更远" class="headerlink" title="[020]练习发音时的几个注意要点，让你走的更远"></a><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/020">[020]练习发音时的几个注意要点，让你走的更远</a></h4><p>练习口语的要点，我已经基本上覆盖到了主体框架，地图在此，剩下的路怎么走，那就看各位看官如何掌舵了。<br>最后交待一些发音训练中的一些情况的说明：<br><strong>1.发音训练初期花费时间较长，做好耐心的准备<br>2.自己听自己的录音会感觉奇怪，但是这是正常情况<br>3.注意英语与汉语的发音模式的差异<br>4.电影与美剧是很好的模仿对象，但是会有一定难度</strong></p>
+<h2 id="022-我为什么要坚持写作"><a href="#022-我为什么要坚持写作" class="headerlink" title="[022]我为什么要坚持写作"></a><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/why-writing">[022]我为什么要坚持写作</a></h2><p><strong>写作是我个人意志的舒张。</strong><br>我想写，我乐意写，虽然我未必能谈上热爱写。我学英语十五年了，可惜我似乎没有好好地总结过她；我在生活中有许多思考，许多一闪而过的念想，可我却没有去抓住她，体会她，而直到全然忘却，或看到现成的产品问世，或者相同观点的工作发表；我每天的生活中，似乎很充实，充实到嫌电脑的CPU无法赶上我工作思路的速度，但是回望一年，时间却又像水一样，从指隙中溜出。我无法面对青春年华的流逝，而不能尽力去做一些事情，让这些岁月变得更有意义，值得未来时刻的怀念。于是在那么有一天，我突然想写了，就这么简单，我开始写下去。<br><strong>写作是我个人心灵的涤荡。</strong><br>这个社会很像充满了各种射线的太空，各种声音各种争论各种媒介叠加充斥着你每一寸注意力空间。穿越其中难免不受到干扰，就像一件上好的大衣，在公交车上挤一遭，衣服上挂满了挤公交高手的大妈的长发、上班族光鲜亮丽的羽绒服的渗出绒毛，北京一年大部分优质空气中的粉尘……但这些都不是问题，问题是长经以久不经保养，衣服就像一个人弯曲的脊梁，失去了精气神。而每当我回到家中铺开纸笔，磨好墨砚，一股清香气息铺面而来——实际上是打开电脑了。我会在慢慢地文字中，静静地把自己从交织的心绪中安静下来，一篇文字完成，轻舒一口气。就像小米手机轻轻地重启一般，为下一轮的工作作好新的准备。<br><strong>写作是我个人面对世界的原点。</strong><br>我是一个跳跃的思考者，我的思考有时就像电子云中的电子那样，无法用固定的轨道来描述，但是我却找不到那个贴切的波函数。写作让我的思考强迫地落在白纸黑字上，让所有复杂的关系通通线性化，通通变成0和1这10位数字表示的世界。纵使你面对的世界再复杂，你处理的工作再重要再繁重，你的世界再膨胀，你的域再扩张，你的内心终究会有一个原点，你的域终究还要有个本原元。而那个最初的点，最原始的初心，写作给我提供了通道，让我有时间关注她，走向她，呵护她。她告诉我，我是谁，我现在在做什么，我以后能做什么。知道自己能吃几碗饭，才能得意时不忘形，其实自己不牛逼，失意时不灰心，告诉自己还可以。</p>
+<h4 id="001-2014第一篇：新的开始-1"><a href="#001-2014第一篇：新的开始-1" class="headerlink" title="[001]2014第一篇：新的开始"></a><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/debut" title="[001]2014第一篇：新的开始">[001]2014第一篇：新的开始</a></h4><p>这是一个新的开始，我不知道这终将会把我带向何处，但是我会把每个脚步坚实地走下去。——写在前面<br>2014年将会写一系列的文章，内容涉及英语学习、口译训练、论文科研、求职经验教训、产品行业、学术杂想以及其他。这个选题倒不是说自己做出了什么成绩，而是对自己从求学到求职这一阶段所经历的事情——更多是教训的总结。同时这些文章若能对读者有一些价值，那将倍感荣幸。笔耕不辍是我追求的生活状态。</p>
+<h2 id="英语词汇部分系列文章-1"><a href="#英语词汇部分系列文章-1" class="headerlink" title="英语词汇部分系列文章"></a>英语词汇部分系列文章</h2><p> <a target="_blank" rel="noopener" href="http://www.scalerstalk.com/vocabulary">[007]任务驱动，自由生长——谈英语词汇学习中的几个问题</a><br>我们把词汇学习的问题化为归一个目标：即认识足够多的单词，以保证在阅读或者其他被动接收场景时不产生偏差；掌握足够多的单词，以便在表达时自由或者相对自由地进行阐述。<br>我们在学习中需要做的都将围绕这个目标开展，下面以需要注意的问题为主线展开。<br><strong>1. 了解自己目前的词汇情况，评估需要采取的学习策略，是词汇学习的一个基本点。</strong>（测试网站：<a target="_blank" rel="noopener" href="http://www.shanbay.com/vocabtest/">扇贝</a>）<br><strong>2. 根据学习目标，选择学习策略与方法。任务驱动&amp;自由生长</strong><br><strong>3. 任务驱动型的学习策略需要注意为词汇构建语境场景</strong><br><strong>4. 自由生长型的学习策略需要注意词汇的难度与梯度</strong><br><strong>5. 谈一下两种策略的选择搭配问题</strong></p>
+<h4 id="005-自由生长策略的操作方式——关于英语词汇学习中的几个问题（四）-1"><a href="#005-自由生长策略的操作方式——关于英语词汇学习中的几个问题（四）-1" class="headerlink" title="[005]自由生长策略的操作方式——关于英语词汇学习中的几个问题（四）"></a><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/005">[005]自由生长策略的操作方式——关于英语词汇学习中的几个问题（四）</a></h4><p>在了解局部化的结构后，需要选择合适的材料用于词汇的自由生长。英语学习的各个专项互联互通性较高，阅读、听力、翻译均可以作为新鲜词汇的来源。在选择材料时，要注意所选材料所带来的词汇的难度应该循序渐进，难度不宜过大，梯度不宜过高。<br><strong>第一</strong>，选择略难度大一些的材料，可以是考试阅读题目、新闻听力稿、报刊或网站新闻。关于阅读、听力具体操作将会在对应部分具体介绍。<br><strong>第二</strong>，在整体的层面对材料进行理解，同时对于生词，猜测其含义并观察其用法。例如，如果这个是经济类材料，不要当作在应付考试，而是你在读一份具有信息量的报告，尝试理解作者在向你表达什么。这样做的目的是在大脑里建立一个语境场，潜移默化。<br><strong>第三</strong>，评估你的理解程度。可以根据材料的情况，选择复述或者做题（如果你是用阅读理解材料着手）。复述需要保证你能简明扼要地把要点说清楚，做题就把题目都做对即可。<br><strong>第四</strong>，对不认识的生词逐一查词典看解释。由于这是处于词汇学习阶段，我们在这个阶段的学习只要查清楚这个单词的基本意思，以及在本语境中的意思即可。如果是在阅读、写作阶段，可以增加扩展，这会以后续详细论述。<br><strong>第五</strong>，根据目前的情况，挑选出重点吸纳与学习的词，进行语境重构。语境重构就是网络上所谓的“脑补”，想一想这个词可能在什么时候会出现，或者自己什么时候能用上，激活大脑的连接。如果英语不好想，笔者个人认为用中文想想也行。<br><strong>第六</strong>，整理词汇，并尽可能地使用。可以选用一些带单词本的软件进行记录，以便后续复习。在能用到英语的环境中，尽量地使用你学会到的词汇。</p>
+<h4 id="006-两种策略的选择搭配问题——关于英语词汇学习中的几个问题（五）-1"><a href="#006-两种策略的选择搭配问题——关于英语词汇学习中的几个问题（五）-1" class="headerlink" title="[006]两种策略的选择搭配问题——关于英语词汇学习中的几个问题（五）"></a><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/006">[006]两种策略的选择搭配问题——关于英语词汇学习中的几个问题（五）</a></h4><p>1）学习者通过文章第一部分（回复002可以查看）中已经了解到自己的词汇情况。<br>2）根据学习目标确认学习重点。学习目标可大致区分为重要型与紧急型。<br>3）重要型学习目标在开始初期建议以任务驱动为主策略，在时间允许的情况下对学习目标的词汇进行全面覆盖，即扫一遍。之后以自由生长策略为主，贯穿在学习目标的各个专项的学习与训练中。<br>4）紧急型学习目标通常为临阵磨枪式的。<br>总结一下，词汇学习就是在了解自己基本情况的基础上，结合大量猛火力密集（任务驱动型）与细水长流模式（自由生长型）两种策略的特点，实现词汇的不断增长。</p>
+<h2 id="英语口语练习纲要系列文章-1"><a href="#英语口语练习纲要系列文章-1" class="headerlink" title="英语口语练习纲要系列文章"></a>英语口语练习纲要系列文章</h2><p>英语口语能力成长路径合辑 ：<a target="_blank" rel="noopener" href="http://www.scalerstalk.com/spoken">[021]一名IT从业者的英语口语能力成长路径</a></p>
+<h3 id="开篇-1"><a href="#开篇-1" class="headerlink" title="开篇"></a>开篇</h3><p> <a target="_blank" rel="noopener" href="http://www.scalerstalk.com/008">[008]英语口语能力成长路径之开篇</a></p>
+<ol>
+<li><strong>当我们谈论口语是，我们在谈论什么？</strong></li>
+<li><strong>我的发音不是很好，我能怎么办？</strong></li>
+<li><strong>说英语时，我不知道要说啥，我能怎么办？</strong></li>
+</ol>
+<h3 id="第一部分-怎么看待口语-1"><a href="#第一部分-怎么看待口语-1" class="headerlink" title="第一部分 怎么看待口语"></a>第一部分 怎么看待口语</h3><h4 id="一、文艺装腔：当我们谈论口语时，我们在谈论什么-1"><a href="#一、文艺装腔：当我们谈论口语时，我们在谈论什么-1" class="headerlink" title="一、文艺装腔：当我们谈论口语时，我们在谈论什么"></a>一、文艺装腔：当我们谈论口语时，我们在谈论什么</h4><p><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/009">[009]当我们谈论口语时，我们在谈论什么？</a><br>缺了口语的英语世界，就像一部黑白无声有码的电影，你说能感受到多少美。<br>口语不是什么大不了的事情，她就是像我们身边的一个朋友一样，我们接触，了解，掌握，并使用这项技能，能给我们带来不一样的感官与变化的世界。</p>
+<h4 id="二、内核、管道、发音表达：口语的结构化要素分析-1"><a href="#二、内核、管道、发音表达：口语的结构化要素分析-1" class="headerlink" title="二、内核、管道、发音表达：口语的结构化要素分析"></a>二、内核、管道、发音表达：口语的结构化要素分析</h4><p> <a target="_blank" rel="noopener" href="http://www.scalerstalk.com/010">[010]当我们谈论口语时，我们在谈论什么？（二）</a><br>在这里，我把口语拆解成两方面的元素：<br><strong>一个是发音表达</strong>，即感性层面，听上去怎样，听起来怎样；<br><strong>另一个是内核</strong>，即理性层面，听了后你怎样，听完你感觉怎样。<br>当你在开始说英语的时候，给人留下怎样的第一印象，就是发音表达做的事情。<br>内核就是我们的底子，我们的储备，或者说我们的脑子里的货，是决定了我们在什么场景下会说出什么话来的前提。<br>再说一下流利，流利一般是我们在对于熟悉的领域会出现的状况，即对于某个问题有思考，或者有一些材料已经胸有成竹，这样一般会呈现出比较流利的状态。<br> <a target="_blank" rel="noopener" href="http://www.scalerstalk.com/011">[011]当我们谈论口语时，我们在谈论什么？（三）</a><br>从内核里生成，经过管道处理，并适当地表达呈现的能力，称作叫口语能力，或者表达能力。<br><img src="/./_image/309672646.jpg"><br>图1中可以看到三大模块的逻辑关系。最大的圆代表每个人感知到的世界。红色的圆形代表内核，矩形代表口语表达，即上文提到的两个部分。这有点像操作系统的内核模式与用户模式。管道是内心与外界沟通的方式，我们需要显式地处理内核的输出，以保证口语表达的得体、合理、合适。如果对比我前面提出的三个问题，你会发现我重点对应到内核与口语表达模块。那管道呢？我会在翻译口译部分详细论述。</p>
+<h4 id="三、测一测口语：口语能力的衡量体系-1"><a href="#三、测一测口语：口语能力的衡量体系-1" class="headerlink" title="三、测一测口语：口语能力的衡量体系"></a>三、测一测口语：口语能力的衡量体系</h4><p> <a target="_blank" rel="noopener" href="http://www.scalerstalk.com/012">[012]当我们谈论口语时，我们在谈论什么？（四）</a><br>通俗的说，内核就是你肚子里有没有货；管道就是你知道怎么组织好货，包装好货；发音表达就是你拿出的货色给人看到底是什么样子。<br>口语能力的高低，也即所说的口语好不好，是三个要素的综合评判。<br>说到这里，问题一的答案已经出来了，我给了三个方面的因素，告诉了它们之间的关系，但是我没有给一个确切的明确结果。我没有告知三个方面的因素的比例占比，我也没有告知哪个绝对更加重要。因为这个不重要，而他们都很重要。</p>
+<h4 id="四、口语训练的一些原则-1"><a href="#四、口语训练的一些原则-1" class="headerlink" title="四、口语训练的一些原则"></a>四、口语训练的一些原则</h4><p><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/013">[013]不需要外教，不需要英语思维，照样强大口语能力</a><br>以观点的形式，介绍一下我在口语训练中的战术：<br><strong>1.若客观环境有限，口语能力训练不需要过分依靠外国友人、甚至语伴的作用。</strong><br>a)破除学习者潜意识里，口语不好是因为没有老外作为练习对象的幻象。<br>b)破除自己在与老外练习时，产生出自己口语很好的幻象。<br><strong>2.不排斥中英文实时转换的思维方式，只要能帮助你提高表达效率，可以接受。</strong><br>为什么这样做？<br><strong>一是</strong>，我认为语义是脱离语言的，与语言无关的，作为中国人，多数时候它的承载语言是中文，可仅仅是承载语言而已。<br><strong>二是</strong>，心理上更容易接受一点。非英语环境的学习者应该能理解吧。<br><strong>三是</strong>，只要把转换的速度优化的足够好，这个解决方案也是可以接受的。这个就是后续口译翻译部分会涉及到的。</p>
+<h3 id="第二部分-练习口语说什么-1"><a href="#第二部分-练习口语说什么-1" class="headerlink" title="第二部分 练习口语说什么"></a>第二部分 练习口语说什么</h3><h4 id="014-演讲与辩论是口语能力成长的必经之路-1"><a href="#014-演讲与辩论是口语能力成长的必经之路-1" class="headerlink" title="[014]演讲与辩论是口语能力成长的必经之路"></a><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/014">[014]演讲与辩论是口语能力成长的必经之路</a></h4><p>口语能力一方面要求你的货多，另外一方面就是知道怎么说。货多就可以随机应变处事不惊，知道怎么说就可以自由选择采取灵活方式，把自己想表达的传递出去。<br>**怎么丰富自己的语义，怎么让自己有货？<br>**<strong>输出倒逼输入：</strong>你需要有机会能让你大量地阐述内容，以推动你对于源的需求，同时生成强大的动力，迫使你不断地积累。<br><strong>结论：</strong>演讲与辩论是推动学习者对内容积累的有效手段，是英语口语能力成长的必经之路。<br>当你演讲了，当你辩论了，当你感受到你自己对知识的极度渴求后，剩下的事情就自然水到渠成了。你会开始选择领域并关注，可能从你感兴趣的开始。于是你会去阅读查找这个领域的各方面的知识，会产生很多的问题，带着问题去寻找答案，最终有的找到了答案有的没找到。但是经历过这个不断积累的过程，你会看到自己在“货”这方面，终于是有进步的了。</p>
+<h4 id="015-打通语义，无节操利用翻译与口译强化口语能力-1"><a href="#015-打通语义，无节操利用翻译与口译强化口语能力-1" class="headerlink" title="[015]打通语义，无节操利用翻译与口译强化口语能力"></a><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/015">[015]打通语义，无节操利用翻译与口译强化口语能力</a></h4><p>怎么转换速度优化的问题？<br>现在回到问题。对于想表达的意思，而不知道怎么说的情况，采用两种方式解决：<br><strong>1.打通各个语义之间的关联，换用自己已经掌握的方法表达。</strong><br>打通各个语义之间的关联就是说，一个意思我不会说，我换一种说法，而且这种说法的表达我比较熟悉，可以用英语恰当地表达出来。<br><strong>2.无节操地利用翻译、口译来强化自己的表达能力</strong><br>先说翻译。翻译对于口语来说，有点像一个大定理下假定前提的小定理。即，给定了你源的内容，你怎么样做表达？<br>再说口译。口译有点像空中加油，或者在服务不下线的情况下更新部署。这个时候，给定的“源”是动态的，而且需要实时地输出，属于“在线算法”。</p>
+<h3 id="第三部分：同学，练练你的发音-1"><a href="#第三部分：同学，练练你的发音-1" class="headerlink" title="第三部分：同学，练练你的发音"></a>第三部分：同学，练练你的发音</h3><h4 id="017-重新出发，改造我们的英语发音-1"><a href="#017-重新出发，改造我们的英语发音-1" class="headerlink" title="[017]重新出发，改造我们的英语发音"></a><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/017">[017]重新出发，改造我们的英语发音</a></h4><p>在前面的文章中，除了管道与内核模块外，还有一个发音表达的问题。<br>发音表达因为是最外在的层面，所以最容易引人注视，也最受人关注，这就像漂亮的妹子总是有人追的道理。但是发音也是一个相对不是那么重要的模块，因为只要你的发音能够被人听懂，那就可以算过关了，而且我的观察是老外对中国人的语音的纠错能力比我们想象的要强，甚至如果你仅能以非连续的方式蹦出词组，我们的国际友人也可以帮你自动脑补。<br>所以对于发音的追求，就看个人意志了。如果想改造我们的发音，那可以继续往下读。<br><strong>端正心态，发音很重要，但是也没有那么重要。</strong></p>
+<h4 id="018-稳扎稳打，一篇文章搞定英语发音基本面-1"><a href="#018-稳扎稳打，一篇文章搞定英语发音基本面-1" class="headerlink" title="[018]稳扎稳打，一篇文章搞定英语发音基本面"></a><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/018">[018]稳扎稳打，一篇文章搞定英语发音基本面</a></h4><p>亲测有效的方法：用一篇英文，模仿透彻到家，解决发音大部分问题，搞定发音基本面。</p>
+<h4 id="019-回归基础，精雕细琢，让发音涅槃重生-1"><a href="#019-回归基础，精雕细琢，让发音涅槃重生-1" class="headerlink" title="[019]回归基础，精雕细琢，让发音涅槃重生"></a><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/019">[019]回归基础，精雕细琢，让发音涅槃重生</a></h4><p><strong>回归基础</strong>：就是重新学习一遍全部的英语音素，你会发现很多以前没有注意到和发现的细节。<br><strong>精雕细琢</strong>：就是在你说英语的时候，平衡地兼顾每一个细小的发音的点。</p>
+<h4 id="020-练习发音时的几个注意要点，让你走的更远-1"><a href="#020-练习发音时的几个注意要点，让你走的更远-1" class="headerlink" title="[020]练习发音时的几个注意要点，让你走的更远"></a><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/020">[020]练习发音时的几个注意要点，让你走的更远</a></h4><p>练习口语的要点，我已经基本上覆盖到了主体框架，地图在此，剩下的路怎么走，那就看各位看官如何掌舵了。<br>最后交待一些发音训练中的一些情况的说明：<br><strong>1.发音训练初期花费时间较长，做好耐心的准备<br>2.自己听自己的录音会感觉奇怪，但是这是正常情况<br>3.注意英语与汉语的发音模式的差异<br>4.电影与美剧是很好的模仿对象，但是会有一定难度</strong></p>
+<h2 id="022-我为什么要坚持写作-1"><a href="#022-我为什么要坚持写作-1" class="headerlink" title="[022]我为什么要坚持写作"></a><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/why-writing">[022]我为什么要坚持写作</a></h2><h2 id="成长随笔"><a href="#成长随笔" class="headerlink" title="成长随笔"></a>成长随笔</h2><p><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/why-writing">[022]我为什么要坚持写作</a><br><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/present">[033]活在当下的力量</a><br><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/initiative">[050]在通往牛逼的道路上，让一部分事情先做起来</a></p>
+<h2 id="英语学习：归纳与总结"><a href="#英语学习：归纳与总结" class="headerlink" title="英语学习：归纳与总结"></a>英语学习：归纳与总结</h2><h3 id="词汇部分"><a href="#词汇部分" class="headerlink" title="词汇部分"></a>词汇部分</h3><p>英语学习系列文章词汇部分五篇文章合辑:<br><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/vocabulary">[007]任务驱动，自由生长——谈英语词汇学习中的几个问题</a></p>
+<h3 id="口语练习"><a href="#口语练习" class="headerlink" title="口语练习"></a>口语练习</h3><p>英语口语能力成长路径合辑 ：<br><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/spoken">[021]一名IT从业者的英语口语能力成长路径</a></p>
+<h3 id="听力升级"><a href="#听力升级" class="headerlink" title="听力升级"></a>听力升级</h3><p> 英语听力升级作战方案系列文章合辑:<br><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/listening">[036]听的功力与层次——听力升级作战方案</a></p>
+<h3 id="阅读理解"><a href="#阅读理解" class="headerlink" title="阅读理解"></a>阅读理解</h3><p>英语阅读以及理解连载的合辑文章：<br><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/reading-part-one">[062]纸上轻功，思想飞腾：英语阅读与理解的结构与优化（上）</a><br><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/reading-part-two">[063]纸上轻功，思想飞腾：英语阅读与理解的结构与优化（下）</a></p>
+<h3 id="118-“听力-难”问题：关于听力训练中的几个问题的说明"><a href="#118-“听力-难”问题：关于听力训练中的几个问题的说明" class="headerlink" title="[118]“听力-难”问题：关于听力训练中的几个问题的说明"></a><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/118-listeninghard">[118]“听力-难”问题：关于听力训练中的几个问题的说明</a></h3><p>##<strong>我和口译：方法与训练</strong></p>
+<h1 id="093-合辑-一枚计算机系在校生在口译路上的摸爬滚打（上）"><a href="#093-合辑-一枚计算机系在校生在口译路上的摸爬滚打（上）" class="headerlink" title="[093][合辑]一枚计算机系在校生在口译路上的摸爬滚打（上）"></a><a target="_blank" rel="noopener" href="http://www.scalerstalk.com/computer-interpretation-one">[093][合辑]一枚计算机系在校生在口译路上的摸爬滚打（上）</a></h1><p>[094][合辑]一枚计算机系在校生在口译路上的摸爬滚打（下）</p>
+<p><strong>在进入一个新领域，有可能的话尽量请教有经验的过来人。过来人的点拨，对于自己的成长是有重大的影响力的，至少可以少走一些完全没有必要的弯路。</strong><br><strong>老师这时候就像一个全局信息的提供者，给你一个目标前进的路线图，至少让你知道什么地方用大力什么地方略微一带而过。）</strong></p>
+<p>现在回想起来，对大块连续时间的管理而言，宏观战略很重要。必须搞清楚一个大方向，这几天做什么，要达到什么效果；接下来几天做什么。通过大方向的把握后可以逐步细化出每一天要做的事情，这样自己的行动就比较有章法，不会迷失而只见树林不见森林。<br><strong>（&#x2F;&#x2F;对于应试，做真题是一个很好的实践方式。但是一定要做好心态上的建设，把训练当成考试来模拟，计时，计分。不要糟蹋题目。就是不要把题目玩坏了，然后说，我下次一定好好做……怎么可能，人的习惯在那里）</strong><br><strong>（&#x2F;&#x2F;心态上的明确是这样一种状态，bingo，我要的就是这个，不管这么多了，至少先把这个做到。而不是陷入了种权衡比较的状态，我做这个好像会有这些负面，做这个好像会有这些不利，在一些充满臆想的胡乱推测中，做着好像很有逻辑与理性的推断。最后基于这些本来也就不准确的信息，做出一个特别“理性”的选择。</strong><br><strong>说一下侥幸。侥幸就是付出的少却期待得到更多，想占便宜。我告诫自己的一点是，看到别人投机取巧占到便宜千万别一动心自己也跟着去了。别人成功了，自己极可能就会出问题，而且概率相当大。务实一点比较好。）</strong><br><strong>现在看来明确一个目标，并且为之努力地投入奋斗，是一件非常有幸福感的事情。每个人的情况都不一样，这个目标必须是符合自己的实际情况同时切合自己内心的。因为这个世界上什么样你能想到的人都有，有可能你处心积虑去追寻的目标，他人在弹指间就完成了，毫不费力。你必须认识与接受这一点，不抱怨不消极。有参天的大树，小花小草就不活了嘛。）</strong><br><strong>“业余和专业的区别: “A mateurs practice until they get it right, professionals practice until they can’t getit wrong.” by George W. Loomis。”</strong><br>从三月份开始，我执行时间管理。每天晚上提前安排好第二天要做的事情。这样好处是，第二天不用去想要做什么，只要照着清单，一个一个地做下去。在做一件事的时候全神贯注，不去想第二件事时怎么样。<br><strong>当任务足够多，而且其中出现事务性工作时，把任务列表，专注当前任务，完成或者取得一个结果后，进行下一个，会比较高效。）</strong></p>
+<p>有的时候无法完成所有任务的不是事情太复杂太难，而是因为做前面的事的过程中自己的心态、状态已受到了影响，无法入静入定。<br><strong>（&#x2F;&#x2F;状态（state）会影响人的绩效与表现（performance）的。而对状态的管理的能力，反应了自己的掌握力。不以物喜，不以已悲。有人黑你时，你要知道自己真实的情况；有人捧你时，你要知道自己几斤几两；有队友坑了你，你可以草草草（get pissed off），但要尽快调节好。负面的情绪堆在那里，你要能够抽离自己去看那个情绪。</strong></p>
+<p><strong>（&#x2F;&#x2F;技能的掌握都是运营性质的。即你需要在不断地反复中磨炼与培养感觉，是实践性很强的艺术。而且在持续不断的训练中，得不时跳出来看，才能感受到变化。</strong></p>
+<p><strong>人们恐惧那种充分投入的过程，更多时恐惧这种改变所带来的不确定性因素。相反，人们会贪恋自己既定节奏的生活，休闲娱乐打牌上网。并且告诉自己这才是生活，这是享受生活。</strong><br><strong>享受生活不是给别人看的，而是自己真心感受到的。我们不应该是通过在朋友圈刷照片，看到一堆人点赞的好评后，从这些溢美之词中，感觉到自己在享受生活；而是在合理打理的生活安排的每一个环节中，充分投入，充分感受到当下，感受到身心的舒展，上下的通透，这才是享受生活。</strong><br><strong>所谓“辛苦”的生活我体验过，所谓清逸的生活我也体验过，但是后者尽管看上去很舒服，但是并没有给我太多值得铭记的意义，而前者给我的能量，却能让我更好的对待生活。</strong><br><strong>说到底，还是要回访(revisit)我在那个时候听到后来却遗忘的一句话, If you don’tgrow, you are dying.我们必须对自己的成长有要求，有期待，这是生活与生命的一部分意义所在。</strong><br><strong>“自己扳手指算一下：你有多少时间是在消费别人创造的东西（电视，音乐，电玩，网站）而不是生产你自己的东西？只有你的“产出”才能为你添加作为人的价值。by David Wong”</strong></p>
+<h4 id="早起"><a href="#早起" class="headerlink" title="早起"></a>早起</h4><p><strong>睡前有很多浪费时间没有意义的事情，可以缩减，比如把所有的Feed消息源都重新刷一遍的强迫冲动。</strong><br><strong>早晨是一天最能给人希望的时段，因为又是新的一天，可以做新事情。早晨应该是充满期待的心情，不管周末的晚上再如何上班如上坟，不管雾霾如何严重，不管工作上有再多的压力与挑战，第二天清晨，面对新的一天，又是一个新人。</strong><br><strong>（&#x2F;&#x2F;投入的状态是一种非常快乐的感受。你会感觉到你所工作的对象与你的思路融合为一体，你的思绪就像流一样的形态。这个时候会特别痛恨打扰，因为中断会造成无法快速复原。这个原理也被用于心理机制的干扰。基于我自己的体会，我发现工作对象同时具有跨舒适区与成长区属性时，效果比较好。因为刚刚处于你又熟悉但又需要费一些脑力才能完成的事情。</strong></p>
+<p><strong>你觉得牛逼的东西，只是你不了解而已。当你了解了，你就会知道，这都是一步步累积出来的。</strong><br>就像现在我把大部分时间放在本专业学习上了，可是我还老是会想是不是要每天做一段听写，每天模仿一段VOA。<strong>（&#x2F;&#x2F;这就叫念念不忘，必有回响。我们内心中总有自己想做的事情。如果能区分这些事情是自己真正想做，还是想象自己真正想做的，而且认为属于前者的可能性比较大，那尽管去做好了！</strong></p>
+<h4 id="想法与执行力"><a href="#想法与执行力" class="headerlink" title="想法与执行力"></a>想法与执行力</h4><p><strong>事情按当前与长远的痛苦与快乐组合，无非分为四种。我认为其中积极的有当前快乐长期也快乐，以及当前痛苦但长期快乐两种；剩下的两种，一个是当前快乐但是长期痛苦，另外一个是当前痛苦长期也痛苦。</strong><br><strong>很多对我们有意义的事情，经常是第二种，可是我们因为懒惰因为拖延，于是用第三种事情来代替。第三种就是你下决心把某件事情做完，最后在美剧中结束了悔恨的一天的情形，也应了微博上那句“造谣一时爽，全家火葬场”表征的场景。</strong><br><strong>第二种事情最理想的情况是进化成第一种，你的每个当下是快乐的，然后最终达成结果也是快乐的。对我而言，目前的写作，已经慢慢从第三种事情向第二种演变，以前的运动也是间断性的，现在和写作绑定在一块，也渐渐规律起来。</strong><br><strong>第四种情况也不是没有的，损人不利已的事情，国人也经常做。这里就不讨论了。</strong><br><strong>有些事情拖延到截止日期可以疯狂一下完成，但那些真正重要但又没有截止日期的事情你怎么办？</strong><br><strong>你的健康，你事业长远的发展，你和家人的关系，你的亲密关系，这些不会有截止日期，但是却能很大程度上影响你的感受。</strong><br><strong>基于截止日期的驱动，不管用。这是一个主动管理，而不是被驱动管理。</strong><br><strong>于是什么是执行力。管理学大师有很多种讲述。我自己的体会就是，你有一个想法，哪怕最简单的念想，你评估过可行性，你主动把这个想法抓住，明确，放大，行动，行动，再行动，最后有一个不错的过程，然后产生了一个结果，哪怕是阶段性的结果，再修正调整，再变成新的想法与念想，于是形成闭环。演进下去。</strong><br><strong>对于你想做的事情，有困难，要克服困难；没有条件，创造条件。不找借口，行动的原因大多是相似的，而找到的借口往往各有各的版本。</strong></p>
+<h4 id="记录与追踪："><a href="#记录与追踪：" class="headerlink" title="记录与追踪："></a>记录与追踪：</h4><p><strong>（&#x2F;&#x2F;有这么一句话，If life is worthliving, it’s worth recording.在自己的成长过程中，保持良好地记录的习惯，很重要。我说很重要的时候，不是像写公文的那样，随手一写，三个字就出来，而是在持续写作这么多天之后，深切的体会。</strong><br><strong>人们在坚持的时候，往往容易半途而废，其中一个重要的原因，就是没有一个良好的记录与追踪(tracking)，导致无法将过去的历程显示化地展现出来。显性化展现能让大脑明白，你的进度条，到底走了多少。</strong><br><strong>于是，一项计划，一项合理得体的计划，应该伴随着全面而又清晰的记录。这些记录，是你前进过程中每个采样点，可以拼接成一个完整描绘的曲线。在复盘的时候，观察这条曲线，可以发现出自己的很多问题，当然也能看到自己的闪光点。</strong></p>
+<h4 id="抽象-amp-自我复制"><a href="#抽象-amp-自我复制" class="headerlink" title="抽象&amp;自我复制"></a>抽象&amp;自我复制</h4><p><strong>复盘是很重要的一个环节。尤其是在投入到一个较长的过程中，更需要梳理与总结。</strong></p>
+<p>在计算机领域，程序就是数据，但是程序是可以运行的，它有数据的属性，因此可以进行与数据有关的操作。<br><strong>（&#x2F;&#x2F;冯诺依曼体系奠定了整个现代计算机技术的基础。一个图灵机的输入可以是自己。初接触这个感到很神奇。现在再理解，这个像是一种抽离自己的形式化描述吧。就是在以前的文章里我提到过的，我们往往不能“自拔”，不能抽离自己的处境，把自己的当成一个输入，分析自己，跳出来看自己。</strong><br><strong>不能跳出来看自己，往往就会被当前的短期迷惑。不能跳出来看自己，常常也会被一些细节所困扰。在工作中，如果仅着眼于手头的那一小寸工作，而看不到更大的图景，在工作中也许不能找到最巧的发力方式。</strong><br><strong>我之前一直说的复盘，也就是把某一个完成的历程，当成一个整体输入，重新分析，得到新的理解。）</strong></p>
+<h4 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h4><p><strong>（&#x2F;&#x2F;战前的全时模拟很重要。这是一个心态的问题。我们在为某个目标准备的时候，在平时的训练中，心态要和真正在目标的考场上，要尽量完全一样。完全一样指的是，用同等程度的认真的态度与投入精神，对待你的训练，不能产生“这次放松一些，下次注意”类似的想法；而当真正能这么做到，在真正的考场上，会更从容。因为我想大脑也是会有惯性的，其惯性来源与平常持续地训练，形成潜意识的力量，而非在关键的时候，通过意识下一个指令，说，我要认真，就马上认真了。后者必然是没有那么容易的，要不然怎么会有一种说法是“xx是一种习惯”呢。）</strong><br><strong>复盘整个口译的备考历程，我最深刻的感触就是，人必须要对自己有要求，对自己的成长有要求。混是一种活法，投入与成长也是一种活法。这两种活法我都经历过，而且前者的时间显然要更长，但是后者带给我的财富与前者完全不在一个量级。拉伸很痛苦，但是拉伸完必然是各种爽。</strong><br><strong>每个人的前进方向，应该由自己内心牵引，由内心对生活的意义牵引，对美好生活的向往牵引，而不是被媒体软文的声音牵引，被我朋友我同学我亲戚的牛逼事迹牵引，不是被别人可能会认为我很牛逼牵引。我想只有这样，才能在洪流中，锚定住每一个点，在千头万绪的乱线中，描出自己漂亮的轨迹。</strong><br><strong>是为记。）</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/29/Notes/2022-11-09%E3%80%90R%E3%80%91Scalers%E6%96%87%E7%AB%A0%E9%80%9A%E8%AF%BB%E8%AE%B0%E5%BD%95%E6%95%B4%E7%90%86/" data-id="cljh7tocz0088kghnby8p25xe" data-title="" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Notes/2022-08-24【致即将进入大学校园的相赫侄儿】" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/29/Notes/2022-08-24%E3%80%90%E8%87%B4%E5%8D%B3%E5%B0%86%E8%BF%9B%E5%85%A5%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%9B%AD%E7%9A%84%E7%9B%B8%E8%B5%AB%E4%BE%84%E5%84%BF%E3%80%91/" class="article-date">
+  <time class="dt-published" datetime="2023-06-29T13:48:07.860Z" itemprop="datePublished">2023-06-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>相赫侄儿：</p>
+<p>因为工作的原因，8月份没能休年假回洛阳，不能当面和你聊聊即将到来的大学生活，希望下面提到的能对你的大学生活有所帮助。</p>
+<p>##几个容易陷入的误区</p>
+<p>误区一：拘泥于宿舍的小圈子。进入大学，人生第一次开始在陌生的城市生活，宿舍里的人是你最先接触、熟络的，与他们在一起可以使你尽快熟悉校园生活。但要争取早日突破宿舍的交际圈，认识更多来自全国各地的同班同学。<br>误区二：拘泥于班级、年级的圈子。大学按专业划分班级、年级，大家上课时都在一起，经过一个学期或者一年的学习后，相对都会比较熟悉了。这时要突破年级的圈子，去认识高年级的学长，从他们哪里获取关于考研、保研、找工作的相关信息，以利于自己早做准备。</p>
+<p>误区三：按部就班上课、复习和考试，没有明确的目标。与高中时期有“考大学”这个明确目标不同，进入大学后——不会有老师再来督促你的学习——每门功课只要及格就能拿到相应的学分，按照学习计划修满了学分就能顺利毕业，拿到毕业证和学位证，这是比较容易的。然而，如果你的目标是读研深造，那么从一开始就争取每门课拿到好成绩，每个学期拿到奖学金，然后到高年级时争取到保研的名额（成绩排名最靠前的还可以保外校）是比考研更好的路径。这样一来在别人辛辛苦苦备战研究生考试时，你可以有较多的时间和精力专注于自己的毕业论文或者是选择自己研究生阶段的导师。</p>
+<p>误区四：不再需要学习语文了。许多学校的理工科专业课程计划里面都没有语文课，但是阅读和写作对于今后的学习、工作、生活都至关重要。大学阶段，没有课程的束缚，阅读可以随心所欲，图书馆中自己感兴趣的书都可以翻阅浏览、借来阅读。</p>
+<p>误区五：为了与周围的同学打成一片而沉迷电子游戏。小学、初中、高中一路走来，囿于高考的压力，大多数同学都没有什么时间玩游戏，到了大学，一下子有了很多的时间和自由，尝试不同的游戏，甚至沉迷游戏的风险指数级上升，部分同学因此导致多门不及格降级、甚至退学都时有发生。</p>
+<p>误区六：追影视剧成瘾，花费大量时间精力。适当看看电视剧是可以的，以一个学期1至2部为限，不可过多。一些经典的电影（IMBD或者豆瓣评分高的）可以按每周一部的节奏欣赏，不推荐一味地看商业片。看一部电视剧所用的时间，如果用来读书，往往可以读完两三本书。</p>
+<p>误区七：把全部精力用于学业，忽视了社交。大学同学之间关系往往是比较纯洁、质朴的，没有利益上的纷争，犯错的成本比较低，发生矛盾的后果也不会很严重。大学阶段是进入社会前的一个模拟和预备阶段，也是锻炼人际交往能力的宝贵机会。</p>
+<p>误区八：在恋爱的问题上交白卷。大学同学结为伉俪的当然是极少数，但这并不妨碍青年男女之间的纯洁爱情。遇到欣赏的女孩儿，尽管大胆追求，无需顾忌太远的将来（当然啦，发生关系前需慎重考虑）。<br>误区九：在各个方面争强好胜。人的精力和时间是有限的，花在了一个方面，那另一方面的自然就会减少了。所以思考并选择自己人生努力的方向和终生奋斗的目标是十分重要的事情，当然这个需要你花很长时间去探索、尝试、思考。（建议读读《奇特的一生》这本书。）</p>
+<p>##建议努力的几个方向<br>关于大学生活，建议阅读李开复写给中国大学生的几封信。<br><strong>保持规律的作息，睡好觉、吃好饭、锻炼好身体。</strong>充足的睡眠是人精力的保障，尽可能不要因为一些事情熬夜，通宵更是不可取。</p>
+<p><strong>争取当班干部的机会。</strong>虽然会花费一些精力和时间，但是得到的锻炼会让人受益匪浅。</p>
+<p>** 多参加班级、学校组织的活动。**<br>在活动中，可以认识有趣的人，也能较好地磨炼你的人际交往能力（识别情绪、理解他人意图和想法，说话让人听起来舒服等等）。相信以你吹笛子的技艺和打球水平，会有很多有趣的活动可以参加，也会受到广大同学们的欢迎。<br><strong>多阅读经典书籍。</strong>除了自然科学、社会科学，历史、哲学、文学方面的书也要多涉猎一些。简单来说，自然科学影响的是人类社会发展的速度，而文史哲影响的则是社会发展的方向 。</p>
+<p>##我读过后收获很大，推荐你阅读的一些书<br>《给青年的十二封信》、《谈修养》、《谈文学》<br>暗时间、奇特的一生（精装珍藏版）<br>人类简史、未来简史、知识大融通<br>哲学与人生-傅佩荣<br>跟大师学语文系列：文章讲话、怎样写作、文章作法<br><strong>通识类：</strong>语文是什么、什么是数学、何谓文化、政治学通识、大脑的未来、经济学家给孩子的信、如何阅读一本书（精装）<br><strong>心理学：</strong>认知心理学及其启示、进化心理学、社会心理学、亲密关系<br><strong>历史：</strong>全球通史（从史前到21世纪）、中国通史（套装）（全7册）、潜规则（中国历史的真实游戏）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/29/Notes/2022-08-24%E3%80%90%E8%87%B4%E5%8D%B3%E5%B0%86%E8%BF%9B%E5%85%A5%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%9B%AD%E7%9A%84%E7%9B%B8%E8%B5%AB%E4%BE%84%E5%84%BF%E3%80%91/" data-id="cljh7tocz0085kghnctgnhxvf" data-title="" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Notes/2019-06-26【】会员招募" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/29/Notes/2019-06-26%E3%80%90%E3%80%91%E4%BC%9A%E5%91%98%E6%8B%9B%E5%8B%9F/" class="article-date">
+  <time class="dt-published" datetime="2023-06-29T13:48:07.840Z" itemprop="datePublished">2023-06-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>#为了书和人的相遇</p>
+<p>最早构思读书群是在17年5月，当时在笔记本上你定了一些规则，现在看来，那些规则严重脱离实际、极不容易落实。</p>
+<p>2018年在 <strong>知识星球</strong>APP中建立“思考之室”，12月曾与王家栋有如下聊天</p>
+<blockquote>
+<p>怎么说呢，50块是我想了好久才定的门槛。真想读书的话，选错买错一两本书这钱就没有了；你们付完50块钱，我每次都得尽自己最大的能力回答大家的提问；此外还可以共享我的书库（不存在不好意思借书的问题）。一年下来不知道我得投入多少时间在这上边，我其实感觉一点儿都不赚。</p>
+</blockquote>
+<p>2019年组建微信群“乐享书吧”，6月份王家栋提议在群内实行读书打卡</p>
+<blockquote>
+<p>那先从咱俩做起，每周至少发两次，如何？我是怕一旦定了制度规矩，咱们核心成员做不好表率，制度的权威性就荡然无存……以后再立制度就不好办了。。。我是想在“知识星球”里组织这个“书摘打卡”，自你加进来后，还没有发展新成员。</p>
+</blockquote>
+<blockquote>
+<p>会费50元或100元，加入后可以共享我的300册左右的书籍，这样如何？加入的会员可以推荐一本书（我来付钱购买），一年后这本书送给荐购人（或者归入共享书库），共享书库可以在单位长期流传（后期管理是个麻烦的事，得有相应的制度，也得由真爱读书的人来管理实施）<br>丢一本书后，不在享有借书权（可以通过重新付费恢复）。这样一年后最差的收获是得到“我的藏书”中的一本，或者是自己荐购的那本书。<br>我承诺收的会费用于书籍购买、社群运营，定期公开支出情况（后期如果资金量大的话，可以考虑委托第三人管理）。<br>育己招募会员在10人左右，一年下来 新购入千把块的书，应该足够大家看了。</p>
+</blockquote>
+<hr>
+<p>你有过要读书的想法吗？<br>为何总想尝试开始，继而又放弃？<br>读书真的是“开卷有益”吗？<br>在你心中，书是什么？<br>在你看来，读书意味着什么？<br>是打发时间的消遣？还是自我学习进步的渠道？<br>您是否感觉自己基础不好，对读书望而却步？<br>你有深入地思考过这些问题吗？</p>
+<p>如果你想读书，而不知道该如何开始，那就赶紧加入我们“乐享书吧”大家庭里来，在这里您可以：<br><strong>共享200册图书，购买金额超过￥8000元</strong><br><strong>为您推荐量身定制的书籍</strong><br><strong>回答您关于读书的任何问题和疑惑</strong><br><strong>查看其他成员的读书摘抄、心得及感悟</strong></p>
+<p>100元，是四五包烟的</p>
+<p>###暂定规则：<br>每次限借阅书籍一本，最长课借阅3个月；<br>加入之后您可以推荐一本书，由我购买后供您优先借阅；</p>
+<p>##对阅读的认识<br>苏联教育家苏霍姆林斯基说：“真正的阅读能够吸引学生的理智和心灵，激起他们对世界和对自己的深思，迫使他们认识自己和思考自己的未来。没有这样的阅读，一个人就会受到精神空虚的威胁。无论什么都不能取代书籍的作用。学校毕业以后的教育主要是自我教育。一个人只有爱上书籍，学会从书籍里认识周围世界和认识自己的时候，他在毕业后的自我教育才有可能。”<br>[“思考之室”——我们的阅览室]]<br>为了教育儿童，书籍在家庭的精神生活中应当占有重要的地位。父亲和母亲应当多读书、多思考，以便满足和发展儿童的求知欲。没有书籍、没有一些藏书的家庭，往好处说，不能对学校的教育有任何帮助；而往坏处说，这样的家庭环境会使儿童变得头脑迟钝，会限制儿童的智力发展。<br>[怎样使学校教育和家庭教育保持一致]]<br>##读书的时间成本<br>一般读者在选购图书的时候，往往把成本支出的焦点放在书的价格上，其实不然。<br>[<strong>时间才是读者付出的最大阅读成本</strong>]<br>阅读的时间成本&#x3D;选书花费的时间+阅读花费的时间+误读浪费的时间<br>书是读不尽的，许多书没有一读的价值。你多读一本没有价值的书，便丧失可读一本有价值的时间和精力；所以你必须慎加选择。<br>与熟悉的人面对面沟通应该读什么书的问题，远比看各路大神推荐的书单来得实际高效。通过对话交流，周围的师友能全面地了解你读书的现状和需求，推荐的书籍自然就会有针对性，也更适合你。这样得到的是“量身定制“，而不是”工厂批量化生产“的书单。节省你选书的时间的同时又可以使你避免误读书籍浪费时间。<br>##300册图书概览<br>[晒书房] (<a target="_blank" rel="noopener" href="https://img.shaishufang.com/pdf/05/80/21/20161129025220337553017.pdf%EF%BC%89">https://img.shaishufang.com/pdf/05/80/21/20161129025220337553017.pdf）</a><br>###爱情与婚姻<br>《鸳鸯谱》、《爱的艺术》、《亲密关系》、《高效能家庭的7个习惯》<br>###历史<br>《明朝的那些事儿》、《走向辉煌》、《两千年间》、《潜规则》；《中国历史研究法》、《中国历代政治得失》、《国史新论》、《中国史学名著》；《人类简史》、《未来简史》、《今日简史》；《中国通史》（共七卷 傅乐成教授主编）、《中国史纲》（张荫麟）<br>###心理学<br>《这才是心理学》、《改变心理学的40项研究》《心理学与生活》、《认知心理学及其启示》、《进化心理学》、《社会心理学》、《金融心理学》、《津巴多时间心理学》<br>###文学<br>《时间旅行者之妻》、《不能承受的生命之轻》、《幻夜》、《白夜行》、《嫌疑犯X的献身》、《鲁宾逊漂流记》、《双城记》、《额尔古纳河右岸》、《群山之巅》、《我与地坛》、《月亮与六便士》、《天长地久》、《孩子，你慢慢来》、《亲爱的安德烈》、《目送》<br>###人生哲学<br>《因为痛，所以叫青春》、《谁的青春不迷茫》、《》</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/29/Notes/2019-06-26%E3%80%90%E3%80%91%E4%BC%9A%E5%91%98%E6%8B%9B%E5%8B%9F/" data-id="cljh7tocy0082kghn8akqgvpv" data-title="" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Notes/2019-05-16【】家庭教育书目汇总" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/29/Notes/2019-05-16%E3%80%90%E3%80%91%E5%AE%B6%E5%BA%AD%E6%95%99%E8%82%B2%E4%B9%A6%E7%9B%AE%E6%B1%87%E6%80%BB/" class="article-date">
+  <time class="dt-published" datetime="2023-06-29T13:48:07.818Z" itemprop="datePublished">2023-06-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>##关于家庭教育方面的书单<br>午休之前浏览我在“知识星球”APP上加入的一个星球中的精华主题，其中一篇内容是星主推荐的家庭教育方面书单。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">最近有小伙伴问我关于家庭教育方面的书单，我请教了国内正面管教专家王霄老师，她推荐了一些家庭教育经典书目：</span><br><span class="line">1、《斯波克育儿经》</span><br><span class="line">2、《正面管教系列》</span><br><span class="line">3、《父母效能训练手册》</span><br><span class="line">4、《由内而外的教养》</span><br><span class="line">5、《如何说孩子才会听，怎么听孩子才肯说》</span><br><span class="line">6、《蒙台梭利教育实践经典》</span><br><span class="line">7、《王霄老师的5堂幸福课》</span><br></pre></td></tr></table></figure>
+<p>我在下面的评论是</p>
+<blockquote>
+<p>我建议读读《宝宝也是哲学家》、《魔法岁月》、《让孩子的大脑自由》、《给教师的建议》、《翻转课堂的可汗学院》，这些书可以结合龙应台的“人生三书”一起阅读。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">书名	|金额|	购书日期</span><br><span class="line">让孩子的大脑自由	|¥21.00 	|2014/11/11</span><br><span class="line">宝宝也是哲学家	|¥24.50 	|2014/11/11</span><br><span class="line">魔法岁月	|¥35.20 	|2015/04/07</span><br><span class="line">翻转课堂的可汗学院	|¥32.40 	|2015/04/07</span><br><span class="line">给教师的建议|	¥28.90 |	2017/08/16</span><br></pre></td></tr></table></figure>
+<p>翻转课堂的可汗学院<br>《魔法岁月》一书我是在的副标题为“0~6岁孩子的精神世界”，</p>
+<p>18年4月给小孩儿买书是，在妻子的建议下家里面购买了“正面管教”系列中的三本，我曾数次拿来翻阅，但每次都有读不下去的感觉。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/29/Notes/2019-05-16%E3%80%90%E3%80%91%E5%AE%B6%E5%BA%AD%E6%95%99%E8%82%B2%E4%B9%A6%E7%9B%AE%E6%B1%87%E6%80%BB/" data-id="cljh7tocx007zkghndrfzfb00" data-title="" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Notes/2019-04-23【】今天，你读书了吗" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/29/Notes/2019-04-23%E3%80%90%E3%80%91%E4%BB%8A%E5%A4%A9%EF%BC%8C%E4%BD%A0%E8%AF%BB%E4%B9%A6%E4%BA%86%E5%90%97/" class="article-date">
+  <time class="dt-published" datetime="2023-06-29T13:48:07.801Z" itemprop="datePublished">2023-06-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>不管你假装和掩饰的技术有多么娴熟 ，你的真正的需求 、价值观 、信仰和感觉都会源源不断地流露出来 ，你所传授的只是你自己的样子 ——不多也不少 。</p>
+</blockquote>
+<p>18年4月上旬，阅读《如何阅读一本书》的过程中，萌生了总结梳理并分享自己读书经历的想法。为了促成这一想法化为实际行动，我主动向领导请缨，提出要在世界读书日时在单位做了一场题为“这些年，我的读书生活”的汇报。历时10天，共23个小时的准备后（包含一次小范围试讲），最终于4月24日正式做了汇报，实现自己的构想。去年的汇报共分六个部分，现简要整理如下。<br>##1、我的读书经历<br>此部分回顾读书的经历，划分为：初高中启蒙阶段，04-09年的入门阶段，10-16年的中级进阶阶段，17年之后的中高级阶段。具体每个阶段的经历之后会单独成文，这里仅列出每个阶段自己读的代表性书目，主要用意在于说明我几乎是大学毕业工作之后才慢慢地走上读书的道路，给入门的读者一个具体的参考案例。<br>###大学前的启蒙<br>小学《西游记连环画》；初中《福尔摩斯探案集》、《三国演义》（约105回）；高中《我与地坛》、《命若琴弦》、《红楼梦》（约40回）<br>###入门阶段<br>大学04-08：《王牌战舰的覆灭》、《射雕英雄传》、《神雕侠侣》；08-09：《蒋百里传》、《麦克阿瑟回忆录》、《货币战争1-2》、《笑傲江湖》<br>###中级进阶<br>10：《少有人走的路》、《家》、《潜规则》、《八十忆双亲·师友杂忆》、《国史大纲引论》、《中国历史研究法》、《妞妞》、《嫌疑人X的献身》<br>11-13：《暗时间》、《学会提问》、《谁会认错》、《不能承受的生命之轻》、《雨季不再来》、《让我们始终牵手旅行》<br>14-16：《时间简史》、《宝宝也是哲学家》、《让孩子的大脑自由》、《魔法岁月》、《翻转课堂的可汗学院》、《高效能家庭的7个习惯》、《稀缺》、《奇特的一生》<br>###中高级<br>17：《故事》、《人类简史》、《认识商业》、《知识大融通》、《战争论》、《国富论》、《亲密关系》<br>18：《大脑的未来》、《如何阅读一本书》、《何谓文化》、跟大师学语文系列<br>##2、读书的收获<br>其次总结了读书的收获，整体的感觉有两个：一、比原著更精彩的影视作品是屈指可数的；二、优秀的书籍总是避不开历史和哲学。具体来说是增进了对世界的理解和认识、应用于实际生活改变了自己的行为，最重要的收获是自己对待时间的态度有了根本性的转变。<br>##3、为什么要读书<br>第三粗略论述为什么要读书。其一，读书可以获取成长所需的简介经验；其二，真正的阅读可以升华精神层面的需求；其三，读书是自我教育的必经之路；最后，读书可以为孩子树立榜样，通过家庭教育来帮助学校教育。<br>##4、我可以读书吗<br>第四部分“读书，该如何开始”，主要是解答初级入门读书时常见的疑惑，比如：“文化水平低，读书适合我吗？”“现在才开始读书是不是太晚了？”、“我没时间读书”、“如何面对周围人异样的眼光”、“我追不上别人”、“开卷有益吗？”等，帮助入门读者做好思想上的准备。<br>##5、选什么书<br>第五部分就选什么书的问题做了简单的介绍，对于入门级的读书者，建议根据自己感兴趣的点去选书，可以是感兴趣的电影、电视剧的原著，对棋类感兴趣的可以看看小说《棋王》，对武侠剧感兴趣的可以看看金庸的短篇小说《越女剑》。之后可以尝试阅读一些散文集，小说等文学作品，之后可以阅读一些任务传记，再高阶一些的可以读读历史和哲学。<br>##6、如何阅读一本书<br>最后结合《How to Read a Book》（怎样阅读一本书）讲解如何阅读一本书，着重强调阅读一本书需要问的四个问题：(1)整体来说，这本书到底在谈些什么？（找出这本书的主题）；(2)作者细部说了什么，怎么说的？（找出主要的想法、声明与论点）；(3)本书说得有道理吗？是全部，还是部分？（知道作者的想法是不够的，做出自己的判断）；(4) 这本书跟你有什么关系？</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/29/Notes/2019-04-23%E3%80%90%E3%80%91%E4%BB%8A%E5%A4%A9%EF%BC%8C%E4%BD%A0%E8%AF%BB%E4%B9%A6%E4%BA%86%E5%90%97/" data-id="cljh7tocx007xkghn1vltc2a6" data-title="" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Notes/2019-03-09【】《看不见的客人》" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/29/Notes/2019-03-09%E3%80%90%E3%80%91%E3%80%8A%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E5%AE%A2%E4%BA%BA%E3%80%8B/" class="article-date">
+  <time class="dt-published" datetime="2023-06-29T13:48:07.786Z" itemprop="datePublished">2023-06-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>剧情简介<br>#角色：<br>男主：亚德里安·多利亚（M1）环球科技传媒公司<br>        律师（菲利克斯·莱瓦）<br>    劳拉·维达尔<br>女主：弗吉尼亚·古德曼（）W1<br>#场景0<br>###镜头1（侧面）<br>出租车停靠马路边，酒店侍者开门，W1下车与酒店侍者互道晚安。<br>###镜头2（正面）<br>W1过酒店门<br>###镜头3（背面）<br>W1走进酒店大堂<br>###镜头3（侧面）<br>W1经过大堂正中心<br>###镜头4（俯视，视频监控画面）<br>W1走向电梯口，<br>###镜头5（监控室视角）<br>W1走进电梯，<br>###镜头6（正面）<br>电梯门关闭<br>###镜头7<br>W1放下手提包<br>###镜头8<br>W1整理衣服，出电梯<br>#场景1</p>
+<p>###镜头<br>W1按门铃后，M1开门，<br>###对话<br>W1：多利亚先生吗？我是弗吉尼亚·古德曼，你的律师菲利克斯·莱瓦请我来的。<br>M1：很高兴认识你，<br>（握手）<br>M1：进来吧<br>W1：谢谢<br>弗吉尼亚·古德曼（）进门后，电视新闻播出“接下来是全国焦点新闻，今天上午举行了劳拉·维达尔的葬礼，这位著名摄影师和视觉艺术家，疑似遭情夫亚德里安·多利亚。在本案中他辩称自己是无辜的阴谋受害人”</p>
+<p>###对话：</p>
+<p>多利亚：我以为你会晚点儿才到的<br>古德曼（）：本来是 但现在事情变麻烦了，我打了菲利克斯的电话，但是他没接<br>M1：他出城了<br>W1：啊，（应该是出乎她意料的）<br>M1：他说过不用担心，而且在这案子上他还有个计策<br>W1：可以让你逆转胜<br>M1：没错<br>W1：她上次也这样和我说，但现在有个最新情况他还不知道<br>M1：什么？<br>W1：他们可能今晚就会传唤你参加听证会<br>M1：什么？（说话的同时走进W1）<br>W1：我接获可靠的线报消息，检方在最后关头得到了一位或能扭转局势的证人，会让案情对你非常不利。虽然目前其身份不明 但他正在司法保护下进行转移以便三小时后出庭作证<br>M1：我已经说出事实了。<br>W1：你的次有漏洞，多利亚先生，我需要所有的细节。<br>机位变换<br>W1：因为细节能增加可信度，也能让我向大众证明你的清白。这点我保证能做到。<br>W1：执业至今 我从未输过任何一场官司，但我需要你的合作。<br>M1：警方把这件事情闹上头条，又24小时的监视我。如果我还有细节要补充 您觉得我会没说吗？（Don’t you think if I had anything to add I<br>would have done it by now?）<br>W1：检方要求立即局部你入狱，多利亚先生。我们有180分钟重新开始，我建议您别再抱怨，开始工作吧<br>W1定时3个小时（特写），两人开始回顾事件经过。<br>W1：那么，我们把案情在整理一遍。<br>W1：你和死者当时在那家酒店做什么？<br>##场景2<br>M1叙述在酒店的场景</p>
+<p>##短信内容</p>
+<blockquote>
+<p>我要说出真相，丽景酒店715房间.</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/29/Notes/2019-03-09%E3%80%90%E3%80%91%E3%80%8A%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E5%AE%A2%E4%BA%BA%E3%80%8B/" data-id="cljh7tocv007nkghneq7p6s3s" data-title="" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/3/">weiter &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Kategorien</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Memory/">Memory</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OurLove/">OurLove</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Reading/">Reading</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Reflect/">Reflect</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%80%9F%E5%86%99/">生活速写</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%9B%B8%E6%BF%A1%E4%BB%A5%E6%B2%AB/">相濡以沫</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%82%B2%E5%84%BF/">育儿</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Game/" rel="tag">Game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOS/" rel="tag">IOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT/" rel="tag">IT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PC/" rel="tag">PC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Word/" rel="tag">Word</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timetrack/" rel="tag">timetrack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B9%A6%E6%91%98/" rel="tag">书摘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90/" rel="tag">书籍推荐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%93%E4%BC%9A/" rel="tag">体会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A8%B1%E4%B9%90/" rel="tag">娱乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%84%9F%E6%83%B3/" rel="tag">感想</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F/" rel="tag">游戏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" rel="tag">生活经历</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%82%B2%E5%84%BF/" rel="tag">育儿</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%85%E8%AF%BB/" rel="tag">阅读</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Game/" style="font-size: 10px;">Game</a> <a href="/tags/IOS/" style="font-size: 11.11px;">IOS</a> <a href="/tags/IT/" style="font-size: 13.33px;">IT</a> <a href="/tags/Linux/" style="font-size: 13.33px;">Linux</a> <a href="/tags/PC/" style="font-size: 10px;">PC</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Word/" style="font-size: 10px;">Word</a> <a href="/tags/timetrack/" style="font-size: 15.56px;">timetrack</a> <a href="/tags/%E4%B9%A6%E6%91%98/" style="font-size: 17.78px;">书摘</a> <a href="/tags/%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90/" style="font-size: 14.44px;">书籍推荐</a> <a href="/tags/%E4%BD%93%E4%BC%9A/" style="font-size: 10px;">体会</a> <a href="/tags/%E5%A8%B1%E4%B9%90/" style="font-size: 10px;">娱乐</a> <a href="/tags/%E6%84%9F%E6%83%B3/" style="font-size: 16.67px;">感想</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 13.33px;">游戏</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12.22px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" style="font-size: 20px;">生活经历</a> <a href="/tags/%E8%82%B2%E5%84%BF/" style="font-size: 10px;">育儿</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 18.89px;">阅读</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12/">December 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03/">March 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11/">November 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07/">July 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06/">June 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05/">May 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04/">April 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03/">March 2008</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/06/29/Tools/2020-02-15%E3%80%90T%E3%80%91%E5%9B%B4%E6%A3%8B%E5%AD%A6%E4%B9%A0%E5%B7%A5%E5%85%B7%E5%8F%8A%E8%B5%84%E6%BA%90/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/29/Read/%E7%8E%8B%E5%AE%B6%E6%A0%8B/%E3%80%8A%E8%A5%BF%E6%B8%B8%E7%95%85%E6%83%B3%E6%9B%B2%E3%80%8B2019-09-13/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/29/Read/%E7%8E%8B%E5%AE%B6%E6%A0%8B/%E3%80%8AB%E9%9D%A2%E8%A5%BF%E6%B8%B8%E3%80%8B2019-09-13/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/29/Read/%E4%B9%A6%E6%91%98/2018-04-12%E3%80%90%E3%80%91%E3%80%8A%E7%BF%BB%E8%BD%AC%E8%AF%BE%E5%A0%82%E7%9A%84%E5%8F%AF%E6%B1%97%E5%AD%A6%E9%99%A2%E3%80%8B/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/29/Read/%E4%B9%A6%E6%91%98/2017-07-08%E3%80%90R%E3%80%91%E4%B9%A6%E7%9B%AE%E5%88%97%E8%A1%A8%E2%80%942013/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 go2chess<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

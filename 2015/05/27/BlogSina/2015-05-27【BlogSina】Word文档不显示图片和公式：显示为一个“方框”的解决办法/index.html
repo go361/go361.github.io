@@ -1,37 +1,273 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Word文档不显示图片和公式：显示为一个“方框”的解决办法.md | 思考之室</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="电脑型号         华硕 F83VF 笔记本电脑 （以下简称 电脑 ①）操作系统         Windows 7 旗舰版 32位 SP1 ( DirectX 11 )                 （电脑公司 GHOST WIN7 SP1 装机旗舰版V2013.11）Office 版本：Microsoft Office Professional  2007  问题描述：MathType">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Word文档不显示图片和公式：显示为一个“方框”的解决办法.md">
+<meta property="og:url" content="http://example.com/2015/05/27/BlogSina/2015-05-27%E3%80%90BlogSina%E3%80%91Word%E6%96%87%E6%A1%A3%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87%E5%92%8C%E5%85%AC%E5%BC%8F%EF%BC%9A%E6%98%BE%E7%A4%BA%E4%B8%BA%E4%B8%80%E4%B8%AA%E2%80%9C%E6%96%B9%E6%A1%86%E2%80%9D%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/index.html">
+<meta property="og:site_name" content="思考之室">
+<meta property="og:description" content="电脑型号         华硕 F83VF 笔记本电脑 （以下简称 电脑 ①）操作系统         Windows 7 旗舰版 32位 SP1 ( DirectX 11 )                 （电脑公司 GHOST WIN7 SP1 装机旗舰版V2013.11）Office 版本：Microsoft Office Professional  2007  问题描述：MathType">
+<meta property="og:locale">
+<meta property="og:image" content="https://go361.oss-cn-shanghai.aliyuncs.com/img/20220901215804.png">
+<meta property="og:image" content="https://go361.oss-cn-shanghai.aliyuncs.com/img/20220901215855.png">
+<meta property="og:image" content="https://go361.oss-cn-shanghai.aliyuncs.com/img/20220901215925.png">
+<meta property="article:published_time" content="2015-05-27T06:38:16.000Z">
+<meta property="article:modified_time" content="2022-09-01T14:08:16.000Z">
+<meta property="article:author" content="go2chess">
+<meta property="article:tag" content="IT">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://go361.oss-cn-shanghai.aliyuncs.com/img/20220901215804.png">
+  
+    <link rel="alternate" href="/atom.xml" title="思考之室" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">思考之室</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-BlogSina/2015-05-27【BlogSina】Word文档不显示图片和公式：显示为一个“方框”的解决办法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2015/05/27/BlogSina/2015-05-27%E3%80%90BlogSina%E3%80%91Word%E6%96%87%E6%A1%A3%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87%E5%92%8C%E5%85%AC%E5%BC%8F%EF%BC%9A%E6%98%BE%E7%A4%BA%E4%B8%BA%E4%B8%80%E4%B8%AA%E2%80%9C%E6%96%B9%E6%A1%86%E2%80%9D%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2015-05-27T06:38:16.000Z" itemprop="datePublished">2015-05-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Word文档不显示图片和公式：显示为一个“方框”的解决办法.md
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>电脑型号         华硕 F83VF 笔记本电脑 （以下简称 电脑 ①）<br>操作系统         Windows 7 旗舰版 32位 SP1 ( DirectX 11 )<br>                 （电脑公司 GHOST WIN7 SP1 装机旗舰版V2013.11）<br>Office 版本：Microsoft Office Professional  2007 </p>
+<p>问题描述：MathType的公式以及Visio图片不显示，显示为一个方框。如下图。<br><img src="https://go361.oss-cn-shanghai.aliyuncs.com/img/20220901215804.png"></p>
+<p>初遇时间：2015年01月03日<br>场景回顾：<br>写研究生课程《现代电源变换》作业过程中，需要输入较多的公式。当时尚未学会使用Word2007自带的公式编辑器，安装MathType，插入公式后，所见即所得的Word中显示的居然只有一个框框。由于当时在乡下老家，无互联网宽带（当时是硬着头皮在MathType中输入公式，核对无误后确定，Word中均显示为如上图的框框）。回到学校，提交作业时同一文档在另一台电脑上（环境配置如下）能正常显示，无上图所示异常，于是问题搁置。<br>电脑型号         联想 IdeaPad Z370 笔记本电脑 （以下简称 电脑 ②）<br>操作系统         Windows 7 旗舰版 32位 SP1 ( DirectX 11 )<br>          （技术员联盟 GHOST WIN7 SP1 X86 免激活旗舰版 V2014.12（32位））<br>Office版本：Microsoft Office Professional Plus 2007  12.0.4518.1014<br>再次触发：2015年04月09日<br>场景回顾：<br>教研室老师要求将一个Word 文档中的 MathType 公式转化为 由Word2007自带的公式编辑器 生成的格式。在 电脑 ① 打开老师给定的文档，公式均显示为方框，双击后可以在MathType编辑器中正常查看，当时由于时间紧迫，于是更换工作平台为 电脑 ②，完成任务后提交。</p>
+<p>问题分析：<br>初遇上述问题时，没什么头绪，因为自从2008年完成大学毕业设计论文（当时是 Windows XP，Word 2003 ，MathType），一直到写课程作业，生活工作中均未涉及Word公式。4月份问题重现后，当时即将 电脑 ① 的Office版本卸载并更换安装为Microsoft Office Professional Plus 2007，然而问题并没有解决，排除了Office版本不同这个因素。接下来考虑可能是操作系统的问题，这个捣腾一回需要较长时间，当时并未进行验证。</p>
+<p>解决过程：<br>时间进入2015年05月，考虑到 电脑 ②主要用于在宿舍里娱乐用，电脑 ①平时多放置于教研室供学习使用，以后涉及到文献阅读、毕业论文等任务使用Word的频率自然很高，很有必要解决该问题 。2015年05月26日晚将电脑①带回宿舍，计划更换操作系统以解决问题。今天上午起床后，开启两台电脑，备份电脑①资料前，灵光一闪“百度一下这个问题，看是否有更佳的解决方案“，由于把一个新安装的操作系统配置为自己顺手的状态着实要花较长的时间。百度后获得参考，并用其提供办法完美解决问题如下：</p>
+<p>解决办法：<br>Word2007: Word选项–&gt;高级–&gt;显示文档内容–&gt;取消勾选项 显示图片框<br><img src="https://go361.oss-cn-shanghai.aliyuncs.com/img/20220901215855.png"></p>
+<p>效果如下：</p>
+<p><img src="https://go361.oss-cn-shanghai.aliyuncs.com/img/20220901215925.png"></p>
+<p>经验总结：<br>I、卸载Office后，其配置信息并没有被清除！重新安装后那个打勾的选项还是一样存在的，所以重装Office没有解决我的问题。<br>II、通过4月份的任务，得知 Word自带的公式编辑器 是由 MathType的作者为 微软Office量身定制的，再输入公式方面虽没有MathType来的方便，但是格式调整与兼容方面还是有着不小的优势。<br>III、太阳下面无新事儿，遇到问题问百度，尤其是IT方面的问题。<br>IV、不会重装系统的人碰到这个问题或许会直接地去百度一下，而不是像我一样把问题的成因归结到操作系统上而搁置了这么久。</p>
+<p>参考教程：<br><a target="_blank" rel="noopener" href="http://blog.sina.com.cn/s/blog_4c555fd30100s8u6.html">唐志帅的博客</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2015/05/27/BlogSina/2015-05-27%E3%80%90BlogSina%E3%80%91Word%E6%96%87%E6%A1%A3%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87%E5%92%8C%E5%85%AC%E5%BC%8F%EF%BC%9A%E6%98%BE%E7%A4%BA%E4%B8%BA%E4%B8%80%E4%B8%AA%E2%80%9C%E6%96%B9%E6%A1%86%E2%80%9D%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" data-id="cljh7tobr0037kghn045cdsw1" data-title="Word文档不显示图片和公式：显示为一个“方框”的解决办法.md" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IT/" rel="tag">IT</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/05/Read/2016-06-05%E3%80%90%E3%80%91%E3%80%8A%E8%A7%A3%E5%BF%A7%E6%9D%82%E8%B4%A7%E5%BA%97%E3%80%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          《解忧杂货店》
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/01/01/BlogSina/2013-01-01%E3%80%90BlogSina%E3%80%912012%E5%B9%B4%E5%BA%A6%E8%AE%B0%E4%BA%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
-
-{% block page_class %}page-post-detail{% endblock %}
-
-
-{% block content %}
-
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
-
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Kategorien</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Memory/">Memory</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OurLove/">OurLove</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Reading/">Reading</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Reflect/">Reflect</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%80%9F%E5%86%99/">生活速写</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%9B%B8%E6%BF%A1%E4%BB%A5%E6%B2%AB/">相濡以沫</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%82%B2%E5%84%BF/">育儿</a></li></ul>
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Game/" rel="tag">Game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOS/" rel="tag">IOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT/" rel="tag">IT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PC/" rel="tag">PC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Word/" rel="tag">Word</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timetrack/" rel="tag">timetrack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B9%A6%E6%91%98/" rel="tag">书摘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90/" rel="tag">书籍推荐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%93%E4%BC%9A/" rel="tag">体会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A8%B1%E4%B9%90/" rel="tag">娱乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%84%9F%E6%83%B3/" rel="tag">感想</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F/" rel="tag">游戏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" rel="tag">生活经历</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%82%B2%E5%84%BF/" rel="tag">育儿</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%85%E8%AF%BB/" rel="tag">阅读</a></li></ul>
+    </div>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Game/" style="font-size: 10px;">Game</a> <a href="/tags/IOS/" style="font-size: 11.11px;">IOS</a> <a href="/tags/IT/" style="font-size: 13.33px;">IT</a> <a href="/tags/Linux/" style="font-size: 13.33px;">Linux</a> <a href="/tags/PC/" style="font-size: 10px;">PC</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Word/" style="font-size: 10px;">Word</a> <a href="/tags/timetrack/" style="font-size: 15.56px;">timetrack</a> <a href="/tags/%E4%B9%A6%E6%91%98/" style="font-size: 17.78px;">书摘</a> <a href="/tags/%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90/" style="font-size: 14.44px;">书籍推荐</a> <a href="/tags/%E4%BD%93%E4%BC%9A/" style="font-size: 10px;">体会</a> <a href="/tags/%E5%A8%B1%E4%B9%90/" style="font-size: 10px;">娱乐</a> <a href="/tags/%E6%84%9F%E6%83%B3/" style="font-size: 16.67px;">感想</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 13.33px;">游戏</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12.22px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" style="font-size: 20px;">生活经历</a> <a href="/tags/%E8%82%B2%E5%84%BF/" style="font-size: 10px;">育儿</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 18.89px;">阅读</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12/">December 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03/">March 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11/">November 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07/">July 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06/">June 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05/">May 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04/">April 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03/">March 2008</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/06/29/Tools/2020-02-15%E3%80%90T%E3%80%91%E5%9B%B4%E6%A3%8B%E5%AD%A6%E4%B9%A0%E5%B7%A5%E5%85%B7%E5%8F%8A%E8%B5%84%E6%BA%90/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/29/Read/%E7%8E%8B%E5%AE%B6%E6%A0%8B/%E3%80%8A%E8%A5%BF%E6%B8%B8%E7%95%85%E6%83%B3%E6%9B%B2%E3%80%8B2019-09-13/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/29/Read/%E7%8E%8B%E5%AE%B6%E6%A0%8B/%E3%80%8AB%E9%9D%A2%E8%A5%BF%E6%B8%B8%E3%80%8B2019-09-13/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/29/Read/%E4%B9%A6%E6%91%98/2018-04-12%E3%80%90%E3%80%91%E3%80%8A%E7%BF%BB%E8%BD%AC%E8%AF%BE%E5%A0%82%E7%9A%84%E5%8F%AF%E6%B1%97%E5%AD%A6%E9%99%A2%E3%80%8B/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/29/Read/%E4%B9%A6%E6%91%98/2017-07-08%E3%80%90R%E3%80%91%E4%B9%A6%E7%9B%AE%E5%88%97%E8%A1%A8%E2%80%942013/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 go2chess<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
