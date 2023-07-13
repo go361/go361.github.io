@@ -73,14 +73,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Read/2019-06-24【阅读】文学记忆" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-Python/2018-08-04【】小伙伴晨读打卡代码参阅" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2019/06/24/Read/2019-06-24%E3%80%90%E9%98%85%E8%AF%BB%E3%80%91%E6%96%87%E5%AD%A6%E8%AE%B0%E5%BF%86/" class="article-date">
-  <time class="dt-published" datetime="2019-06-24T09:32:42.000Z" itemprop="datePublished">2019-06-24</time>
+    <a href="/2018/08/04/Python/2018-08-04%E3%80%90%E3%80%91%E5%B0%8F%E4%BC%99%E4%BC%B4%E6%99%A8%E8%AF%BB%E6%89%93%E5%8D%A1%E4%BB%A3%E7%A0%81%E5%8F%82%E9%98%85/" class="article-date">
+  <time class="dt-published" datetime="2018-08-03T16:00:00.000Z" itemprop="datePublished">2018-08-04</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Reading/">Reading</a>
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
   </div>
 
   </div>
@@ -91,7 +91,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2019/06/24/Read/2019-06-24%E3%80%90%E9%98%85%E8%AF%BB%E3%80%91%E6%96%87%E5%AD%A6%E8%AE%B0%E5%BF%86/">文学记忆</a>
+      <a class="p-name article-title" href="/2018/08/04/Python/2018-08-04%E3%80%90%E3%80%91%E5%B0%8F%E4%BC%99%E4%BC%B4%E6%99%A8%E8%AF%BB%E6%89%93%E5%8D%A1%E4%BB%A3%E7%A0%81%E5%8F%82%E9%98%85/">Python代码阅读（3）</a>
     </h1>
   
 
@@ -99,20 +99,28 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>本文汇总下阅读过的文学引论，摘录《如何阅读一本书》中“阅读想象文学的方法”，最后回顾这些年我读过的几本文学书。</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/06/24/Read/2019-06-24%E3%80%90%E9%98%85%E8%AF%BB%E3%80%91%E6%96%87%E5%AD%A6%E8%AE%B0%E5%BF%86/#more">Read More</a>
-          </p>
-        
+        <p>#part1:最欣赏的Lan神代码学习<br>全部利用函数实现模块化，代码整洁，功能定义清晰。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    record = <span class="string">&#x27;record.db&#x27;</span></span><br><span class="line">    input_file = <span class="string">&#x27;input.txt&#x27;</span></span><br><span class="line">    <span class="comment"># 从input文档中将数据整理进入数据库</span></span><br><span class="line">    write_db(input_file, record)</span><br><span class="line">    <span class="comment"># 从数据库读取数据，并进行统计整理</span></span><br><span class="line">    df = handle_data(record, <span class="string">&#x27;2018-06-25&#x27;</span>, <span class="string">&#x27;2018-07-01&#x27;</span>)</span><br><span class="line">    <span class="comment"># 对qq信息进行脱敏处理</span></span><br><span class="line">    df[<span class="string">&#x27;昵称&#x27;</span>] = cyper_qq(df[<span class="string">&#x27;昵称&#x27;</span>])</span><br><span class="line">    <span class="comment"># 数据写入excel</span></span><br><span class="line">    write_excel(df, <span class="string">&#x27;晨读统计.xlsx&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>##直接从数据库筛选不同的qq号码和日期</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">qq_sql = <span class="string">&quot;select distinct qq from record where pub_date between &#x27;&#123;&#125;&#x27; and &#x27;&#123;&#125;&#x27;&quot;</span>.<span class="built_in">format</span>(start_date, end_date)</span><br><span class="line">date_sql = <span class="string">&quot;select distinct pub_date from record where pub_date between &#x27;&#123;&#125;&#x27; and &#x27;&#123;&#125;&#x27;&quot;</span>.<span class="built_in">format</span>(start_date, end_date)</span><br></pre></td></tr></table></figure>
+<p>这样筛选到的QQ号码就不用去重复了，筛选到的日期也可以自动去除那些没有任何人打卡的日期。<br>##列表扩展的技巧</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pub_dates = [<span class="string">&#x27;2018-06-25&#x27;</span>, <span class="string">&#x27;2018-06-26&#x27;</span>, <span class="string">&#x27;2018-06-27&#x27;</span>]</span><br><span class="line">titles = [<span class="string">&#x27;昵称&#x27;</span>, <span class="string">&#x27;字数统计&#x27;</span>, <span class="string">&#x27;打卡频次&#x27;</span>]</span><br><span class="line">titles[<span class="number">1</span>:<span class="number">1</span>] = pub_dates</span><br><span class="line"><span class="built_in">print</span>(titles)</span><br><span class="line">&gt;&gt;&gt;[<span class="string">&#x27;昵称&#x27;</span>, <span class="string">&#x27;2018-06-25&#x27;</span>, <span class="string">&#x27;2018-06-26&#x27;</span>, <span class="string">&#x27;2018-06-27&#x27;</span>, <span class="string">&#x27;字数统计&#x27;</span>, <span class="string">&#x27;打卡频次&#x27;</span>]</span><br></pre></td></tr></table></figure>
+<p>这个比extend牛多了，远远超出了我的想象力！《python核心编程》书中也没类似示例。<br>##打卡次数生成</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">values = get_column(cur, <span class="string">&quot;select qq, pub_date from record where pub_date between &#x27;&#123;&#125;&#x27; and &#x27;&#123;&#125;&#x27;&quot;</span>.<span class="built_in">format</span>(start_date, end_date))</span><br><span class="line"><span class="keyword">for</span> qq, pub_date <span class="keyword">in</span> values:</span><br><span class="line">    df.loc[qq, pub_date] = <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>##打卡次数的迅速批量求和</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;打卡频次&#x27;</span>] = df.<span class="built_in">sum</span>(axis=<span class="number">1</span>, numeric_only=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<p>##字数统计的 select 实现</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">count_sql = <span class="string">&quot;select qq, sum(count) from record where pub_date between &#x27;&#123;&#125;&#x27; and &#x27;&#123;&#125;&#x27; group by qq&quot;</span>.<span class="built_in">format</span>(start_date, end_date)</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2019/06/24/Read/2019-06-24%E3%80%90%E9%98%85%E8%AF%BB%E3%80%91%E6%96%87%E5%AD%A6%E8%AE%B0%E5%BF%86/" data-id="cljh8ue040091o8hn41lqbdkm" data-title="文学记忆" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2018/08/04/Python/2018-08-04%E3%80%90%E3%80%91%E5%B0%8F%E4%BC%99%E4%BC%B4%E6%99%A8%E8%AF%BB%E6%89%93%E5%8D%A1%E4%BB%A3%E7%A0%81%E5%8F%82%E9%98%85/" data-id="clk19qh03009lvghnflk56p9a" data-title="Python代码阅读（3）" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" rel="tag">生活经历</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%98%85%E8%AF%BB/" rel="tag">阅读</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></li></ul>
 
     </footer>
   </div>
@@ -122,14 +130,14 @@
 
 
   
-    <article id="post-Read/2019-06-16【阅读】梳理读过的历史，推荐一套书" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-Python/2018-07-29【】可汗学院-统计学笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2019/06/16/Read/2019-06-16%E3%80%90%E9%98%85%E8%AF%BB%E3%80%91%E6%A2%B3%E7%90%86%E8%AF%BB%E8%BF%87%E7%9A%84%E5%8E%86%E5%8F%B2%EF%BC%8C%E6%8E%A8%E8%8D%90%E4%B8%80%E5%A5%97%E4%B9%A6/" class="article-date">
-  <time class="dt-published" datetime="2019-06-15T16:00:00.000Z" itemprop="datePublished">2019-06-16</time>
+    <a href="/2018/07/29/Python/2018-07-29%E3%80%90%E3%80%91%E5%8F%AF%E6%B1%97%E5%AD%A6%E9%99%A2-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2018-07-28T16:00:00.000Z" itemprop="datePublished">2018-07-29</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Reading/">Reading</a>
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
   </div>
 
   </div>
@@ -140,7 +148,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2019/06/16/Read/2019-06-16%E3%80%90%E9%98%85%E8%AF%BB%E3%80%91%E6%A2%B3%E7%90%86%E8%AF%BB%E8%BF%87%E7%9A%84%E5%8E%86%E5%8F%B2%EF%BC%8C%E6%8E%A8%E8%8D%90%E4%B8%80%E5%A5%97%E4%B9%A6/">终于遇见你——《中国通史》</a>
+      <a class="p-name article-title" href="/2018/07/29/Python/2018-07-29%E3%80%90%E3%80%91%E5%8F%AF%E6%B1%97%E5%AD%A6%E9%99%A2-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%AC%94%E8%AE%B0/">可汗学院，统计学笔记</a>
     </h1>
   
 
@@ -148,207 +156,42 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>在读历史书的道路上，我尚未真正迈入历史的大门之前，就先读了《中国历史研究法》、《中国历代政治得失》、《国史新论》等专著。七年之后，才开始真正地阅读基础的史书。<br>本文共分五个部分回顾我读过的历史类书籍，向想系统地读历史而尚未开始的读者推荐一套傅乐成主编的《中国通史》（全七册）。</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/06/16/Read/2019-06-16%E3%80%90%E9%98%85%E8%AF%BB%E3%80%91%E6%A2%B3%E7%90%86%E8%AF%BB%E8%BF%87%E7%9A%84%E5%8E%86%E5%8F%B2%EF%BC%8C%E6%8E%A8%E8%8D%90%E4%B8%80%E5%A5%97%E4%B9%A6/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2019/06/16/Read/2019-06-16%E3%80%90%E9%98%85%E8%AF%BB%E3%80%91%E6%A2%B3%E7%90%86%E8%AF%BB%E8%BF%87%E7%9A%84%E5%8E%86%E5%8F%B2%EF%BC%8C%E6%8E%A8%E8%8D%90%E4%B8%80%E5%A5%97%E4%B9%A6/" data-id="cljh8ue04008yo8hn4irphdef" data-title="终于遇见你——《中国通史》" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90/" rel="tag">书籍推荐</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" rel="tag">生活经历</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Read/2019-06-15【阅读】读过的心理学书籍" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2019/06/15/Read/2019-06-15%E3%80%90%E9%98%85%E8%AF%BB%E3%80%91%E8%AF%BB%E8%BF%87%E7%9A%84%E5%BF%83%E7%90%86%E5%AD%A6%E4%B9%A6%E7%B1%8D/" class="article-date">
-  <time class="dt-published" datetime="2019-06-14T16:00:00.000Z" itemprop="datePublished">2019-06-15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Reading/">Reading</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2019/06/15/Read/2019-06-15%E3%80%90%E9%98%85%E8%AF%BB%E3%80%91%E8%AF%BB%E8%BF%87%E7%9A%84%E5%BF%83%E7%90%86%E5%AD%A6%E4%B9%A6%E7%B1%8D/">心理学进阶之路</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>本文回顾我读心理学书籍的经历，向对心理学感兴趣的读者推荐以下阅读路线：<br><strong>1. 《大脑的未来》、《这才是心理学》、《改变心理学的40项研究》</strong><br><strong>2. 《心理学与生活》、《认知心理学及其启示》、《进化心理学》、《社会心理学》</strong><br><strong>3. 《亲密关系》、《金融心理学》、《津巴多时间心理学》等</strong></p>
-        
-          <p class="article-more-link">
-            <a href="/2019/06/15/Read/2019-06-15%E3%80%90%E9%98%85%E8%AF%BB%E3%80%91%E8%AF%BB%E8%BF%87%E7%9A%84%E5%BF%83%E7%90%86%E5%AD%A6%E4%B9%A6%E7%B1%8D/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2019/06/15/Read/2019-06-15%E3%80%90%E9%98%85%E8%AF%BB%E3%80%91%E8%AF%BB%E8%BF%87%E7%9A%84%E5%BF%83%E7%90%86%E5%AD%A6%E4%B9%A6%E7%B1%8D/" data-id="cljh8ue03008vo8hn355fgjva" data-title="心理学进阶之路" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90/" rel="tag">书籍推荐</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%98%85%E8%AF%BB/" rel="tag">阅读</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Read/2016-10-29【】《高效能家庭的7个习惯》" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2019/06/12/Read/2016-10-29%E3%80%90%E3%80%91%E3%80%8A%E9%AB%98%E6%95%88%E8%83%BD%E5%AE%B6%E5%BA%AD%E7%9A%847%E4%B8%AA%E4%B9%A0%E6%83%AF%E3%80%8B/" class="article-date">
-  <time class="dt-published" datetime="2019-06-11T16:00:00.000Z" itemprop="datePublished">2019-06-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Reading/">Reading</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2019/06/12/Read/2016-10-29%E3%80%90%E3%80%91%E3%80%8A%E9%AB%98%E6%95%88%E8%83%BD%E5%AE%B6%E5%BA%AD%E7%9A%847%E4%B8%AA%E4%B9%A0%E6%83%AF%E3%80%8B/">《高效能家庭的7个习惯》</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>“你们将成为医生、律师或商业领袖，然而，同你们所肩负的责任同样重要的是，你是人类的一员，人与人之间的关系——和你的配偶、孩子、朋友的关系是你要进行的最重要的投资。因为当生命走到尽头，你绝不会因又一次考试失利、又输了一场官司或丢了一桩生意而悔恨；你会为自己没花时间与丈夫、孩子、朋友和父母在一起而后悔……一个家庭的幸福感、一个社会的幸福感并不取决于白宫发生的一切，而在于你自己家里所发生的一切。”——芭芭拉·布什</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/06/12/Read/2016-10-29%E3%80%90%E3%80%91%E3%80%8A%E9%AB%98%E6%95%88%E8%83%BD%E5%AE%B6%E5%BA%AD%E7%9A%847%E4%B8%AA%E4%B9%A0%E6%83%AF%E3%80%8B/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2019/06/12/Read/2016-10-29%E3%80%90%E3%80%91%E3%80%8A%E9%AB%98%E6%95%88%E8%83%BD%E5%AE%B6%E5%BA%AD%E7%9A%847%E4%B8%AA%E4%B9%A0%E6%83%AF%E3%80%8B/" data-id="cljh8udzy008bo8hngzlu8ipc" data-title="《高效能家庭的7个习惯》" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B9%A6%E6%91%98/" rel="tag">书摘</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%98%85%E8%AF%BB/" rel="tag">阅读</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Read/2019-06-12【阅读】《亲爱的安德烈》" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2019/06/12/Read/2019-06-12%E3%80%90%E9%98%85%E8%AF%BB%E3%80%91%E3%80%8A%E4%BA%B2%E7%88%B1%E7%9A%84%E5%AE%89%E5%BE%B7%E7%83%88%E3%80%8B/" class="article-date">
-  <time class="dt-published" datetime="2019-06-11T16:00:00.000Z" itemprop="datePublished">2019-06-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Reading/">Reading</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2019/06/12/Read/2019-06-12%E3%80%90%E9%98%85%E8%AF%BB%E3%80%91%E3%80%8A%E4%BA%B2%E7%88%B1%E7%9A%84%E5%AE%89%E5%BE%B7%E7%83%88%E3%80%8B/">《亲爱的安德烈》</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>这本书老爸大约只读了前半部分，我阅读时格外注意爸爸做过标记的地方。我们父子俩人能以这样的方式，读这样的一本书，感觉很棒。</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/06/12/Read/2019-06-12%E3%80%90%E9%98%85%E8%AF%BB%E3%80%91%E3%80%8A%E4%BA%B2%E7%88%B1%E7%9A%84%E5%AE%89%E5%BE%B7%E7%83%88%E3%80%8B/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2019/06/12/Read/2019-06-12%E3%80%90%E9%98%85%E8%AF%BB%E3%80%91%E3%80%8A%E4%BA%B2%E7%88%B1%E7%9A%84%E5%AE%89%E5%BE%B7%E7%83%88%E3%80%8B/" data-id="cljh8ue02008ro8hng3thez1s" data-title="《亲爱的安德烈》" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B9%A6%E6%91%98/" rel="tag">书摘</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%98%85%E8%AF%BB/" rel="tag">阅读</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-ChildRearing/2019-05-30【】育儿小组半年总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2019/05/30/ChildRearing/2019-05-30%E3%80%90%E3%80%91%E8%82%B2%E5%84%BF%E5%B0%8F%E7%BB%84%E5%8D%8A%E5%B9%B4%E6%80%BB%E7%BB%93/" class="article-date">
-  <time class="dt-published" datetime="2019-05-29T16:00:00.000Z" itemprop="datePublished">2019-05-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>提交半年总结各位，育儿小组已经快半年了~写半年总结的时间到了。要求1000字，（以此节点为准，之前交过总结的小伙伴，一份总结可以减少150字的要求）写下你参加育儿小组以来，有什么样的收获，期待以后的小组是什么样的形式。总结里可以有课程的观点，认知，内容，感悟，行动，案例等各种形式。本总结请于2019年5月31日前提交，将于2019年6月1日开始清理：）</p>
-<hr>
-<p>##碎碎念<br>怎么说呢，其实我不知道该怎么写这个总结，我加入育儿小组不足一月，除了递交申请外尚未参加小组的任何活动。<br>19年1月就围棋、《奇特的一生》和魔方等话题与组长聊过几次，组长委婉地邀请我加入育儿小组，我说“好的，谢谢。”等我写申请进入咱们小组已经是4月底了，又间隔了一个月，直到近几天才开始着手下载群文件，试听关于英语儿歌教学的录音、育儿小组2018年的总结课等。儿歌教学音频很棒，18年的总结课也引发了我深层次的思考，总的来说小组留给我三点印象：</p>
+        <h1 id="S53-Go361-统计学"><a href="#S53-Go361-统计学" class="headerlink" title="[S53]Go361-统计学"></a>[S53]Go361-统计学</h1><blockquote>
 <ul>
-<li>Linda组长已经在育儿和英语启蒙方面已经积累了十分丰富的经验，值得爸爸妈妈们学习。</li>
-<li>Linda在抚育一大一小两个孩子、工作生活之余，能有如此大的行动量，着实令人钦佩。组长的执行力让我难以望其项背。</li>
-<li>十分认同小组的口号 <strong>“关注孩子，从关爱自己开始；育儿育己，和孩子共同成长”。</strong></li>
+<li>如果不是组长要求，自己主动学习统计学的概率约等于零。学习完整个课程内容，累计用时12小时，可接受的播放速度1.25x。</li>
+<li>中间穿插看了《程序员的数学2：概率统计》目前看完了前三章内容，约5小时。</li>
+<li>做统计学习题时发现好多概念还似是而非，回头重看了部分视频，完成习题累计约4小时。</li>
 </ul>
-<p>碰巧的是前两天我妻子也提到说“小区里别人家的小孩儿都开始英语启蒙了，咱们的孩子在英语方面还是白纸一张”，她还在一个妈妈（英语老师）的推荐下，报名准备试听幼儿英语启蒙在线课程。尚不清楚这个在线的英语启蒙课是怎样的形式，但是我心中有一种预感——课程的效果应该没有组长的儿歌教学效果好。妻子今天晚上会带孩子参加线上课，希望她还没有在这条路上走太远之前，我们能共同商讨出一个适合孩子英语启蒙的方案。</p>
-<p>##带儿子学国际象棋的经历<br>18年春节之前，我和妻子两人两地分居，妻子和我爸妈带着两个孩子在老家小县城生活，我一个人在外地上班。春节之后，在父母的陪伴下，妻子携俩孩子（小名糖糖、豆豆，14年12月出生）来到我工作的城市生活，我们之间的距离总算是近了一些，但因为工作的原因，我通常三个周末中只有两个周末可以回市区家里同她们团聚，其它时间都在隶属市管辖的小山村工作。<br>18年3月份带小孩儿逛街时买了一副国际象棋给孩子当礼物（中国象棋、围棋我都会一些，选国际象棋是觉得立体的棋子更容易引起孩子的兴趣），当天回到家中糖豆俩就认全了所有的棋子，对这个新鲜的玩具表现出强烈的兴趣。美中不足的是妻子和父母对棋类根本不感兴趣，“先教会她们，然后由她们陪伴孩子共同学习国际象棋”的想法成为泡影，带孩子学国象这一计划只能有我来落实。<br>在后来零星的周末时间里，我教糖豆俩学会了大部分棋子的走法（其中学会“马走日”用的时间最长，至今尚未学会“吃过路兵”），也知道了游戏的“王一死，战斗立即结束”等基本规则。其中腾讯视频里有一个“小博士国际象棋”的视频对激励俩人的兴趣起了举足轻重的作用，这个视频他们看了至少10遍，其中第一集的内容俩人可以完全复述出来（包括视频中的人物对白、拟声词）。18年6月选购了《大师三人行-少儿国际象棋入门》（上下两册），参照里面的课程体系，开始更系统地教他们国际象棋。<br>关于“马走日”的教学，因为小孩儿不认识汉字“日”，也不认识英文字母“L”，我一开始是按照“直直横”、“横直直”这样的方式来教糖豆马的走法的。后来经组长Linda介绍，我认识了一个专门教小孩儿国象的老师，在他推荐的国象学习app中，我学到“教小孩儿马的走法”的更好的方式——“one，two，turn”（一、二、转弯）。另外这位老师也纠正了我的一些错误认识。<br>在我提出“小孩儿多子优势的情况下，盲目地将军，不知道如何尽快把我的王将死”的疑问时，老师指出“四周岁的孩子根本学不会这些，五周岁都学不会，现阶段只要让孩子保持对国象的关注，不失去兴趣就可以了。其它更高难度的内容，后面再慢慢教，不能心急。”<br>##我的几点思考<br>###儿童的智力发育有其自然规律<br>儿童的身体、智力发育有着固有规律，这是毋庸置疑的，心理学的大量研究以及生活中的经验都可以说明这一点。在父母看来很简单的事情对于儿童来说却并不容易。教会成人”用两个战车将死对方的单王“很容易，但是当你要教的是一个不足四周岁的孩子时，就不是那么简单了。超过儿童当前发展阶段的启蒙往往收不到很好的效果，正如《宝宝也是哲学家》一书需要中所说“孩子本来就具有科学地探索世界、自己找到答案的能力，我们需要做的，只是在他们探索的不同阶段，把可以探索的目标和问题放在他们的生活中系统性地呈现出来。”<br>###教学效果取决于孩子的学习意愿<br>虽说理论上知道“不能用自己的兴趣爱好绑架小孩儿”，但实际生活中，多数家长难以免俗。一则因为在日常生活中，孩子耳染目濡地会对家长从事的娱乐活动表现出一定程度的关注，家长容易把这种关注误判为兴趣（实际上可能仅仅是儿童的好奇心）。二则因为家长在爱好特长方面有着自己的基础和经验积累，拥有基本的价值判断，可以为小孩儿提供更多的帮助，希望儿女能站在自己的肩膀上走的更远。细思在教小孩儿学国象一年以来，很多时候小孩儿并没有表现出很高的学习意愿，只是我一方面的“单相思”——还试图假借看国象教材、打谱等行动来熏陶小孩儿，效果往往不如人意。<br>###成就感和习惯比兴趣更重要<br>兴趣可能只是三分钟的热度，要真想让孩子在某个方面出众，必然需要他投入大量的时间反复学习、实践。这个成长的道路上，如何让孩子养成学习、实践的习惯，怎样及时地用合适的方式让孩子体会到进步的成就感，远比单纯的兴趣重要得多。国象在我生活的城市并不普及，市里没有教小孩儿国象的专业培训机构，身边朋友的小孩儿也没有学国象的，如何让孩子体会到成就感——“经过学习和训练后，水平确实提升了，能打败以前赢不了的小朋友”，这是个比较令人头疼的问题。<br>###家庭成员间务必达成一致意见<br>带小孩儿学国象是由我一个人发起的，妻子虽然不反对，但支持度也不高，我父亲对棋类也不感兴趣，教孩子学国象成了我一个人的孤军奋战，没有得到家人有效地支持。由于工作的原因我在家陪伴孩子的时间太少了，不足以呵护培养孩子的兴趣，也不能形成很好的连续性。一周最多有半个小时到一个小时的时间教小孩或者是陪他下棋，这个行动量是远远不够的。妻子和父亲都不愿意投入时间和精力陪小孩儿学、陪小孩儿下棋，这是教小孩儿学国象过程中的致命伤，如何说服他们积极参与这一活动或者是今后孩子感兴趣的其他活动是值得深思的问题。</p>
+</blockquote>
+<p>##学习基础<br>最早接触均值、样本方差这些概念印象中应该是在初中阶段，当时一直不明白的就是样本方差公式S²中分母上的那个n-1了，明明是从总体中抽取了n个样本值。。。<br>本科阶段，在高等数学、线性代数、概率论的基础上，选修过《信号检测与估值》课程，曾经学习过“置信区间”等知识，现在基本忘干净了。<br>##关键知识点</p>
+<ol>
+<li>样本方差 和 总体方差 的区别：样本方差中分母n-1是什么原因？</li>
+<li>如何从二项分布 推导出泊松分布？</li>
+<li>二项分布vs正态分布，两者之间的近似；</li>
+<li>伯努利分布vs二项分布</li>
+<li>中心极限定理</li>
+<li>小容量样本的置信区间，t分布</li>
+<li>type 1 error：拒绝了正确的零假设</li>
+<li>线性回归，决定系数r2</li>
+<li>协方差：</li>
+<li>皮尔逊χ²分布检验</li>
+<li>F统计量假设检验</li>
+<li>相关与因果，推理与演绎</li>
+</ol>
+<ul>
+<li>样本容量小于30时是不好的估计；</li>
+<li>资源参考：ck12.org 开源课程</li>
+</ul>
+<p>##经验积累<br>时间过去一半时，至少要完成计划内容的70%！<br><strong>学习时最好使用电脑</strong>，拿个iPad躺在床上看视频课的学习效果是很差的。<br>观看教学视频过程中最好的作法是<strong>边看边做笔记</strong>；看完后因为某个知识点没掌握而去回放视频是效率很低的学习方式！<br>视频中讲解了大量的例子，通过逐个例子依次引入了二项分布、正态分布、泊松分布、伯努利分布、t分布、χ²分布、F分布，比曾经学习的教科书一上来就直接给出定义要直观得多，也相对容易理解。做习题时才发现，其实自己对关键知识点的掌握上还差得比较远，能看懂是一回事，<strong>会应用则是更高阶的需求</strong>。<br>整体感觉还不能将视频中讲解的概念融会贯通，<strong>统计学的理论框架</strong>还没有理清楚。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2019/05/30/ChildRearing/2019-05-30%E3%80%90%E3%80%91%E8%82%B2%E5%84%BF%E5%B0%8F%E7%BB%84%E5%8D%8A%E5%B9%B4%E6%80%BB%E7%BB%93/" data-id="cljh8udxt0005o8hna0d67efg" data-title="" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2018/07/29/Python/2018-07-29%E3%80%90%E3%80%91%E5%8F%AF%E6%B1%97%E5%AD%A6%E9%99%A2-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%AC%94%E8%AE%B0/" data-id="clk19qh03009ivghnfwh09n31" data-title="可汗学院，统计学笔记" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%82%B2%E5%84%BF/" rel="tag">育儿</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></li></ul>
 
     </footer>
   </div>
@@ -358,14 +201,14 @@
 
 
   
-    <article id="post-Memory/2019-05-26【往事】羽球记忆" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-Python/2018-07-11【】ReView File1 By#Go361" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2019/05/26/Memory/2019-05-26%E3%80%90%E5%BE%80%E4%BA%8B%E3%80%91%E7%BE%BD%E7%90%83%E8%AE%B0%E5%BF%86/" class="article-date">
-  <time class="dt-published" datetime="2019-05-25T16:00:00.000Z" itemprop="datePublished">2019-05-26</time>
+    <a href="/2018/07/11/Python/2018-07-11%E3%80%90%E3%80%91ReView%20File1%20By#Go361/" class="article-date">
+  <time class="dt-published" datetime="2018-07-10T16:00:00.000Z" itemprop="datePublished">2018-07-11</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Memory/">Memory</a>
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
   </div>
 
   </div>
@@ -376,7 +219,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2019/05/26/Memory/2019-05-26%E3%80%90%E5%BE%80%E4%BA%8B%E3%80%91%E7%BE%BD%E7%90%83%E8%AE%B0%E5%BF%86/">趁着中国队再捧苏杯的喜庆，聊聊我打羽毛球的故事</a>
+      <a class="p-name article-title" href="/2018/07/11/Python/2018-07-11%E3%80%90%E3%80%91ReView%20File1%20By#Go361/">Python代码阅读（2）</a>
     </h1>
   
 
@@ -384,16 +227,43 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>##结缘，萌芽时期（—11.2）<br>幼时曾在外婆家和伯父家见过羽毛球拍和羽毛球，那个时候羽毛球于我只能算是一种玩具。<br>高一时，教我们英语的老师体育特长是羽毛球，班上的同学曾和他切磋过，虽然没有网子和标准场地，但依然能感觉到老师的水平高过我们好几个层级。<br>大一寒假期间去县城逛街，在姐姐的赞助下买了我们家里的第一副羽毛球拍，当时大概只买了三五个羽毛球，我开学后那副羽毛球拍基本上也就退役了。<br>大二体育课，有部分舍友选择了羽毛球项目，我还是保守地选择了熟悉的乒乓球。后来舍友们聊起来说结业考核要求“把羽毛球发到场地的固定区域”，我心里还顿生疑惑“这不可能做到吧”。<br>2010年3月前往西安参加为期十个月的培训班，宿舍楼下面恰好有两片露天羽毛球场地，下午上完课回到宿舍后，一闲下来就从窗台上趴着看下面的人打球。培训班上有个叫韩磊的高手，经常带着班里的几个同学在楼下打球；场地上偶尔能看到一个十分厉害的老师，充不多能单挑两个韩磊。看得多了，渐渐发现羽毛球是一项非常有趣的运动——跑动范围比乒乓球大得多、没有那种令人捉摸不定的旋转变化，没有篮球那种激烈的身体对抗，力量、速度、落点、线路等变化十分丰富。<br>在耳染目濡的熏陶下，我在5月12日—16日期间破天荒地认真观看了电视直播的汤尤杯比赛，8月份逐渐开始和同学们一起打羽毛球，参与的次数并不多，连基本的握拍姿势都没有很好地掌握，但正是这段弥足珍贵的经历开启了我迈入羽毛球殿堂的大门。<br>##痴迷，飞速成长(11-14)<br>2011年初回到工作单位后，单位里面正好掀起了打羽毛球的热潮，在达哥、豪哥、贺总的带领下，同事们先后购买了价值数百元的球拍，开始学打羽毛球。我于2月10日起逐渐融入打羽毛球的圈子，形成打球习惯后，购买了第一把球拍（Victor nano 9），日渐痴迷于羽毛球运动。自此踏上不归路，羽毛球成为业余体育运动的首选项目。<br><strong>有记录可查的打球次数：</strong><br>2011年上半年打球共计46次，<br>2012年共计打球83次，<br>2013年上半年共计打羽毛球77次<br><strong>比赛直播及录像</strong><br>实战之余还观看肖杰、赵建华教学视频《专家把脉》，<br>11年5月22日至29日期间第一次观看了苏迪曼杯混合团体锦标赛，12月中旬从达哥那儿拷贝大量羽毛球比赛视频，基本上每个看过两遍以上。<br>2012年全程观看奥运会羽毛球比赛直播<br><strong>装备选购</strong><br>2011年4月8日4月8号购买了自己的第一把球拍（Victor nano 9）；<br>2012年选购第一双羽毛球鞋（凯胜），8月选购自己的第一套羽毛球服（Victor）；<br>2013年10月第二双羽毛球鞋（YY SHB-45C 海军蓝 ￥343）、Yonex羽毛球袜<br>###球友及与外界的交流<br>阿达是我们中多数人的启蒙老师，曾经跟着专业的老师学过球，从握拍、高远球、吊球、杀球、平抽、勾对角等一个个动作地教会我们打球。其爆发力很好，动作标准，杀球威力大，封网扑杀杀伤力都非常强。<br>贺总体能极好，跑动能力十分突出，学习半年多之后以逐渐感觉不到他在单项技术上的优势。<br>标哥是属于我们单位的体育健将，是篮球、足球、乒乓球、羽毛球四个项目都可以排入第一集团的牛人。跟他打球就一个字“累”，能把人跑死。<br>豪哥是乒乓球准专业选手，曾打进市里面前三名。令人着实佩服的是他右手握拍打乒乓球，羽毛球项目上则是左手握拍，技术也相当细腻。<br>老魏是我培训结束回到单位时的舍友，打球出勤率极高，杀球能力比较突出，步法上相对弱一些。<br>房子也是左手握拍的一名选手，出勤率比我们几个低一些，但是球也大的相当不错，身上有一种永不服输、拼到最后一分的倔强劲儿。<br>雷帅是我们中起步较晚的一个，大概是从12年开始加入打球的团队，但借着身体素质上的优势，他用了不到一年的时间就基本上追平了我们的水平。平板支撑20分钟+的身体素质着实令人羡慕。<br>11年买了球拍的部分同事后来没有在羽毛球项目上继续投入更多的精力，这里就不一一列举名字了。<br>其中到黄冈市区与其他球友交流共两次，工作单位所在地的高中老师到我们单位交流一次。<br>##平稳期，走出去(14.9-17.5)<br>2014年4月参加研究生复试期间，曾逛到学校的体育馆观摩羽毛球教学，感受学校的羽毛球氛围。9月份入学之后，刚加入年级群就在里面询问有没有打羽毛球的同学，第一次到体育馆打球认识了李鑫、李明、童淑君等同班同学，第二次去打球有幸被学院羽毛球队选中成为其中的一员。随后在体育文化月学院组织了班级羽毛球团体赛，带领班级进入年级前三名。<br>研究生期间除了参加学院羽毛球的活动，和学院球队的伙伴一起参加“三航杯”，还参加过一个业余比赛。学院队的圈子之外，最多的就是和李鑫打球了，由于学校羽毛球场地紧张，经常两个人趁中午没人的时候到体育馆刷卡打球。后来还在李的推荐下认识了器材党土豪黄柏力，印象中共和黄打过三次球（两次在东大，一次在老校区）。<br>15年3月购买自己的第二把球拍YY（NR-ZSP），<br>15年11月，尤尼克斯 SHB-45C 橙黑 鞋码: 42 （￥282）<br>16年购买第二把球拍Victor（极速12）</p>
+        <p>#好的方面</p>
+<ul>
+<li>定义了获取最大值、最大值索引的函数</li>
+<li>运用了groupby函数</li>
+<li>设置了时间戳作为整个数据的索引</li>
+<li>统计部分功能实现得很好</li>
+</ul>
+<p>#可能有问题的部分<br>##0、变量命名不规范</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">monthList = &#123;<span class="string">&#x27;january&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;february&#x27;</span>:<span class="number">2</span>, <span class="string">&#x27;march&#x27;</span>:<span class="number">3</span>, <span class="string">&#x27;april&#x27;</span>:<span class="number">4</span>, <span class="string">&#x27;may&#x27;</span>:<span class="number">5</span>, <span class="string">&#x27;june&#x27;</span>:<span class="number">6</span>, <span class="string">&#x27;july&#x27;</span>:<span class="number">7</span>, <span class="string">&#x27;august&#x27;</span>:<span class="number">8</span>, <span class="string">&#x27;september&#x27;</span>:<span class="number">9</span>,</span><br><span class="line">             <span class="string">&#x27;october&#x27;</span>:<span class="number">10</span>, <span class="string">&#x27;november&#x27;</span>:<span class="number">11</span>, <span class="string">&#x27;december&#x27;</span>:<span class="number">12</span>, <span class="string">&#x27;all&#x27;</span>:<span class="string">&#x27;all&#x27;</span>&#125;</span><br><span class="line">dayList = &#123;<span class="string">&#x27;monday&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;tuesday&#x27;</span>:<span class="number">2</span>, <span class="string">&#x27;wednesday&#x27;</span>:<span class="number">3</span>, <span class="string">&#x27;thursday&#x27;</span>:<span class="number">4</span>, <span class="string">&#x27;friday&#x27;</span>:<span class="number">5</span>, <span class="string">&#x27;saturday&#x27;</span>:<span class="number">6</span>, <span class="string">&#x27;sunday&#x27;</span>:<span class="number">0</span>, <span class="string">&#x27;all&#x27;</span>:<span class="string">&#x27;all&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>这样的代码不利于和伙伴们沟通，明明是字典，变量名后缀List！！！<br>##1、main()中注释了程序核心代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="comment"># city, month, day = get_filters()</span></span><br><span class="line">        <span class="comment"># df = load_data(city, month, day)</span></span><br><span class="line">        df = load_data(<span class="string">&#x27;chicago&#x27;</span>,<span class="string">&#x27;all&#x27;</span>,<span class="string">&#x27;all&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>main()函数中在测试时注释组长给的原生代码，导致运行时一直是用chicago的所有数据在统计，这虽是一个小疏忽，但如果这就是给客户的一次提交呢？<br>##2、get_filters()功能不完善</p>
+<ul>
+<li>输入城市之后，如果输错了星期则需要重头再来；</li>
+<li>没实现捕获多个星期，多个月份的输入</li>
+<li>返回值 不是 str</li>
+</ul>
+<p>###2.1 输入城市后，如果输错了星期则需要重头再来<br><img src="http://ofjvlww7j.bkt.clouddn.com/Python/_image/2018-07-11-13-29-28.jpg"><br><strong>感觉这一环节是逻辑流程的思路不够清晰，三部分代码放在一个大的while循环中可能不是很好处理。</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line"><span class="comment"># TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs</span></span><br><span class="line">    city = <span class="built_in">input</span>(<span class="string">&quot;请输入要查询的城市：&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> city.lower() <span class="keyword">not</span> <span class="keyword">in</span> CITY_DATA.keys():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;未找到该城市数据，请重新输入&quot;</span>)</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line"><span class="comment"># TO DO: get user input for month (all, january, february, ... , june)</span></span><br><span class="line">    monthInput = <span class="built_in">input</span>(<span class="string">&quot;请输入要查询的月份：&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> monthInput.lower() <span class="keyword">not</span> <span class="keyword">in</span> monthList.keys():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;输入无效数据，请重新输入：&quot;</span>)</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        month = monthList[monthInput.lower()]</span><br><span class="line"><span class="comment"># TO DO: get user input for day of week (all, monday, tuesday, ... sunday)</span></span><br><span class="line">    dayInput = <span class="built_in">input</span>(<span class="string">&quot;请输入要查询的日期：&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> dayInput.lower() <span class="keyword">not</span> <span class="keyword">in</span> dayList.keys():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;输入无效数据，请重新输入：&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        day = dayList[dayInput.lower()]</span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<p>###2.2 没实现多个星期或多个月份的输入<br><strong>我在实现这部分代码的时候也花费了不少时间，一开始觉得组长提的需求不合理，还去找组长确认是否确实要实现多个输入的情况；后来仔细看组长在注释中题的任务需求是非常清晰的，只是自己本能的一种抵触，忽略了那些信息。</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">get_filters</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Asks user to specify a city, month, and day to analyze.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">        (str) city - name of the city to analyze</span></span><br><span class="line"><span class="string">        (str) month - name of the month to filter by, or &quot;all&quot; to apply no month filter</span></span><br><span class="line"><span class="string">        (str) day - name of the day of week to filter by, or &quot;all&quot; to apply no day filter</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<p>###2.3 建议在输入时 给用户一些提醒<br>对于像我这种记不住月份和星期拼写的人来说会方便不少</p>
+<hr>
+<p><strong>下面是我写的捕获输入函数get_filters()代码可以适当参考下：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">month_tuple = (<span class="string">&#x27;Jan&#x27;</span>, <span class="string">&#x27;Feb&#x27;</span>, <span class="string">&#x27;Mar&#x27;</span>, <span class="string">&#x27;Apr&#x27;</span>, <span class="string">&#x27;May&#x27;</span>, <span class="string">&#x27;Jun&#x27;</span>)</span><br><span class="line">day_tuple = (<span class="string">&#x27;MON&#x27;</span>, <span class="string">&#x27;TUE&#x27;</span>, <span class="string">&#x27;WED&#x27;</span>, <span class="string">&#x27;THU&#x27;</span>, <span class="string">&#x27;FRI&#x27;</span>, <span class="string">&#x27;SAT&#x27;</span>, <span class="string">&#x27;SUN&#x27;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_filters</span>():</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;Hello! Let\&#x27;s explore some US bikeshare data!&#x27;</span>)</span><br><span class="line">	<span class="comment"># TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs</span></span><br><span class="line">	<span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">		city = <span class="built_in">input</span>(<span class="string">&quot;Please input the city in&#123;&#125;:\n&quot;</span>.<span class="built_in">format</span>(CITY_DATA.keys()))</span><br><span class="line">		<span class="keyword">if</span> city <span class="keyword">in</span> CITY_DATA.keys():</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">	<span class="comment"># TO DO: get user input for month (all, january, february, ... , june)</span></span><br><span class="line">	<span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">		month = <span class="built_in">input</span>(<span class="string">&quot;Please input the month &#123;&#125;:\n&quot;</span>.<span class="built_in">format</span>(month_tuple))</span><br><span class="line">		<span class="keyword">if</span> month == <span class="string">&#x27;all&#x27;</span> <span class="keyword">or</span> <span class="built_in">set</span>(month.split(<span class="string">&#x27;,&#x27;</span>)).issubset(<span class="built_in">set</span>(month_tuple)):</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">	<span class="comment"># TO DO: get user input for day of week (all, monday, tuesday, ... sunday)</span></span><br><span class="line">	<span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">		day = <span class="built_in">input</span>(<span class="string">&quot;Please input the Correct day:&#123;&#125;\n&quot;</span>.<span class="built_in">format</span>(day_tuple))</span><br><span class="line">		<span class="keyword">if</span> day == <span class="string">&#x27;all&#x27;</span> <span class="keyword">or</span> <span class="built_in">set</span>(day.split(<span class="string">&#x27;,&#x27;</span>)).issubset(<span class="built_in">set</span>(day_tuple)):</span><br><span class="line">			<span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://ofjvlww7j.bkt.clouddn.com/Python/_image/2018-07-11-13-56-28.jpg"></p>
+<h2 id="3-关于星期的获取"><a href="#3-关于星期的获取" class="headerlink" title="3 关于星期的获取"></a>3 关于星期的获取</h2><p>输入星期三，会获取星期四的数据：<br><img src="http://ofjvlww7j.bkt.clouddn.com/Python/_image/2018-07-11-14-00-08.jpg"><br>如果星期项输入的是all，则可以正常统计。<br>问题可能在于”The day of the week with Monday&#x3D;0, Sunday&#x3D;6”<br>#</p>
+<p><strong>建议：认真阅读需求说明</strong></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2019/05/26/Memory/2019-05-26%E3%80%90%E5%BE%80%E4%BA%8B%E3%80%91%E7%BE%BD%E7%90%83%E8%AE%B0%E5%BF%86/" data-id="cljh8udz50053o8hne5ll0cqa" data-title="趁着中国队再捧苏杯的喜庆，聊聊我打羽毛球的故事" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2018/07/11/Python/2018-07-11%E3%80%90%E3%80%91ReView%20File1%20By#Go361/" data-id="clk19qh02009evghn7tzr50rv" data-title="Python代码阅读（2）" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" rel="tag">生活经历</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></li></ul>
 
     </footer>
   </div>
@@ -403,14 +273,14 @@
 
 
   
-    <article id="post-OurLove/2019-05-21【相濡以沫】初见" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-Python/2018-06-27【】ReView(extractData)By#Go361" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2019/05/21/OurLove/2019-05-21%E3%80%90%E7%9B%B8%E6%BF%A1%E4%BB%A5%E6%B2%AB%E3%80%91%E5%88%9D%E8%A7%81/" class="article-date">
-  <time class="dt-published" datetime="2019-05-20T16:00:00.000Z" itemprop="datePublished">2019-05-21</time>
+    <a href="/2018/06/27/Python/2018-06-27%E3%80%90%E3%80%91ReView(extractData)By#Go361/" class="article-date">
+  <time class="dt-published" datetime="2018-06-26T16:00:00.000Z" itemprop="datePublished">2018-06-27</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%9B%B8%E6%BF%A1%E4%BB%A5%E6%B2%AB/">相濡以沫</a>
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
   </div>
 
   </div>
@@ -421,7 +291,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2019/05/21/OurLove/2019-05-21%E3%80%90%E7%9B%B8%E6%BF%A1%E4%BB%A5%E6%B2%AB%E3%80%91%E5%88%9D%E8%A7%81/">初见</a>
+      <a class="p-name article-title" href="/2018/06/27/Python/2018-06-27%E3%80%90%E3%80%91ReView(extractData)By#Go361/">Python代码阅读</a>
     </h1>
   
 
@@ -429,20 +299,85 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>我们结婚五个月后的一天，通电话时聊起“婚后感受”这个话题，两人达成一致意见——回忆彼此在一起的点点滴滴，最好能形成文字。妻子的执行力比我强得多，单是我们初次相见的故事，她就洋洋洒洒写了三千多字。今天“521”我把她的文章稍作删减后发出来，重温我们相识的美好记忆。</p>
+        <p>#REVIEW(extractData.py)By(Go361)20180627<br>首先运行了代码，整体速度比我自己的好很多，不知道是不是因为我在for循环中使用了with conn的缘故。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">conn = sqlite3.connect(<span class="string">&#x27;record.db&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(relID)):</span><br><span class="line">    ……</span><br><span class="line">		<span class="keyword">with</span> conn:</span><br><span class="line">			conn.execute(<span class="string">&quot;INSERT INTO Record VALUES(?,?,?,?,?)&quot;</span>, (i, rDate, rTime, rId, rRecord))</span><br></pre></td></tr></table></figure>
+<p><strong>思路和我的基本一致：</strong></p>
+<ol>
+<li>判断文件是否存在，如果存在则删除，重新创建。(方便运行调试，否则总是提醒 Table 已经存在)</li>
+<li>然后创建数据库，建表；</li>
+<li>读入文本文件的内容，用一个匹配“标题行”的正则表达式，findall()实现匹配标题行，split()实现筛选发言内容，存入列表；</li>
+<li>在for循环中 逐一将 发言的标题行进行字段划分，匹配到笔记，插入数据库的表中。<br>不足之处：发言内容没有进行更深入的字段划分，比如区分 笔记 和感想。</li>
+</ol>
+<hr>
+<p>##1</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg_pattern = re.<span class="built_in">compile</span>(<span class="string">r&#x27;20[\d-]&#123;8&#125;\s[\d:]&#123;7,8&#125;\s+[^\n]*&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>虽然在这个场景中可以实现想要的结果，但个人感觉这个正则匹配得不够严格，比如”20——– 1::::::8 “这样的字符串也会被匹配到。<br>##2</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qqRegex = re.<span class="built_in">compile</span>(reg_pattern)</span><br></pre></td></tr></table></figure>
+<p>这一行应该是属于多余的代码，正则表达式没必要进行二次编译。<br>##3</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">contents.pop(<span class="number">0</span>)</span><br><span class="line">len1 = <span class="built_in">len</span>(titles)</span><br><span class="line">len2 = <span class="built_in">len</span>(contents)</span><br><span class="line"><span class="keyword">if</span> len1 == len2:</span><br></pre></td></tr></table></figure>
+<p>我没有使用pop()，是通过 发言内容的索引 +1 的方式实现的；另外感觉没必要引入 len1、len2两个变量，直接判断长度是否匹配更方便些。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(titles) == <span class="built_in">len</span>(contents):</span><br><span class="line"><span class="comment">## if len(titles) == len(contents)-1:</span></span><br></pre></td></tr></table></figure>
+<p>##4</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">id</span> integer primary key autoincrement,</span><br></pre></td></tr></table></figure>
+<p>这个用法很赞，我的消息序号来自for 循环的 i 是不连续的。<br><img src="http://ofjvlww7j.bkt.clouddn.com/Python/_image/2018-06-27-20-28-15.jpg"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/06/27/Python/2018-06-27%E3%80%90%E3%80%91ReView(extractData)By#Go361/" data-id="clk19qh01009bvghn7h4hc5jm" data-title="Python代码阅读" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-LifeReview/2018-06-08【生活小结】201801-201805" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/06/08/LifeReview/2018-06-08%E3%80%90%E7%94%9F%E6%B4%BB%E5%B0%8F%E7%BB%93%E3%80%91201801-201805/" class="article-date">
+  <time class="dt-published" datetime="2018-06-07T16:00:00.000Z" itemprop="datePublished">2018-06-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%80%9F%E5%86%99/">生活速写</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/06/08/LifeReview/2018-06-08%E3%80%90%E7%94%9F%E6%B4%BB%E5%B0%8F%E7%BB%93%E3%80%91201801-201805/">生活小结201801-201805</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2018年1~5月份时间统计分析</p>
         
           <p class="article-more-link">
-            <a href="/2019/05/21/OurLove/2019-05-21%E3%80%90%E7%9B%B8%E6%BF%A1%E4%BB%A5%E6%B2%AB%E3%80%91%E5%88%9D%E8%A7%81/#more">Read More</a>
+            <a href="/2018/06/08/LifeReview/2018-06-08%E3%80%90%E7%94%9F%E6%B4%BB%E5%B0%8F%E7%BB%93%E3%80%91201801-201805/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2019/05/21/OurLove/2019-05-21%E3%80%90%E7%9B%B8%E6%BF%A1%E4%BB%A5%E6%B2%AB%E3%80%91%E5%88%9D%E8%A7%81/" data-id="cljh8ue0a009wo8hn84f375bd" data-title="初见" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2018/06/08/LifeReview/2018-06-08%E3%80%90%E7%94%9F%E6%B4%BB%E5%B0%8F%E7%BB%93%E3%80%91201801-201805/" data-id="clk19qgzo007wvghnd5vw9n58" data-title="生活小结201801-201805" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%84%9F%E6%83%B3/" rel="tag">感想</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" rel="tag">生活经历</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/timetrack/" rel="tag">timetrack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" rel="tag">生活经历</a></li></ul>
 
     </footer>
   </div>
@@ -452,14 +387,14 @@
 
 
   
-    <article id="post-Tools/2019-05-19【T】IOS应用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-Python/2018-05-21【】网络爬虫开发实战" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2019/05/19/Tools/2019-05-19%E3%80%90T%E3%80%91IOS%E5%BA%94%E7%94%A8/" class="article-date">
-  <time class="dt-published" datetime="2019-05-18T16:00:00.000Z" itemprop="datePublished">2019-05-19</time>
+    <a href="/2018/05/21/Python/2018-05-21%E3%80%90%E3%80%91%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/" class="article-date">
+  <time class="dt-published" datetime="2018-05-20T16:00:00.000Z" itemprop="datePublished">2018-05-21</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a>
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
   </div>
 
   </div>
@@ -470,7 +405,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2019/05/19/Tools/2019-05-19%E3%80%90T%E3%80%91IOS%E5%BA%94%E7%94%A8/">iPhone 手机应用盘点</a>
+      <a class="p-name article-title" href="/2018/05/21/Python/2018-05-21%E3%80%90%E3%80%91%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/">Python3网络爬虫开发实战</a>
     </h1>
   
 
@@ -478,18 +413,22 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>自从大四时购买第一个手机三星U608以来，09年8月购买了诺基亚的5320XM，第三个手机用的是 HUAWEI C8825D（第一个安卓手机，购买于12年11月），15年4月开始使用家人淘汰下来的iPhone4，上手很快，基本上算是一见钟情，没中不足的是iPhone4只支持联通的3G网络，当时用的是移动手机号无缘3G网络，好在读研期间校园里每个角落都可以随时连接WiFi，使用起来并无大碍。16年10月临近毕业季时将手机升级为iPhoneSE（玫瑰金），一直使用至今。<br>##按耗电量排名<br>结合“设置”中“电池”选项下“过去24小时”和“过去10天”的统计数据，常用的应用如下：<br>微信、牛津词典、timetrack、播客、TIM（简版QQ）、知识星球、Safari、悦跑圈、AppStore、京东、高德地图、坚果云、印象笔记、Scanner、晒书房、私家藏书……等</p>
-<p>#APP及使用场景<br>##笔记文件类<br><strong>印象笔记：</strong>主要用于记录碎片化的想法，偶尔当做备忘录来记录一些待办事项（可以设置日期时间提醒），支持多平台，可以在PC端、Android、IOS、网页上使用。<br><strong>坚果云：</strong>个人十分钟爱的一款云盘软件，似乎是国内唯一的可以支持WEBDAV的云盘，同样可以支持多平台。<br><strong>PDF Expert：</strong>用于查看、批注PDF格式的文档，这个应用我平时在iPad上使用（手机屏幕太小，看文档不方便，至适合临时应急）；<br><strong>Scanner Pro：</strong>可以自动识别纸张边界和大小，扫描文件为电子版，支持导出为pdf、jpg格式，很方便。<br>##英语学习<br><strong>新概念英语：</strong>这个在应用商店中有好几个版本，我使用的是Cai  Kevin开发的那一个，原价￥128，我是在现实优惠1元的时候购买的。涵盖新概念全4册的内容，每一课包括课程学习、课程详解、单词学习、习题测试四个部分。课程学习部分支持语音，可以点击每个句子逐句跟读。课程详解部分有单词讲解、难句讲解、语法讲解。<br><strong>牛津高阶：</strong>十分好用的一款查单词、背单词软件，会自动保存检索记录，可以将单词添加为书签。“学习卡”功能支持背记分类词汇（包括考试词汇、牛津3000核心，最好用的是支持 “书签”和“检索记录” 这两个非常实用的单词本）。总而言之，个人感觉是学英语必备的软件之一。</p>
-<p>###悦跑圈：3km长跑练习时使用，有引导跑前热身、跑后拉伸的辅助功能。<br>微信，即时通信，朋友圈、公众号咨询阅读，偶尔会去翻一下新近推出的“看一看”</p>
+        <p>#[《Python3网络爬虫开发实战》]<br>[崔庆才·著]<br>[人民邮电出版社]<br>[2018年4月第1版]<br>#第二章 爬虫基础<br>###2.1.3 HTTP和HTTPS<br>目前广泛使用的是HTTP1.1版本。<br>HTTPS的安全基础是SSL，通过它传输的内容都是经过SSL加密的。<br>有些网站虽然使用了HTTPS协议，但还是会被浏览器提示不安全，通常是因为其CA证书不是被CA机构信任的，爬取这样的站点，就需要设置忽略证书的选项，否则会提示SSL链接错误（例如12306）。<br>###2.1.4 HTTP请求过程<br>Chrome中 右击并选择“检查”项，打开开发者工具。<br>Network页面下方出现的条目代表请求和接收响应的过程，点击第一个网络请求，可以看到General、Response Headers、Request Headers等更详细的信息。<br>写爬虫时，大部分时候都需要设定请求头。如果要构造POST请求，需要使用正确的Conten-Type，并了解各种请求库的各个参数设置时使用的是哪种Conten-Type，不然可能会导致POST提交后无法正常响应。<br><strong>常见的响应状态码及错误原因（P85）</strong><br>CSS选择器的语法规则（P91）<br>#第三章<br>##requests<br>Session用于维持会话（P133）<br>证书错误的解决办法（P135）：verif参数设置为False即可。<br>由于绝大部分的HTML文本都包含了换行符，所以在运用正则进行匹配的时候尽量加上 re.S修饰符，以免出现匹配不到的问题。</p>
+<p>#第五章<br>##<br><strong>Redis</strong><br><a target="_blank" rel="noopener" href="https://github.com/MicrosoftArchive/redis/releases">https://github.com/MicrosoftArchive/redis/releases</a><br><a target="_blank" rel="noopener" href="https://github.com/uglide/RedisDesktopManager/releases">https://github.com/uglide/RedisDesktopManager/releases</a><br>##5.3MongoDB<br>有一些数据库名是保留的，可以直接访问这些有特殊作用的数据库。</p>
+<ul>
+<li><strong>admin</strong>： 从权限的角度来看，这是”root”数据库。要是将一个用户添加到这个数据库，这个用户自动继承所有数据库的权限。一些特定的服务器端命令也只能从这个数据库运行，比如列出所有的数据库或者关闭服务器。</li>
+<li><strong>local:</strong> 这个数据永远不会被复制，可以用来存储限于本地单台服务器的任意集合</li>
+<li><strong>config</strong>: 当Mongo用于分片设置时，config数据库在内部使用，用于保存分片的相关信息。</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2019/05/19/Tools/2019-05-19%E3%80%90T%E3%80%91IOS%E5%BA%94%E7%94%A8/" data-id="cljh8ue0w00dio8hnbisd3dpd" data-title="iPhone 手机应用盘点" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2018/05/21/Python/2018-05-21%E3%80%90%E3%80%91%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/" data-id="clk19qgzx0097vghn2dt2e0af" data-title="Python3网络爬虫开发实战" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IOS/" rel="tag">IOS</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></li></ul>
 
     </footer>
   </div>
@@ -499,12 +438,16 @@
 
 
   
-    <article id="post-2019-05-17【0】写作的想法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-书摘/2018-04-12【R】How to read a book" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2019/05/18/2019-05-17%E3%80%900%E3%80%91%E5%86%99%E4%BD%9C%E7%9A%84%E6%83%B3%E6%B3%95/" class="article-date">
-  <time class="dt-published" datetime="2019-05-17T16:00:00.000Z" itemprop="datePublished">2019-05-18</time>
+    <a href="/2018/04/12/%E4%B9%A6%E6%91%98/2018-04-12%E3%80%90R%E3%80%91How%20to%20read%20a%20book/" class="article-date">
+  <time class="dt-published" datetime="2018-04-11T16:00:00.000Z" itemprop="datePublished">2018-04-12</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Reading/">Reading</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -513,7 +456,161 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2019/05/18/2019-05-17%E3%80%900%E3%80%91%E5%86%99%E4%BD%9C%E7%9A%84%E6%83%B3%E6%B3%95/">Hello Go361</a>
+      <a class="p-name article-title" href="/2018/04/12/%E4%B9%A6%E6%91%98/2018-04-12%E3%80%90R%E3%80%91How%20to%20read%20a%20book/">《如何阅读一本书》</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>1940年初版<br>1972年新版<br>1999年译者第一次阅读，<br>2014年10月中译本 第一版，2017年8月第6次印刷<br>##封底<br>本书初版于1940年，1972年大幅增订改写为新版。不论什么时候阅读，都不能不叹服作者对阅读用心之深，视野之广。不懂阅读的人，初探阅读的人，读这本书可以少走冤枉路。对阅读有体会的人，读这本书可以有更深的印证和领悟。这是一本有关阅读的永不退色的经典。</p>
+<p>##译序<br>最后满足的不只是我的好奇心，还有对阅读及出版的重新认识。<br>如果没有经历这么多年的寻觅与颠簸，发现与失落，我读这本书的感受不会这么深刻，收获也不会这么丰富。<br>##序言<br>要达到阅读的所有目的，就必须在阅读不同书籍的时候，运用适当的阅读速度。<br>#第一篇阅读的层次<br>##第一章 阅读的活力与艺术<br>这本书是为那些想把读书的主要目的当作是增进理解能力的人而写。</p>
+<p>收音机、电视等取代了以往由书本所提供的部分功能。到底这些新时代的传播媒体是否真的能增进我们对自己世界的了解？<br>我们为了理解一件事，并不需要知道和这件事相关的所有事情。太多的资讯就如同太少的资讯一样，都是一种对理解力的阻碍。现代媒体正以压倒性的泛滥资讯阻碍了我们的理解力。<br>媒体报道的目的都在让人不需要面对困难或努力，就很容易整理出“自己”的思绪。但这些精美包装的资讯效率实在太高了，让观众、听众或读者根本用不着自己做结论。相反的，他们直接将包装过后的观点装进自己的脑海中，就像录影机愿意接受录影带一样自然。他只要按一个“倒带”的钮，就能找到他所需要的适当言论。他根本不用思考就能表现得宜。<br>###主动的阅读<br>作者：投手；<br>读者：捕手。<br>成功的沟通都发生于作者想要传达给读者的信息，刚好被读者掌握住了。<br>###阅读的目标：获得资讯 or 求得理解<br>求得理解：让一本书向你既有的理解力做挑战。理解更多的东西，而不是记住更多的资讯。<br>###阅读就是学习：指导型 vs 自我发现型<br>老师可能用尽了方法来教学生，学生却必须自己能学习才行。<br>###老师的出席与缺席<br>对于我们这些已经不在学校的人来说，当我们试着要读一本既非主修也非选修的书籍时，也就是我们的承认教育要完全依赖书籍本身的时候，我们就不能再有老师的帮助了。因此，如果我们打算继续学习与发现，我们就要懂得如何让书本来教导我们。</p>
+<p>##如何阅读想象文学<br>《如何阅读一本书》<br>###读想象文学的“不要”<br>论说性作品要传达的是知识，想象文学是在阐述经验本身。<br>不要抗拒想象文学带给你的影响力。<br>在阅读一个故事时，我们一定要让故事在我们身上活动。我们要让故事贯穿我们，做任何它想要做的事。我们一定得打开心灵，接纳它。<br>阅读一部伟大的文学作品的规则应该以达成某种深沉的经验为目标。<br>我们阅读小说时，我们想要的是一个故事，这个故事只要确实可能在小说家笔下所创造，再经过我们内心重新创造的世界中发生，就够了。<br>###阅读想象文学的一般规则<br><strong>架构性规则</strong><br>要了解一个故事的架构，你一定要知道故事是从哪里开始的——当然，不一定是从第一页开始得——中间经过些什么事，最后的结局是什么。你要知道带来高潮的各种不同的关键是什么，高潮是在哪里、又如何发生的，在这之后的影响又是什么。<br><strong>批评规则</strong><br>在你由衷地感激作者试着为你创造的经验之前，不要批评一本想象的作品。<br>###如何阅读故事书<br>快读，并且全心全意地读。理想上来说，一个故事应该一口气读完，但是对于忙碌的人来说，要一口气读完长篇小说几乎是不可能的事。不过，要达到这个理想，最接近的方法就是将阅读一篇好故事的时间压缩到合理的长度。否则你可能会忘了期间发生的事情，也会漏掉一些完整的情节，最后不知道自己在读的是什么了。<br>我们的建议是要读得很快，而且全神投入。最重要的是要让想象的作品在你身上发生作用。这也就是说，让角色进入你的心灵之中，相信其中发生的事件，就算有疑虑也不要怀疑。在你了解一个角色为什么要做这件事之前，不要心存疑虑。尽量试着活在他的世界里，而不是你的世界，这样他所做的事就容易理解了。<br>对人类而言，小说或虚构的故事似乎是不可或缺的。为什么？其中一个理由是：小说能够满足我们潜意识或意识中许多的需要。其次，我们总是怀疑生命是不公平的。为什么好人受苦，坏人却成功？我们不知道，也无法知道为什么，但这个事实让所有的人焦虑。在故事中，这个混乱又不愉快的情况被矫正过来了，我们觉得格外满足。<br>在故事书中——小说、叙事诗或戏剧——公里正义是确实存在的。人们得到他们应该得到的。对书中的角色来说，作者就像上帝一样，依照他们的行为给他们应得的奖励或惩罚。在一个好故事中，在一个能满足我们的故事中，至少应该做到这一点。关于一个坏故事最惹人厌的一点是，一个人受奖励或惩罚一点都不合情理。真正会说故事的人不会在这一点上出错。他要说服我们：正义——我们称之为诗的正义——已经战胜了。<br>##阅读与心智的成长</p>
+<p>　　这是此书最后一章的内容，包括如下几个小节：</p>
+<p>◇好书能带来什么帮助？</p>
+<p>　　前面介绍的，都是关于“如何更好地阅读”，但是书籍本身的好坏也很重要。关于好书的重要性，俺摘录一段：<br>读一本好书，却会让你的努力有所回报。最好的书对你的回馈也最多。当然，这样的回馈分成两种：第一，当你成功地阅读了一本难读的好书之后，你的阅读技巧必然增进了。第二（长期来说这一点更重要）一本好书能教你了解这个世界以及你自己。你不只更懂得如何读得更好，还更懂得生命。你变得更有智慧，而不只是更有知识—像只提供讯息的书所形成的那样。你会成为一位智者，对人类生命中永恒的真理有更深刻的体认。<br>　　请注意这段提到的两个词【知识】和【智慧】——只提供讯息的书，带给你“知识”；而真正的好书带给你“智慧”。至于消遣性的书，既不会给你知识，也不会给你智慧。</p>
+<p>◇书籍的金字塔</p>
+<p>　　书籍好坏是符合二八原理的。（俺曾经写过一个系列《无处不在的二八原理》）。关于书籍的金字塔，包括三层：</p>
+<p>　　第1层<br>　　99% 的书籍对于你的能力提升是毫无帮助的。这 99% 里面，相当大一部分书是“消遣性”的，还有一些可能是跟你完全无关的领域。<br>　　显然，这些书籍是不需要进行“分析阅读”的。</p>
+<p>　　第2层<br>　　这一层次的书籍，你至少要做一次完整的“分析阅读”。经过一次分析阅读之后，你基本上就“读通”了，知道这本书的主要精华。一旦读通，以后你就无需再去阅读。顶多是偶尔拿出来翻看个别重点，复习某些片段。</p>
+<p>　　第3层<br>　　这一层次的书，非常非常少。它们的特点是：你无法通过一次完整的“分析阅读”，就把它读通。甚至有可能你进行了 N 次分析阅读，也无法尽其究竟。<br>　　为啥会这样捏？俺介绍一下第2层与第3层之间的微妙差异：</p>
+<p>　　第2层与第3层的差异<br>　　第2层的书<br>　　当你进行多次分析阅读，每次的收获会变少。因为你的本人的积累增多了，理解力提升了，而书的内容是固定的。显然每次阅读，收获降低了。<br>　　第3层的书<br>　　随着你的能力提升，每一次对该书进行分析阅读，你的收获都是全新的。甚至有可能后面的阅读，收获会更多。为啥会这样捏？因为这类书的作者，境界远远高于你本人。有可能在你一生的不同阶段都可以反复阅读同一本书，始终有收获。因为你始终达不到该书作者的境界。</p>
+<p>◇生命与心智的成长</p>
+<p>　　这一节有两段话，俺摘录如下。希望能激发大伙儿对思考的热情。<br>人类的心智有很奇怪的一点，主要是这一点划分了我们心智与身体的截然不同。我们的身体是有限制的，心智却没有限制。其中一个迹象是，在力量与技巧上，身体不能无限制地成长。人们到了30岁左右，身体状况就达到了巅峰，随着时间的变化，身体的状况只有越来越恶化，而我们的头脑却能无限地成长与发展下去。我们的心智不会因为到了某个年纪死就停止成长，只有当大脑失去活力，僵化了，才会失去了增加技巧与理解力的力量。</p>
+<p>这是人类最明显的特质，也是万物之灵与其他动物最主要不同之处。其他的动物似乎发展到某个层次之后，便不再有心智上的发展。但是人类独有的特质，却也潜藏着巨大的危险。心智就跟肌肉一样，如果不常运用就会萎缩。心智的萎缩就是在惩罚我们不经常动脑。这是个可怕的惩罚，因为证据显示，心智萎缩也可能要人的命。除此之外，似乎也没法说明为什么许多工作忙碌的人一旦退休之后就会立刻死亡。他们活着是因为工作对他们的心智上有所要求，那是一种人为的支撑力量，也就是外界的力量。一旦外界要求的力量消失之后，他们又没有内在的心智活动，他们便停止了思考，死亡也跟着来了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/04/12/%E4%B9%A6%E6%91%98/2018-04-12%E3%80%90R%E3%80%91How%20to%20read%20a%20book/" data-id="clk19qh1e00gavghn1j6x90oq" data-title="《如何阅读一本书》" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B9%A6%E6%91%98/" rel="tag">书摘</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%98%85%E8%AF%BB/" rel="tag">阅读</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-书摘/2018-04-12【】《翻转课堂的可汗学院》" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/04/12/%E4%B9%A6%E6%91%98/2018-04-12%E3%80%90%E3%80%91%E3%80%8A%E7%BF%BB%E8%BD%AC%E8%AF%BE%E5%A0%82%E7%9A%84%E5%8F%AF%E6%B1%97%E5%AD%A6%E9%99%A2%E3%80%8B/" class="article-date">
+  <time class="dt-published" datetime="2018-04-11T16:00:00.000Z" itemprop="datePublished">2018-04-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Reading/">Reading</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/04/12/%E4%B9%A6%E6%91%98/2018-04-12%E3%80%90%E3%80%91%E3%80%8A%E7%BF%BB%E8%BD%AC%E8%AF%BE%E5%A0%82%E7%9A%84%E5%8F%AF%E6%B1%97%E5%AD%A6%E9%99%A2%E3%80%8B/">《翻转课堂的可汗学院》</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>##扉页<br>不要用自己的学识限制孩子，因为他出生在与你不同的时代。——泰戈尔<br>教育的基本原理在于，使人们在还提时代就建立起良好的思维体系。教育无需强迫，也不能强迫，更无法强迫。任何填鸭式的教育方式只会让人们头脑空空、一无所获。只有在早期的教育中融入寓教于乐的成分，我们才能更快地发现孩子的兴趣所在。——柏拉图《理想国》</p>
+<p>#01踏上教学之路<br>作者在辅导自己表妹学习数学过程中的两个认知：其一，课程的进度应该按照每个学生的不同需求来制定，而不是人为规定一个统一的进度；其二，学生如果想要掌握更高难度的知识，就必须深入理解最基本的概念。<br>作者十分强调每个人在学习过程中的差异。<br>“在教育中，常量应该是学生对知识和概念的高水平理解，而变量才是学生为理解问题所花的时间。”<br>#02传统教育模式的弊端<br>教育最关键的任务：教会孩子们如何学习，激励他们对学习产生渴望，培养他们的好奇心，鼓励他们思考，并持续不断地为他们注入信心，让他们能够在人类尚未发掘的领域中自主寻找问题的答案。<br>导致教育低效且不符合社会需要的种种过时的想法和习惯中，危害最大的一个就是暑假。他是农耕时代的残留物。<br>用人单位将“进不去某所顶级学校”等同于“不够优秀”，所以从非名校毕业的学生往往过不了建立筛选的环节。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/04/12/%E4%B9%A6%E6%91%98/2018-04-12%E3%80%90%E3%80%91%E3%80%8A%E7%BF%BB%E8%BD%AC%E8%AF%BE%E5%A0%82%E7%9A%84%E5%8F%AF%E6%B1%97%E5%AD%A6%E9%99%A2%E3%80%8B/" data-id="clk19qh1f00gdvghncq4qf60s" data-title="《翻转课堂的可汗学院》" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B9%A6%E6%91%98/" rel="tag">书摘</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%98%85%E8%AF%BB/" rel="tag">阅读</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-书摘/2018-04-11【】给教师的建议" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/04/11/%E4%B9%A6%E6%91%98/2018-04-11%E3%80%90%E3%80%91%E7%BB%99%E6%95%99%E5%B8%88%E7%9A%84%E5%BB%BA%E8%AE%AE/" class="article-date">
+  <time class="dt-published" datetime="2018-04-10T16:00:00.000Z" itemprop="datePublished">2018-04-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Reading/">Reading</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/04/11/%E4%B9%A6%E6%91%98/2018-04-11%E3%80%90%E3%80%91%E7%BB%99%E6%95%99%E5%B8%88%E7%9A%84%E5%BB%BA%E8%AE%AE/">《给教师的建议》</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>#给教师的建议<br>##教师的时间从哪里来？一昼夜只有24小时<br>一位有30年教龄的历史教师上了一节公开课，课题是《苏联青年的道德理想》。区培训班的学员，区教育局视导员都来听课。课上得非常出色。听课的教师和视导员本来打算在课堂进行中写点记录，以便课后提些意见的，可是他们听得入了迷，竟连做记录也忘记了。他们坐在那里，平息静气地听，完全被讲课吸引住了，就跟自己也变成了学生一样。<br>课后，邻校的一位教师对这位历史老师说：“是的，您把自己的全部心血都倾注给自己的学生了。您的每一句话都具有极大的感染力。不过，我想请教您：您花了多少时间来备这节课？不止一个小时吧？”<br>那位历史教师说：“对这节课，我准备了一辈子。而且，总的来说，对每一节课，我都是用终生的时间来备课的。不过，对这个课题的直接准备，或者说现场准备，只用了大约15分钟。”<br>怎样进行这种准备呢？这就是读书，每天不间断地读书，更书籍结下终生的友谊。潺潺小溪，每日不断，注入思想的大河。读书不是为了应付明天的课，而是出自内心的需要和对知识的渴求。如果你想有更多的空闲时间，不至于把备课变成单调乏味的死抠教科书，那你就要都学术著作。应当在你所教的纳闷学科领域里，使学校教科书里包含的那点儿科学基础知识，对你来说只不过是入门的常识。在你的科学知识的大海里，你所教给学生教科书里的那点基础知识，应当只是沧海之一粟。</p>
+<p>##致未来的教师<br>“每一个人就是一个世界，这个世界是随他而生，随他而灭的。每一块墓碑下面，都躺着一部整个世界的历史。”——亨利·海涅(P418)</p>
+<p>##思考之室——我们的阅览室<br>”真正的阅读能够吸引学生的理智和心灵，激起他们对世界和对自己的深思，迫使他们认识自己和思考自己的未来。没有这样的阅读，一个人就会受到精神空虚的威胁。无论什么都不能取代书籍的作用。“<br>英雄人物的传记是少年进行自我教育的百科全书。<br>书籍对少年来说，并不是真理的仓库，而是内心体验的源泉。<br>一个人在少年时期和青年早期读过哪些书，书籍对他意味着什么，这一点决定着他的精神丰富性，决定着他对生活目标的认识和体验。这一点也决定着青年人的观点和情感的形成，决定着他对自己的义务的态度。<br>学校毕业以后的教育主要是自我教育。只有一个人在上学年代里就爱上书籍，学会从书籍里认识周围世界和认识自己的时候，他在毕业后的自我教育才有可能。</p>
+<p>##谈谈对“后进生“的工作<br>对这些学生来说，把学习仅仅局限于背诵必修的教材是特别有害的——这种做法会使他们养成死记硬背的习惯，变得更加迟钝。我曾使用过许多手段来减轻这些学生的脑力劳动，结果得出一条结论：最有效的手段就是扩大他们的阅读范围。<br>请记住：儿童的学习越困难，他在学习中遇到的似乎无法克服的障碍越多，他就应该更多地阅读。阅读能交给他思考，而思考会变成一种激发智力的刺激。<br>##怎样使学校教育和家庭教育保持一致<br>为了教育儿童，书籍在家庭的精神生活中应当占有重要的地位。父亲和母亲应当多读书、多思考，以便满足和发展儿童的求知欲。<br>没有书籍、没有一些藏书的家庭，往好处说，不能对学校的教育有任何帮助；而往坏处说，这样的家庭环境会使儿童变得头脑迟钝，会限制儿童的智力发展。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/04/11/%E4%B9%A6%E6%91%98/2018-04-11%E3%80%90%E3%80%91%E7%BB%99%E6%95%99%E5%B8%88%E7%9A%84%E5%BB%BA%E8%AE%AE/" data-id="clk19qh1d00g6vghne04w6n3b" data-title="《给教师的建议》" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B9%A6%E6%91%98/" rel="tag">书摘</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%98%85%E8%AF%BB/" rel="tag">阅读</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-English/2018-02-05【英语】翻背复盘" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/02/05/English/2018-02-05%E3%80%90%E8%8B%B1%E8%AF%AD%E3%80%91%E7%BF%BB%E8%83%8C%E5%A4%8D%E7%9B%98/" class="article-date">
+  <time class="dt-published" datetime="2018-02-04T16:00:00.000Z" itemprop="datePublished">2018-02-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/02/05/English/2018-02-05%E3%80%90%E8%8B%B1%E8%AF%AD%E3%80%91%E7%BF%BB%E8%83%8C%E5%A4%8D%E7%9B%98/">英语朗读复盘（6）</a>
     </h1>
   
 
@@ -522,20 +619,21 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <blockquote>
+<p>2018年第5周:<br>本周只有前三天完成了翻背和复习任务；周四、周五只完成了翻背任务；周六的翻背任务拖延到周天才完成；复盘拖延至第六周周一完成。累计语音输出786秒，约18分钟。</p>
 </blockquote>
-<p><strong>“每一个人就是一个世界，这个世界是随他而生，随他而灭的。每一块墓碑下面，都躺着一部整个世界的历史。”</strong><br>[——亨利•海涅]]</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/05/18/2019-05-17%E3%80%900%E3%80%91%E5%86%99%E4%BD%9C%E7%9A%84%E6%83%B3%E6%B3%95/#more">Read More</a>
-          </p>
-        
+<p>##L73 The way to King Street<br>###1. and 表示结果<br>她对伦敦不很熟悉，所以她迷路了。<br><del>She doesn’t know London well, so she lost her way.</del><br>She doesn’t know London very well, and she lost her way.<br>句中，and 当“所以”讲，表示结果。<br>###2. bus stop 和 bus station<br>**bus stop:**a place at the side of a road that is marked with a sign, where buses stop. 公共汽车停靠站<br>**bus station:**the place in a town or city where buses(especially to or from other town) leave and arrive. 公共汽车站；(尤指)长途汽车站<br>###3. say to oneself 心中暗想<br>talk to oneself 意为“自言自语地说”<br><del>She thought, “I can ask him the way.”</del><br>“I can ask him the way.” she said to herself.<br>###4. friendly 和 pleasantly<br><strong>friendly:</strong> adj. behaving in a kind and pleasant way because you like sb or want to help them.<br><strong>pleasant:</strong><br>enjoyable, pleasing or attractive 令人愉快的；可喜的；宜人的；吸引人的<br>friendly and polite 友好的；和善的；文雅的<br><del>The man smiled friendly.</del><br>The man smiled pleasantly.</p>
+<p>##L75 Uncomfortable shoes<br>你能为我找一双吗？<br> <del>Can you find a pair for me?</del><br>Can you get a pair for me?<br> **fashion:**a popular style of clothes, hair, etc. at a particular time or place;<br>##L77 Terrible toothache<br>**dentist:**a person whose job is to take care of people’s teeth<br><del>Can you come on April 24th Monday’s morning at ten o’clock?</del><br>Can you come at 10 am. on Monday April 24th?<br>##L81 Roastbeef ang Potatoes<br><strong>restaurant:</strong> a place where you can buy and eat a meal 餐馆、餐厅<br>**nearly:**almost; not quite; not completely<br><strong>have(完全动词):</strong> have 可以替代常用动词，表示 eta，enjoy，experience，drink，take等意义。这时的have是行为动词，因此，可以用于各种时态。<br>##L83 Going on Holiday<br><strong>pack:</strong> verb : to put clothes,etc. into a bag in preparation for a trip away from home 收拾(行李)；装(箱)<br><del>When do you plan to have a holiday?</del><br>When are you going to have a holiday?</p>
+<p>[2018-02-05 18:35:32]]</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2019/05/18/2019-05-17%E3%80%900%E3%80%91%E5%86%99%E4%BD%9C%E7%9A%84%E6%83%B3%E6%B3%95/" data-id="cljh8udxp0003o8hnf1tj04kd" data-title="Hello Go361" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2018/02/05/English/2018-02-05%E3%80%90%E8%8B%B1%E8%AF%AD%E3%80%91%E7%BF%BB%E8%83%8C%E5%A4%8D%E7%9B%98/" data-id="clk19qgz6005lvghn3i6u4sym" data-title="英语朗读复盘（6）" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%8B%B1%E8%AF%AD/" rel="tag">英语</a></li></ul>
+
     </footer>
   </div>
   
@@ -569,7 +667,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Game/" rel="tag">Game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOS/" rel="tag">IOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT/" rel="tag">IT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PC/" rel="tag">PC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Word/" rel="tag">Word</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timetrack/" rel="tag">timetrack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B9%A6%E6%91%98/" rel="tag">书摘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90/" rel="tag">书籍推荐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%93%E4%BC%9A/" rel="tag">体会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A8%B1%E4%B9%90/" rel="tag">娱乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%84%9F%E6%83%B3/" rel="tag">感想</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F/" rel="tag">游戏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" rel="tag">生活经历</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%82%B2%E5%84%BF/" rel="tag">育儿</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%85%E8%AF%BB/" rel="tag">阅读</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Game/" rel="tag">Game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOS/" rel="tag">IOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT/" rel="tag">IT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PC/" rel="tag">PC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Word/" rel="tag">Word</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timetrack/" rel="tag">timetrack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B9%A6%E5%8D%95%E6%8E%A8%E8%8D%90/" rel="tag">书单推荐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B9%A6%E6%91%98/" rel="tag">书摘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90/" rel="tag">书籍推荐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%93%E4%BC%9A/" rel="tag">体会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%99%E4%BD%9C/" rel="tag">写作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%B4%E6%A3%8B/" rel="tag">围棋</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A8%B1%E4%B9%90/" rel="tag">娱乐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" rel="tag">学习之路</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%84%9F%E6%83%B3/" rel="tag">感想</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A3%8B%E7%89%8C/" rel="tag">棋牌</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%8B%E5%AE%B6%E6%A0%8B%E7%9A%84%E6%96%87%E7%AB%A0/" rel="tag">王家栋的文章</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" rel="tag">生活经历</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8B%B1%E8%AF%AD/" rel="tag">英语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B5%84%E8%AE%AF/" rel="tag">资讯</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%85%E8%AF%BB/" rel="tag">阅读</a></li></ul>
     </div>
   </div>
 
@@ -579,7 +677,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Game/" style="font-size: 10px;">Game</a> <a href="/tags/IOS/" style="font-size: 11.11px;">IOS</a> <a href="/tags/IT/" style="font-size: 13.33px;">IT</a> <a href="/tags/Linux/" style="font-size: 13.33px;">Linux</a> <a href="/tags/PC/" style="font-size: 10px;">PC</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Word/" style="font-size: 10px;">Word</a> <a href="/tags/timetrack/" style="font-size: 15.56px;">timetrack</a> <a href="/tags/%E4%B9%A6%E6%91%98/" style="font-size: 17.78px;">书摘</a> <a href="/tags/%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90/" style="font-size: 14.44px;">书籍推荐</a> <a href="/tags/%E4%BD%93%E4%BC%9A/" style="font-size: 10px;">体会</a> <a href="/tags/%E5%A8%B1%E4%B9%90/" style="font-size: 10px;">娱乐</a> <a href="/tags/%E6%84%9F%E6%83%B3/" style="font-size: 16.67px;">感想</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 13.33px;">游戏</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12.22px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" style="font-size: 20px;">生活经历</a> <a href="/tags/%E8%82%B2%E5%84%BF/" style="font-size: 10px;">育儿</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 18.89px;">阅读</a>
+      <a href="/tags/Game/" style="font-size: 10px;">Game</a> <a href="/tags/IOS/" style="font-size: 10.91px;">IOS</a> <a href="/tags/IT/" style="font-size: 11.82px;">IT</a> <a href="/tags/Linux/" style="font-size: 11.82px;">Linux</a> <a href="/tags/PC/" style="font-size: 10px;">PC</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Word/" style="font-size: 10px;">Word</a> <a href="/tags/timetrack/" style="font-size: 16.36px;">timetrack</a> <a href="/tags/%E4%B9%A6%E5%8D%95%E6%8E%A8%E8%8D%90/" style="font-size: 10px;">书单推荐</a> <a href="/tags/%E4%B9%A6%E6%91%98/" style="font-size: 18.18px;">书摘</a> <a href="/tags/%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90/" style="font-size: 13.64px;">书籍推荐</a> <a href="/tags/%E4%BD%93%E4%BC%9A/" style="font-size: 10px;">体会</a> <a href="/tags/%E5%86%99%E4%BD%9C/" style="font-size: 10px;">写作</a> <a href="/tags/%E5%9B%B4%E6%A3%8B/" style="font-size: 10px;">围棋</a> <a href="/tags/%E5%A8%B1%E4%B9%90/" style="font-size: 10px;">娱乐</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" style="font-size: 10.91px;">学习之路</a> <a href="/tags/%E6%84%9F%E6%83%B3/" style="font-size: 17.27px;">感想</a> <a href="/tags/%E6%A3%8B%E7%89%8C/" style="font-size: 12.73px;">棋牌</a> <a href="/tags/%E7%8E%8B%E5%AE%B6%E6%A0%8B%E7%9A%84%E6%96%87%E7%AB%A0/" style="font-size: 10.91px;">王家栋的文章</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 11.82px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" style="font-size: 20px;">生活经历</a> <a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 14.55px;">编程</a> <a href="/tags/%E8%8B%B1%E8%AF%AD/" style="font-size: 15.45px;">英语</a> <a href="/tags/%E8%B5%84%E8%AE%AF/" style="font-size: 10px;">资讯</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 19.09px;">阅读</a>
     </div>
   </div>
 
@@ -588,7 +686,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12/">December 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03/">March 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11/">November 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07/">July 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06/">June 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05/">May 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04/">April 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03/">March 2008</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">December 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12/">December 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03/">March 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11/">November 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07/">July 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06/">June 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05/">May 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04/">April 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03/">March 2008</a></li></ul>
     </div>
   </div>
 
@@ -601,23 +699,23 @@
       <ul>
         
           <li>
-            <a href="/2023/06/29/Tools/2020-02-15%E3%80%90T%E3%80%91%E5%9B%B4%E6%A3%8B%E5%AD%A6%E4%B9%A0%E5%B7%A5%E5%85%B7%E5%8F%8A%E8%B5%84%E6%BA%90/">(no title)</a>
+            <a href="/2023/01/03/LifeReview/2023-01-03%E3%80%90%E5%B2%81%E6%9C%AB%E7%9B%98%E7%82%B9%E3%80%91%E6%88%91%E7%9A%842022/">2022岁末盘点</a>
           </li>
         
           <li>
-            <a href="/2023/06/29/Read/%E7%8E%8B%E5%AE%B6%E6%A0%8B/%E3%80%8A%E8%A5%BF%E6%B8%B8%E7%95%85%E6%83%B3%E6%9B%B2%E3%80%8B2019-09-13/">(no title)</a>
+            <a href="/2022/12/03/Python/2022-12-03%E3%80%90%E3%80%91%E7%A6%BB%E7%BA%BF%E9%85%8D%E7%BD%AEIDE%E7%8E%AF%E5%A2%83/">如何离线安装python包</a>
           </li>
         
           <li>
-            <a href="/2023/06/29/Read/%E7%8E%8B%E5%AE%B6%E6%A0%8B/%E3%80%8AB%E9%9D%A2%E8%A5%BF%E6%B8%B8%E3%80%8B2019-09-13/">(no title)</a>
+            <a href="/2022/11/29/Diary/2022-11-29%E3%80%90%E3%80%91%E9%87%8D%E5%90%AF%E8%B1%A1%E6%A3%8B%E4%B9%8B%E6%97%85/">2022年象棋生活</a>
           </li>
         
           <li>
-            <a href="/2023/06/29/Read/%E4%B9%A6%E6%91%98/2018-04-12%E3%80%90%E3%80%91%E3%80%8A%E7%BF%BB%E8%BD%AC%E8%AF%BE%E5%A0%82%E7%9A%84%E5%8F%AF%E6%B1%97%E5%AD%A6%E9%99%A2%E3%80%8B/">(no title)</a>
+            <a href="/2022/11/28/Read/2022-11-28%E3%80%90R%E3%80%91%E4%B8%AD%E5%9B%BD%E6%80%9D%E6%83%B3%E5%8F%B2&%E4%BA%BA%E7%94%9F%E5%93%B2%E5%AD%A6/">读钱穆《中国思想史》和《人生十论》</a>
           </li>
         
           <li>
-            <a href="/2023/06/29/Read/%E4%B9%A6%E6%91%98/2017-07-08%E3%80%90R%E3%80%91%E4%B9%A6%E7%9B%AE%E5%88%97%E8%A1%A8%E2%80%942013/">(no title)</a>
+            <a href="/2022/11/13/Diary/2022-11-13%E3%80%90%E3%80%91S%E5%A4%9C%E8%B0%88/">S成长会夜谈（11月）</a>
           </li>
         
       </ul>
