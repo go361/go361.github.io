@@ -73,6 +73,252 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Tools/190428【T】Linux学习记录" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/04/28/Tools/190428%E3%80%90T%E3%80%91Linux%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="article-date">
+  <time class="dt-published" datetime="2019-04-27T16:00:00.000Z" itemprop="datePublished">2019-04-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019/04/28/Tools/190428%E3%80%90T%E3%80%91Linux%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">Linux学习记录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Linux再经典、再强大，充其量也只是个操作系统，是一个工具。虽说“磨刀不误砍柴工”，但是一定要对自己所要砍的“柴”有清醒的认识，不能盲目地在工具上投入过多的经历，在耽于磨刀的过程中失去方向，还用所谓的“不误”来为自己的踌躇不前辩解。</p>
+</blockquote>
+<p>##1、初识Linux<br>2008年6月临近大学毕业的时候，我有幸收到一位同学的推荐邀请，注册加入hdchina，接触到PT的文件分享机制，下载收藏了一批高清析度的视频和音乐。《Revolution.OS.2001.DVDRip.XviD-RETRO.avi》是其中的一个，影片内容是关于计算机操作系统中Windows和Linux两大阵营之间的竞争。通过观看这部影片，我了解到Linux是一种完全不同于Windows的操作系统——Linux自创立之初就是开放源代码源、支持自由软件的。<br>第一次成功安装Linux操作系统已经是2011年2月时的事情了。当时在单位同事的建议下将ASUS笔记本操作系统更换为Win7（之前一直用WindowsXP），整理完台式机的硬盘数据后，台式机空闲出来，在上面尝试安装了Ubuntu操作系统，看过几个教学视频后，没有更深入地去学习。之后的七年中除了使用安卓手机外，与Linux无任何交集。<br><em>（没有找到好的教程和学习材料或许是没有继续学习Linux的原因之一。单位周边的第一个3G基站是2011年2~3月份才建立起来的，更早些的时候工作单位不仅没有互联网，也没有手机3G网络信号，几个玩魔兽世界网友的同事都是在用中国移动的2G网络，数据传输只能靠GPRS。）</em><br>##2、Ubuntu下配置深度学习框架<br>2016年ALphaGo与李世乭的人机大战掀起了机器学习、深度学习的热潮，我于17年10月开始学习开始学习Python（一门在容易上手的编程语言，在机器学习领域拥有较高的占有率），18年初加入一个深度学习的QQ小组。深度学习对于电脑性能有着更高的要求，老旧的笔记本电脑已经不能胜任这一需求，在和妻子商议后，花费了￥7000+在京东上购买配件自己组装了台式电脑。在安装Win7的过程中总是不能正确地识别驱动键盘，于是在同事的推荐下安装了Win10。<br><img src="https://go361.oss-cn-shanghai.aliyuncs.com/img/20230715113043.jpg"></p>
+<p>根据组长安排的学习进度，我们在3月份集中两个星期的时间学习Linux操作系统，要求完成深度学习框架的配置。当时推荐的学习材料除了网易的公开课之外还有《鸟哥的Linux私房菜基础学习篇-第三版》。我下载<strong>ubuntu-16.04.4-desktop-amd64</strong>的版本，安装在台式机单独的一块硬盘中，经过多次的尝试成功地配置好GPU版本的tensorflow框架。但是自5月2日运行完“猫狗大战”的例子之后，没有继续投入时间和精力在深度学习方面。<br>##3、CentOS的学习<br>深度学习告一段落，但是Sophie组长推荐的电子书却给我留下了深刻的印象。之后我曾在IPad上断续的阅读该书的部分章节，并于18年6月购买了《鸟哥的Linux私房菜：服务器架设篇（第三版）》纸质书。学习《服务器架设》的过程中发现基础篇已经更新到第四版了，与第三版不同，基础篇的第四版已经改用CentOS7进行讲解。<br>2018年12月下载<strong>CentOS-7-x86_64-DVD-1810</strong>版本后，前后数次在ASUS笔记本电脑以及新台式机上安装CentOS7，并进行了一些操作练习。19年1月购买《基础学习篇（第四版）》纸质书，学习的同时开始做笔记记录一些要点。目前已学完前面九章，最后面的四个章章也粗略的看过一遍。<br>###实践及收获<br>参照教材第三章内容在ASUS笔记本电脑上安装了Linux和Win7双系统，实现了多重开机安装流程与管理（grub2）。几经周折安装好了shadowsocks-qt5客户端，对于Linux下的软件安装机制有了一定得认识。<strong>Linux水平自评——（初级）</strong>： 了解系统的启动流程及开机中的引导 ；基本了解Linux的文件系统及目录架构；知道Linux下文件及用户的权限；会在Linux对磁盘进行分区，格式化，挂载以及设置启动挂载。<br>##4、一些思考<br>18年12月重新启动CentOS的学习后，自己的思路不是很清晰，目标也不够明确。<br>对于笔记本、台式机以及硬盘资源的规划一直犹豫不决。一方面想一次到位，把Linux打造成自己顺手的工具；另一方面又舍弃不了用顺手了的Windows。安装、格式化、再次安装，来来回回折腾了几次，浪费了大量的时间。最后才定下来在旧笔记本上安装双系统，用于CentOS学习过程中的实践以及移动办公；台式机保持Win10主用操作系统，用于处理日常的其他事项。<br><strong>Linux再经典、再强大，充其量也只是个操作系统，是一个工具。虽说“磨刀不误砍柴工”，但是一定要对自己所要砍的“柴”有清醒的认识，不能盲目地在工具上投入过多的经历，在耽于磨刀的过程中失去方向，还用所谓的“不误”来为自己的踌躇不前辩解。</strong></p>
+<p>[2019-04-29 21:41:41]]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2019/04/28/Tools/190428%E3%80%90T%E3%80%91Linux%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" data-id="clx0axse500df3whnb6ff7mwn" data-title="Linux学习记录" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Diary/190427【生活速写】我与组长Linda的几次交流" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/04/27/Diary/190427%E3%80%90%E7%94%9F%E6%B4%BB%E9%80%9F%E5%86%99%E3%80%91%E6%88%91%E4%B8%8E%E7%BB%84%E9%95%BFLinda%E7%9A%84%E5%87%A0%E6%AC%A1%E4%BA%A4%E6%B5%81/" class="article-date">
+  <time class="dt-published" datetime="2019-04-26T16:00:00.000Z" itemprop="datePublished">2019-04-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%80%9F%E5%86%99/">生活速写</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019/04/27/Diary/190427%E3%80%90%E7%94%9F%E6%B4%BB%E9%80%9F%E5%86%99%E3%80%91%E6%88%91%E4%B8%8E%E7%BB%84%E9%95%BFLinda%E7%9A%84%E5%87%A0%E6%AC%A1%E4%BA%A4%E6%B5%81/">与Linda的几次交流</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>能认识组长“冬冬~Linda”是2019年的幸事。文中引用的谈话中L代表Linda，M代表我自己。</p>
+        
+          <p class="article-more-link">
+            <a href="/2019/04/27/Diary/190427%E3%80%90%E7%94%9F%E6%B4%BB%E9%80%9F%E5%86%99%E3%80%91%E6%88%91%E4%B8%8E%E7%BB%84%E9%95%BFLinda%E7%9A%84%E5%87%A0%E6%AC%A1%E4%BA%A4%E6%B5%81/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2019/04/27/Diary/190427%E3%80%90%E7%94%9F%E6%B4%BB%E9%80%9F%E5%86%99%E3%80%91%E6%88%91%E4%B8%8E%E7%BB%84%E9%95%BFLinda%E7%9A%84%E5%87%A0%E6%AC%A1%E4%BA%A4%E6%B5%81/" data-id="clx0axsbu002x3whn9uekdxku" data-title="与Linda的几次交流" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%84%9F%E6%83%B3/" rel="tag">感想</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" rel="tag">生活经历</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Read/190423【】今天，你读书了吗" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/04/23/Read/190423%E3%80%90%E3%80%91%E4%BB%8A%E5%A4%A9%EF%BC%8C%E4%BD%A0%E8%AF%BB%E4%B9%A6%E4%BA%86%E5%90%97/" class="article-date">
+  <time class="dt-published" datetime="2019-04-22T16:00:00.000Z" itemprop="datePublished">2019-04-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Reading/">Reading</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019/04/23/Read/190423%E3%80%90%E3%80%91%E4%BB%8A%E5%A4%A9%EF%BC%8C%E4%BD%A0%E8%AF%BB%E4%B9%A6%E4%BA%86%E5%90%97/">今天，你读书了吗？</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>不管你假装和掩饰的技术有多么娴熟 ，你的真正的需求 、价值观 、信仰和感觉都会源源不断地流露出来 ，你所传授的只是你自己的样子 ——不多也不少 。</p>
+</blockquote>
+<p>18年4月上旬，阅读《如何阅读一本书》的过程中，萌生了总结梳理并分享自己读书经历的想法。为了促成这一想法化为实际行动，我主动向领导请缨，提出要在世界读书日时在单位做了一场题为“这些年，我的读书生活”的汇报。历时10天，共23个小时的准备后（包含一次小范围试讲），最终于4月24日正式做了汇报，实现自己的构想。去年的汇报共分六个部分，现简要整理如下。<br>##1、我的读书经历<br>此部分回顾读书的经历，划分为：初高中启蒙阶段，04-09年的入门阶段，10-16年的中级进阶阶段，17年之后的中高级阶段。具体每个阶段的经历之后会单独成文，这里仅列出每个阶段自己读的代表性书目，主要用意在于说明我几乎是大学毕业工作之后才慢慢地走上读书的道路，给入门的读者一个具体的参考案例。<br>###大学前的启蒙<br>小学《西游记连环画》；初中《福尔摩斯探案集》、《三国演义》（约105回）；高中《我与地坛》、《命若琴弦》、《红楼梦》（约40回）<br>###入门阶段<br>大学04-08：《王牌战舰的覆灭》、《射雕英雄传》、《神雕侠侣》；08-09：《蒋百里传》、《麦克阿瑟回忆录》、《货币战争1-2》、《笑傲江湖》<br>###中级进阶<br>10：《少有人走的路》、《家》、《潜规则》、《八十忆双亲·师友杂忆》、《国史大纲引论》、《中国历史研究法》、《妞妞》、《嫌疑人X的献身》<br>11-13：《暗时间》、《学会提问》、《谁会认错》、《不能承受的生命之轻》、《雨季不再来》、《让我们始终牵手旅行》<br>14-16：《时间简史》、《宝宝也是哲学家》、《让孩子的大脑自由》、《魔法岁月》、《翻转课堂的可汗学院》、《高效能家庭的7个习惯》、《稀缺》、《奇特的一生》<br>###中高级<br>17：《故事》、《人类简史》、《认识商业》、《知识大融通》、《战争论》、《国富论》、《亲密关系》<br>18：《大脑的未来》、《如何阅读一本书》、《何谓文化》、跟大师学语文系列<br><img src="https://go361.oss-cn-shanghai.aliyuncs.com/img/20230715152723.jpg"></p>
+<p>##2、读书的收获<br>其次总结了读书的收获，整体的感觉有两个：一、比原著更精彩的影视作品是屈指可数的；二、优秀的书籍总是避不开历史和哲学。具体来说是增进了对世界的理解和认识、应用于实际生活改变了自己的行为，最重要的收获是自己对待时间的态度有了根本性的转变。<br>##3、为什么要读书<br>第三粗略论述为什么要读书。其一，读书可以获取成长所需的间接经验；其二，真正的阅读可以升华精神层面的需求；其三，读书是自我教育的必经之路；最后，读书可以为孩子树立榜样，通过家庭教育来帮助学校教育。<br>##4、我可以读书吗<br>第四部分“读书，该如何开始”，主要是解答初级入门读书时常见的疑惑，比如：“文化水平低，读书适合我吗？”“现在才开始读书是不是太晚了？”、“我没时间读书”、“如何面对周围人异样的眼光”、“我追不上别人”、“开卷有益吗？”等，帮助入门读者做好思想上的准备。<br>##5、选什么书<br>第五部分就选什么书的问题做了简单的介绍，对于入门级的读书者，建议根据自己感兴趣的点去选书，可以是感兴趣的电影、电视剧的原著，对棋类感兴趣的可以看看小说《棋王》，对武侠剧感兴趣的可以看看金庸的短篇小说《越女剑》。之后可以尝试阅读一些散文集，小说等文学作品，之后可以阅读一些任务传记，再高阶一些的可以读读历史和哲学。<br>##6、如何阅读一本书<br>最后结合《How to Read a Book》（怎样阅读一本书）讲解如何阅读一本书，着重强调阅读一本书需要问的四个问题：<br><img src="https://go361.oss-cn-shanghai.aliyuncs.com/img/20230715152624.jpg"></p>
+<p>(1)整体来说，这本书到底在谈些什么？（找出这本书的主题）；(2)作者细部说了什么，怎么说的？（找出主要的想法、声明与论点）；(3)本书说得有道理吗？是全部，还是部分？（知道作者的想法是不够的，做出自己的判断）；(4) 这本书跟你有什么关系？</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2019/04/23/Read/190423%E3%80%90%E3%80%91%E4%BB%8A%E5%A4%A9%EF%BC%8C%E4%BD%A0%E8%AF%BB%E4%B9%A6%E4%BA%86%E5%90%97/" data-id="clx0axsdm00b13whnhad0fpwf" data-title="今天，你读书了吗？" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90/" rel="tag">书籍推荐</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Read/190422【】《天长地久》" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/04/22/Read/190422%E3%80%90%E3%80%91%E3%80%8A%E5%A4%A9%E9%95%BF%E5%9C%B0%E4%B9%85%E3%80%8B/" class="article-date">
+  <time class="dt-published" datetime="2019-04-21T16:00:00.000Z" itemprop="datePublished">2019-04-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Reading/">Reading</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019/04/22/Read/190422%E3%80%90%E3%80%91%E3%80%8A%E5%A4%A9%E9%95%BF%E5%9C%B0%E4%B9%85%E3%80%8B/">《天长地久》</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+</blockquote>
+<p>你以为落日天天绚烂回头，晚霞夜夜华丽演出，其实，落日是时间的刻度，晚霞是生命的秒表，每一个美的当下，一说出“当下”二字、它已一笔勾销。<br>此生唯一能给的，只有陪伴。而且，就在当下，因为，人走，茶凉，缘灭，生命从不等候。</p>
+        
+          <p class="article-more-link">
+            <a href="/2019/04/22/Read/190422%E3%80%90%E3%80%91%E3%80%8A%E5%A4%A9%E9%95%BF%E5%9C%B0%E4%B9%85%E3%80%8B/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2019/04/22/Read/190422%E3%80%90%E3%80%91%E3%80%8A%E5%A4%A9%E9%95%BF%E5%9C%B0%E4%B9%85%E3%80%8B/" data-id="clx0axsdl00ay3whnbhr9by6m" data-title="《天长地久》" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B9%A6%E6%91%98/" rel="tag">书摘</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%98%85%E8%AF%BB/" rel="tag">阅读</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Tools/190417【T】ASUS笔记本重新安装Win7" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/04/17/Tools/190417%E3%80%90T%E3%80%91ASUS%E7%AC%94%E8%AE%B0%E6%9C%AC%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%85Win7/" class="article-date">
+  <time class="dt-published" datetime="2019-04-16T16:00:00.000Z" itemprop="datePublished">2019-04-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2019/04/17/Tools/190417%E3%80%90T%E3%80%91ASUS%E7%AC%94%E8%AE%B0%E6%9C%AC%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%85Win7/">ASUSX83V 安装 Win7 原版 32</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>#ASUSX83V 安装 Win7 原版 32<br>##驱动安装（ASUS DRIVER WIN7 32 64）<br>##NetFramework安装<br>Microsoft .NET Framework 4.6.2 (Offline Installer) for Windows 7 SP1, Windows 8.1, Windows 10, Windows 10 November Update, Windows Server 2008 R2 SP1, Windows Server 2012 and Windows Server 2012 R2<br><a target="_blank" rel="noopener" href="https://www.microsoft.com/en-US/download/details.aspx?id=53344">https://www.microsoft.com/en-US/download/details.aspx?id=53344</a></p>
+<h2 id="Microsoft-Visual-C-2015-Redistributable-Update-3"><a href="#Microsoft-Visual-C-2015-Redistributable-Update-3" class="headerlink" title="Microsoft Visual C++ 2015 Redistributable Update 3"></a>Microsoft Visual C++ 2015 Redistributable Update 3</h2><p><a target="_blank" rel="noopener" href="https://www.microsoft.com/en-us/download/details.aspx?id=53840">https://www.microsoft.com/en-us/download/details.aspx?id=53840</a><br>##shadowsocks.ch<br><a target="_blank" rel="noopener" href="https://portal.shadowsocks.ch/clientarea.php">https://portal.shadowsocks.ch/clientarea.php</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2019/04/17/Tools/190417%E3%80%90T%E3%80%91ASUS%E7%AC%94%E8%AE%B0%E6%9C%AC%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%85Win7/" data-id="clx0axse200d13whn7spb38ed" data-title="ASUSX83V 安装 Win7 原版 32" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Tools/190417【T】SS" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2019/04/17/Tools/190417%E3%80%90T%E3%80%91SS/" class="article-date">
@@ -180,7 +426,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2019/04/17/Tools/190417%E3%80%90T%E3%80%91SS/" data-id="clk3qjkbo00ciwghn7t29er8j" data-title="Shadowsocks 客户端设置教程 - Linux" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2019/04/17/Tools/190417%E3%80%90T%E3%80%91SS/" data-id="clx0axse200d43whnfdwdhrzu" data-title="Shadowsocks 客户端设置教程 - Linux" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -230,7 +476,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2019/04/04/Game/190401%E3%80%90G%E3%80%91%E5%9B%B4%E6%A3%8BAI/" data-id="clk3qjka0004ywghn13m74y29" data-title="围棋人工智能" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2019/04/04/Game/190401%E3%80%90G%E3%80%91%E5%9B%B4%E6%A3%8BAI/" data-id="clx0axsch005p3whnfyse6wkv" data-title="围棋人工智能" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -283,7 +529,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2019/03/13/Tools/190313%E3%80%90T%E3%80%91centOS%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" data-id="clk3qjkbl00c8wghn09vxefoc" data-title="CentOS安装记录" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2019/03/13/Tools/190313%E3%80%90T%E3%80%91centOS%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" data-id="clx0axsdz00cq3whn7xft5v7l" data-title="CentOS安装记录" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -334,7 +580,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2019/02/28/English/190228%E3%80%90%E8%8B%B1%E8%AF%AD%E3%80%9119%E5%B9%B4%E5%89%8D%E4%B8%A4%E4%B8%AA%E6%9C%88%E7%9A%84%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/" data-id="clk3qjkab006fwghnczaz3lex" data-title="2019年初学英语" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2019/02/28/English/190228%E3%80%90%E8%8B%B1%E8%AF%AD%E3%80%9119%E5%B9%B4%E5%89%8D%E4%B8%A4%E4%B8%AA%E6%9C%88%E7%9A%84%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/" data-id="clx0axscg005n3whn38aeaa63" data-title="2019年初学英语" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -382,268 +628,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2019/02/11/Diary/190211%E3%80%90%E7%94%9F%E6%B4%BB%E9%80%9F%E5%86%99%E3%80%912019%E6%98%A5%E8%8A%82%E8%AE%B0%E4%BA%8B/" data-id="clk3qjk9j0030wghn2xva320k" data-title="2019春节记事" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/timetrack/" rel="tag">timetrack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" rel="tag">生活经历</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-English/190102【英语】词汇基础训练营" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2019/01/02/English/190102%E3%80%90%E8%8B%B1%E8%AF%AD%E3%80%91%E8%AF%8D%E6%B1%87%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83%E8%90%A5/" class="article-date">
-  <time class="dt-published" datetime="2019-01-01T16:00:00.000Z" itemprop="datePublished">2019-01-02</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2019/01/02/English/190102%E3%80%90%E8%8B%B1%E8%AF%AD%E3%80%91%E8%AF%8D%E6%B1%87%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83%E8%90%A5/">词汇基础训练营</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>#学了20年英语，为什么要加入词汇基础训练营</p>
-<p>##学习之路<br>###英语启蒙（98年7月）<br>初次接触和听说英语是在小学毕业后的暑假，刚参加完“九八初招”进入初中前的那段时间内，村子里一个教初中英语的老师在我们村小学开设了英语辅导班。当时我和姐姐也参加了，因为伯父当时在小学里执教，辅导班老师还免了我们俩的学费（每人￥20，当年进入初中一个学期学费在￥200以内）。印象中辅导班的老师带着我们学了三个星期左右，所教的大概是初一教材前面的内容，还额外的教了音标。</p>
-<p><em>现在想来辅导班老师用心虽然良苦，但效果并不好。首先没有说明除了考试之外学英语有什么用。其次，在我们没有听足够多的英语声音、所学单词还很少的情况下教音标感觉有些操之过急。</em><br>###初中阶段（98年8月<del>01年6月）<br>初一时教我们英语的是一位年轻漂亮的段老师，因为有了暑假辅导班的基础，一开始的半个学期里，我的英语学习还差强人意，之后就逐渐落入后进生的行列。印象中一次业余课班主任老师还邀请她来教我们一首“常回家看看”的歌曲。 <em>&#x2F;&#x2F;:若是换成一首简单的英文歌，会不会提升我们对于英语的兴趣呢？</em><br>初二教我们的老师换成了另一个姓李的女老师，李老师上课比较着重的是各种语法知识。初三的时候大堂兄是我的班主任，教我们的英语的是王老师。为了能让我中招考试时英语不拉分，考上好一些的高中，王老师想尽了各种办法来帮助我学英语。印象最深的是她给我们几个英语薄弱的学生开小灶，让我们做各种题目，做完了拿去给她批阅，然后再给我们讲解其中的知识点。<br><em>受当时教学条件的限制，英语老师手里只有一盒与教材配套的磁带，每次上课先放一边磁带，然后就开始领着我们一句一句地读课文，读完了讲解课文内的生词，相应的语法点等。磁带和随身听当时对于我们大多数学生来说都是奢侈品，除了上课时听听磁带，听老师读读课文，没有别的接触英语声音的渠道。所读的初中在镇上，大多数人已经开始住校，早自习时间英语和语文对半开，老师也是要求我们要朗读和背诵的。只是好多时候英语课文根本就不知道怎么读，因为里面的单词有好几个不认识、不会读，也没有问老师的勇气。时间久了不会读的越来越多，也慢慢觉得学英语真的是一件很痛苦的事情，成绩也就愈来愈差了。最终中招考试离县城第一高中分数线差了几分，主要就是因为英语和体育成绩太差。</em> 现在初中教学模式已改成由各科目的老师组成一个教学班组，滚动教学，一直把学生教到初中毕业，该教学模式应该是更利于教学的，至少老师对每个学生的情况都掌握的比较清楚。<br>###高中（01年08月</del>04年06月）<br>高一的英语老师是个瘦小精干的男老师，除了课程教学之外还教过我们一首英文歌曲，也曾让我们欣赏了一部英文原声的电影。<br>高二时中途似乎还换过一个英语老师，其中一个体态略胖的老师教学过程中也十分强调语法的重要性。高三的英语老师听说是毕业于兰州大学的高材生，他家在学校内开设了一个商店，去买东西时偶尔会碰上他。<br>高考成绩好像是100零几不足110分。<br><em>不得不提的是，高中阶段少数学生已经拥有了自己的随身听，盗版的磁带大约一两块钱一盒，我不属于那些少数。高中阶段少有一次听英语的经历要感谢当时的Xyl同学和Hdd同学。其实拥有随身听的同学里，真正用来学英语的并不多，基本上都在听流行歌曲。比如说我与流行歌的首次相遇，就是缘由Hgj同学的Sony经典款迷你随身听（装口香糖电池的那种）。当时疯狂英语十分火爆，也从Gpf同学那里结果相关的教材来学习。现在很多人抨击疯狂英语，我感觉里面提出的两个理念还是有价值的。第一个是要大声的反复朗读一个句子；第二个放下面子，不要怕出丑，读得差也要敢于读出来。</em><br>###大学阶段（0408~0806）<br>大学开设了两个学年的英语课，我是一只在为CET4而奋斗的，最后侥幸压线通过（这里要感谢同班的一姐Llx同学曾经给予的无私帮助）。<br>大学时与教材配套的光盘中提供的音频资料相当详细，当时播放音乐的主流已经不再是磁带而是MP3了，我也曾向父母申请经费购买了一台（￥400左右，差不多是我一个月的生活费）。除此之外也购买了不少英语学习材料，比如《大学生英语学习指南》、《新概念3》、《新概念4》、《莎士比亚》喜剧节选及配套磁带…等。<strong>很遗憾的是当时并没有投入更多的时间和精力用于实践，用于听、用于读。</strong><br><em>2006年春节的寒假曾为读初中的弟弟购买了《新概念英语1》教材及配套磁带，也在姐姐的资助下到县城百货大楼为他买了一个复读机。近两年我重新开始学英语，把新一的教材翻了出来，从痕迹来看弟弟只学习过不到30课的内容。</em></p>
-<p>###研究生备考及其他<br>我曾于2008年1月（本科）及工作后2014年1月（工作后）两次参加研究生入学考试，其中英语科目的备考主要是背记考研词汇，仔细学习大纲解析，做历年真题等，两次都是勉强过线。除了参加培训时上过一门《通信专业英语》课程外，这两次考试期间英语学习处于完全停滞的状态。其它跟英语贴边的事儿估计也就是看得一些海外电影和美剧了……<br>###硕研阶段（14年9月<del>16年12月）<br>研究生阶段上了一年的英语课，上学期为听说课程，下学期为读写课程。听说课程上老师要求临场组队对话，这时候才算是我真正意义上第一次开口说英语。也是在读写课程作业的催促下，我才第一次写考试题目之外的英语作文。<br>14年12月裸考CET6，成绩只有363分。16年论文课题研究过程中，在谷歌翻译的帮助下读了约二十篇英语文献。制作实验电路的过程中，因为看不懂电子元器件说明书，花费了大量的时间去找中文版资料。16年12月准备一个月后再次参加CET6考试，成绩未通过。<br>###新概念一教材（2017</del>2018）<br>2016年6月24日加入一个练习英语朗读的QQ群，曾尝试跟进新概念三的朗读行动: 6月份行动1次，7月份行动2次，9月份行动2次，11月份行动2次；2017年1月份行动10次，3月份行动3次……数次搁浅!<br>2017年6月16日起，开始新概念一课文的朗读练习，从L65开始，行动至7月25日完成第一轮，累计朗读38课内容；第二轮背诵从7月26日—10月5日，累计背诵41课内容；第三轮背默行动(10月6日—12月16日)，累计背默行动42课内容。行动累计55小时：最长无间断行动15天，最长中断时间持续15天，输出语音78min；破天荒读完一本英文原版书《half girlfriend 》（22h）。2017年12月17日开始第四轮翻背行动，截至2018年2月8日，共计翻背46课内容。。。<br>是的，18年2月5日写完周总结，3月7日翻背了一课内容后，我的新概念一学习行动就戛然而止了，再次翻开新一的书已经是11月26日了，当天听写了课文L143，于12月5日开始再次从第一课开始朗读课文，截至12月26日完成了所有课文的朗读复习。<br>回顾这两年以来断断续续的英语朗读行动，在17年下半年行动最为密集的时间段里也曾感觉到英语语的显著提升，然而很快就走向了自我毁灭的道路，没能持之以恒地行动。</p>
-<p>##自我的反思<br>学习英语20年了，整体上英语水平仍然处于很低的层次。分析起来，最主要的原因就是对英语的认识存在着重大误区：高中时觉得高考完就可以不学习英语了，大学时觉得过完四级可以不用在学英语了，考研时觉得过线了就可以不用学英语了……<strong>总把英语当成考试中的一个科目消极地应付，而不是发自内心地觉得自己需要掌握她而主动的去学习。</strong><br>现在研究生毕业近两年了，在业余的学习过程中，无处不感到英语障碍阻挡着自己前进的脚步，第一手的资料几乎全是英文的，英语差信息获取上无疑是脱节的，落伍的。另外这两年以来文学和社科书籍的阅读过程中，也时时刻刻感知到掌握英语的重要性。遂决定于2019年开启英语学习的新征程，计划在5年内稳步提升自我英语水平。<br>熟练掌握英语运用英语的好处是不言自明的，粗浅的来看包括以下几个方面：</p>
-<ul>
-<li>避免儿女今后走入英语学习的歧途、误区；</li>
-<li>为其他方向、专业领域的学习进步扫清障碍；</li>
-<li>欣赏原汁原味儿的西方文艺作品，省去纠结翻译版本的烦恼；</li>
-<li>走出国门领略异域文化魅力时，可以畅快地倾听、交谈，而不是一脸茫然。</li>
-</ul>
-<p>##2019年的行动计划</p>
-<p>2019年第一个月围绕以下“词汇训练营”的要求和方法进行学习；截至年底完成新概念二教材的学习，主要行动包括朗读课文，背诵课文，默写课文等；读完怀特三部曲之一《吹小号的天鹅》。<br>#词汇训练营介绍</p>
-<blockquote>
-<p>我们从五个日常的主题（相识、衣、食、住行、喜好）入手，带大家学习每个主题的常用词汇，学习用英文理解每个词的真正含义。以此为突破口，慢慢学会用已有知识解决未知问题的能力。在用英文表达中，掌握新的语言知识。<br>在这期训练营，你会学习到以一当十的词汇拓展技能，这样你可以通过一个单词，生长出一堆单词的网络。当单词网络生长起来，就有了生命，你的表达也会富有张力。<br>你接触到的不是孤零零的词，也不是前不着村后不着店的例句，而是一个个生动的小故事，有可能是主播字正腔圆的播报，也可能是家庭主妇的碎碎念，也可能是一个你想象不到的奇闻异事。但不论是哪一种形式，都是都这些词汇真正根植的土壤，通过接触这些材料，你可能会感叹，竟然还可以这样讲，也可能会发现很多曾经视而不见的好宝贝。<br>一点一点把它们拾起来，让自己的语言渐渐丰富起来。我们在课前、课后都会设置小测试，让你看看经过这次学习会给自己带来什么改变。<br>** 深入学习300个英文词汇（可扩展至2100词汇），掌握5类词汇拓展技能，顺带深入学习5篇听力、10篇段新闻、10篇日记、5个故等，巩固所学的词汇、表达及语言点，逐渐化为己用。**</p>
-</blockquote>
-<p><img src="https://go361.oss-cn-shanghai.aliyuncs.com/img/20230715100659.JPG"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2019/01/02/English/190102%E3%80%90%E8%8B%B1%E8%AF%AD%E3%80%91%E8%AF%8D%E6%B1%87%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83%E8%90%A5/" data-id="clk3qjkad006mwghneblwdwyw" data-title="词汇基础训练营" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%8B%B1%E8%AF%AD/" rel="tag">英语</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Memory/2018-12-26【英语】20年英语学习之路" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2018/12/26/Memory/2018-12-26%E3%80%90%E8%8B%B1%E8%AF%AD%E3%80%9120%E5%B9%B4%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" class="article-date">
-  <time class="dt-published" datetime="2018-12-25T16:00:00.000Z" itemprop="datePublished">2018-12-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Memory/">Memory</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2018/12/26/Memory/2018-12-26%E3%80%90%E8%8B%B1%E8%AF%AD%E3%80%9120%E5%B9%B4%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/">英语学习之路</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>##PartI 我的学习之路<br>###初中阶段（98.07<del>01.06）<br>小学毕业，进入初中前的暑假期间，村里一个教初中英语的女老师在我们小学办了个英语辅导班。当时我报名参加辅导班学英语，印象中老师带着我们学了三个星期左右，所教的大概是初一英语教材前面的部分课程和一些音标。<br><em>现在想来辅导班老师用心虽然良苦，但效果并不好。首先，没有说明除了考试之外学英语有什么用（也可能是我忘记了）。其次，在我们没有听足够多的英语声音、所学单词还很少的情况下教音标感觉有些操之过急，效果也不是很好。就像小孩子还没学会说话就开始教a、o、e。</em><br>初一时教我们英语的是年轻漂亮的段老师。因为有了暑假辅导班的基础，一开始的半个学期里，我的英语成绩还过得去，之后就逐渐落入后进生的行列。一次业余文化课时班主任老师还邀请她来教我们一首“常回家看看”的歌曲。 <em>&#x2F;&#x2F;:若是换成一首简单的英文歌，或许会在一定程度上增加我们学英语的兴趣吧？</em><br>初二的英语老师换成了李老师，她上课比较着重的是各种语法知识。初三时教我们的英语的是王老师，为了能让我中招考试时英语不落分，她想尽了各种办法来帮助我学英语。王老师给我们几个英语薄弱的学生开小灶，让我们做各种题目，做完了拿去给她批阅，然后再给我们讲解其中的知识点。<br><em>受当时教学条件的限制，英语老师手里只有一盒与教材配套的磁带，每次上课先放一边磁带，然后就开始领着我们一句一句地读课文，读完了讲解课文内的生词，相应的语法点等。磁带和随身听当时对于我们大多数学生来说都是奢侈品，除了上课时听听磁带，跟着老师朗读课文，没有别的接触英语声音的渠道。所读的初中在一个小镇上，大多数人已经开始住校，早自习时间英语和语文对半开，老师也是要求我们要朗读和背诵的。只是好多时候英语课文根本就不知道怎么读，因为里面的单词有好几个不认识、不会读，也没有问老师的勇气。时间久了不会读的越来越多，也慢慢觉得学英语真的是一件很痛苦的事情，成绩也就愈来愈差了。</em><br>###高中（01.08</del>04.06）<br>高一教我们英语课的是位瘦小精干的男老师，除了课程教学之外还教过我们一首英文歌曲，也曾在听力课上给我们放映了一部英文原声电影。高二时中途似乎还换过一个英语老师，其中一个体态略胖的老师教学过程中也十分强调语法的重要性。高三的英语老师听说是毕业于兰州大学的高材生。<br>高中阶段老师们的教学方法还是应试英语式的讲课文，做题，讲试卷；我们的学习方法无外乎背单词、学语法、记固定搭配、搞词汇辨析等。最终高考钟我的英语成绩是111分。<br><em>高中阶段少数学生已经拥有了自己的随身听，盗版的磁带大约一两块钱一盒，我不属于那些少数。高中阶段少有听英语的经历。其实拥有随身听的同学里，真正用来学英语的并不多，基本上都在听流行歌曲。当时疯狂英语十分火爆，也曾从郭同学那里结果相关的教材来学习。现在很多人抨击疯狂英语，我感觉里面提出的两个理念还是十分有价值的。第一个是要大声的反复朗读一个句子；第二个放下面子，不要怕出丑，读得差也要敢于读出来。</em><br>###大学阶段（04.08~08.01）<br>大学开设了两个学年的英语课，我一直在为通过英语四级而奋斗，最后侥幸压线通过。 <em>（这里要感谢同班的一姐曾给予的无私帮助）</em><br>大学时与教材配套的光盘中提供的音频资料相当详细，当时播放音乐的主流已经不再是磁带而是MP3了，我也曾向父母申请经费购买了一台（￥400+，差不多是我一个多月的生活费）。除此之外也购买了一些英语学习材料，比如《大学生英语学习指南》、《新概念3》、《新概念4》、《莎士比亚》喜剧节选及配套磁带…等。<strong>很遗憾的是当时并没有投入更多的时间和精力在英语学习上，听的少、读得更少。</strong><br><em>2006年春节的寒假曾为读初中的弟弟购买了《新概念英语1》教材及配套磁带，也在姐姐的资助下到县城百货大楼为他买了一个复读机。近两年我重新开始学英语，把新一的教材翻了出来，从痕迹来看弟弟当时只学了不到30课的内容。</em></p>
-<p>###备考及硕研阶段（14.09<del>16.12）<br>工作后2014年1月参加研究生入学考试，其中英语科目的备考主要是背记考研词汇，仔细学习大纲解析，做历年真题等，两次都是勉强过线。这期间除了10年参加培训时上过一门《通信专业英语》课程外，英语学习处于完全停滞的状态，跟英语贴边的事儿就是看电影和美剧了……<br>研究生阶段第一学年英语课，上学期为听说课程，下学期为读写课程。听说课程上老师要求临场组队对话，这时候才算是我真正意义上第一次开口说英语。也是在读写课程作业的催促下，我才第一次写考试题目之外的英语作文。<br>14年12月裸考CET6，成绩只有363分。16年论文课题研究过程中，在谷歌翻译的帮助下读了约二十篇英语文献。制作实验电路的过程中，因为看不懂电子元器件说明书，花费了大量的时间去找中文版资料。16年12月准备一个月后再次参加CET6考试，成绩未通过。<br><em>14年12月和我一起参加英语六级考试的李同学，其成绩比我的还差些，结果人家后来以500+的分数通过了六级。现在想来，自己研究生阶段的生活实在是缺乏长远的规划，临近毕业了才想起来再考六级——一个月的准备时间 对我来说还是远远不够的！</em><br>###朗读新概念（17</del>18）<br>2016年6月24日曾加入一个练习英语朗读的QQ群，尝试跟进新概念三的朗读行动: 6月份行动1次，7月份行动2次，9月份行动2次，11月份行动2次；2017年1月份行动10次，3月份行动3次……数次启动、数次中断，均未能坚持下来!<br>2017年6月16日起，开始新概念一课文的朗读练习，从L65开始，行动至7月25日完成第一轮，累计朗读38课内容；第二轮背诵从7月26日—10月5日，累计背诵41课内容；第三轮背默行动(10月6日—12月16日)，累计背默行动42课内容。行动累计55小时：最长无间断行动15天，最长中断时间持续15天，输出语音78min。破天荒读完一本英文原版书《half girlfriend 》（22h）。<br>2017年12月17日开始第四轮翻译背送行动，截至2018年2月8日，共计翻背46课内容。。。<br>18年2月5日写完周总结，3月7日翻背了一课内容后，我的新概念一学习行动再次戛然而止了，再次翻开新一的书已经是11月26日了，当天听写了课文L143，于12月5日开始再次从第一课开始朗读课文，截至12月26日完成了所有课文的朗读复习。<br><em>回顾这两年以来断断续续的英语朗读行动，在17年下半年行动最为密集的时间段里也曾感觉到英语语感的显著提升，然而很快就走向了自我毁灭的道路，没能持之以恒地行动。</em></p>
-<p>##PartII 自我的反思<br>学习英语20年了，整体上英语水平仍然处于很低的层次。分析起来，最主要的原因就是对英语的认识存在着重大误区：高中时觉得高考完就可以不学习英语了，大学时觉得过完四级可以不用在学英语了，考研时觉得过线了就可以不用学英语了……<strong>总把英语当成考试中的一个科目消极地应付，而没有把英语当做一门语言，发自内心地觉得需要掌握这项技能而主动地学习。</strong><br>现在研究生毕业两年了，在工作之余的自学过程中，经常发现我的英语水平已经成为阻挡自己前进的一个障碍——第一手的资料几乎全是英文的，英语水平差不能阅读英文原版的学习素材，导致在信息获取上往往延迟数月，甚至数年。另外这两年阅读文学和社科书籍的过程中，也时时刻刻感知到掌握英语的必要性。遂决定于2019年开启英语学习的新征程，计划在五年内稳步提升英语水平。<br>熟练掌握、运用英语的好处是不言自明的，粗浅的来看包括以下几个方面：</p>
-<ul>
-<li>避免儿女今后走入英语学习的歧途、误区；</li>
-<li>为其他方向、专业领域的学习进步扫清障碍；</li>
-<li>欣赏原汁原味儿的西方文艺作品，省去等待国内人士翻译、纠结翻译版本的烦恼；</li>
-<li>走出国门领略异域文化魅力时，可以畅快地倾听、交谈。</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2018/12/26/Memory/2018-12-26%E3%80%90%E8%8B%B1%E8%AF%AD%E3%80%9120%E5%B9%B4%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" data-id="clk3qjkaw008swghn94km7az9" data-title="英语学习之路" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%8B%B1%E8%AF%AD/" rel="tag">英语</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-LifeReview/181225【我在成长会的这两年】2017-2018" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2018/12/25/LifeReview/181225%E3%80%90%E6%88%91%E5%9C%A8%E6%88%90%E9%95%BF%E4%BC%9A%E7%9A%84%E8%BF%99%E4%B8%A4%E5%B9%B4%E3%80%912017-2018/" class="article-date">
-  <time class="dt-published" datetime="2018-12-24T16:00:00.000Z" itemprop="datePublished">2018-12-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%80%9F%E5%86%99/">生活速写</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2018/12/25/LifeReview/181225%E3%80%90%E6%88%91%E5%9C%A8%E6%88%90%E9%95%BF%E4%BC%9A%E7%9A%84%E8%BF%99%E4%B8%A4%E5%B9%B4%E3%80%912017-2018/">在成长会的这两年（2017-2018）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>成长会两年记……</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/12/25/LifeReview/181225%E3%80%90%E6%88%91%E5%9C%A8%E6%88%90%E9%95%BF%E4%BC%9A%E7%9A%84%E8%BF%99%E4%B8%A4%E5%B9%B4%E3%80%912017-2018/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2018/12/25/LifeReview/181225%E3%80%90%E6%88%91%E5%9C%A8%E6%88%90%E9%95%BF%E4%BC%9A%E7%9A%84%E8%BF%99%E4%B8%A4%E5%B9%B4%E3%80%912017-2018/" data-id="clk3qjkap007qwghn03ed8dz8" data-title="在成长会的这两年（2017-2018）" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/timetrack/" rel="tag">timetrack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" rel="tag">生活经历</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Python/181213【】2018年Python小组行动记录" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2018/12/13/Python/181213%E3%80%90%E3%80%912018%E5%B9%B4Python%E5%B0%8F%E7%BB%84%E8%A1%8C%E5%8A%A8%E8%AE%B0%E5%BD%95/" class="article-date">
-  <time class="dt-published" datetime="2018-12-12T16:00:00.000Z" itemprop="datePublished">2018-12-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%80%9F%E5%86%99/">生活速写</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2018/12/13/Python/181213%E3%80%90%E3%80%912018%E5%B9%B4Python%E5%B0%8F%E7%BB%84%E8%A1%8C%E5%8A%A8%E8%AE%B0%E5%BD%95/">Python小组2018行动记录</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2017年11月开始自学Python，18年恰好加入了一个学习小组。这篇文章是学习Python的一个阶段性总结。</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/12/13/Python/181213%E3%80%90%E3%80%912018%E5%B9%B4Python%E5%B0%8F%E7%BB%84%E8%A1%8C%E5%8A%A8%E8%AE%B0%E5%BD%95/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2018/12/13/Python/181213%E3%80%90%E3%80%912018%E5%B9%B4Python%E5%B0%8F%E7%BB%84%E8%A1%8C%E5%8A%A8%E8%AE%B0%E5%BD%95/" data-id="clk3qjkb5009zwghnaedodima" data-title="Python小组2018行动记录" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/timetrack/" rel="tag">timetrack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" rel="tag">生活经历</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-LifeReview/181211【岁末盘点】2018" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2018/12/11/LifeReview/181211%E3%80%90%E5%B2%81%E6%9C%AB%E7%9B%98%E7%82%B9%E3%80%912018/" class="article-date">
-  <time class="dt-published" datetime="2018-12-10T16:00:00.000Z" itemprop="datePublished">2018-12-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%80%9F%E5%86%99/">生活速写</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2018/12/11/LifeReview/181211%E3%80%90%E5%B2%81%E6%9C%AB%E7%9B%98%E7%82%B9%E3%80%912018/">岁末盘点2018</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>回顾一年的生活，自己存在的主要问题是：<strong>目标不够明确，执行力差，行动量不足</strong>。</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/12/11/LifeReview/181211%E3%80%90%E5%B2%81%E6%9C%AB%E7%9B%98%E7%82%B9%E3%80%912018/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2018/12/11/LifeReview/181211%E3%80%90%E5%B2%81%E6%9C%AB%E7%9B%98%E7%82%B9%E3%80%912018/" data-id="clk3qjkaj0078wghn7z5pfp8k" data-title="岁末盘点2018" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2019/02/11/Diary/190211%E3%80%90%E7%94%9F%E6%B4%BB%E9%80%9F%E5%86%99%E3%80%912019%E6%98%A5%E8%8A%82%E8%AE%B0%E4%BA%8B/" data-id="clx0axsbv00303whnd61lhzsf" data-title="2019春节记事" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -661,7 +646,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/7/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/9/">weiter &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/7/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/9/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -692,7 +677,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Game/" style="font-size: 11px;">Game</a> <a href="/tags/IOS/" style="font-size: 11px;">IOS</a> <a href="/tags/IT/" style="font-size: 12px;">IT</a> <a href="/tags/Linux/" style="font-size: 12px;">Linux</a> <a href="/tags/PC/" style="font-size: 10px;">PC</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Word/" style="font-size: 10px;">Word</a> <a href="/tags/timetrack/" style="font-size: 17px;">timetrack</a> <a href="/tags/%E4%B9%A6%E5%8D%95%E6%8E%A8%E8%8D%90/" style="font-size: 10px;">书单推荐</a> <a href="/tags/%E4%B9%A6%E6%91%98/" style="font-size: 18px;">书摘</a> <a href="/tags/%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90/" style="font-size: 14px;">书籍推荐</a> <a href="/tags/%E4%BD%93%E4%BC%9A/" style="font-size: 10px;">体会</a> <a href="/tags/%E5%86%99%E4%BD%9C/" style="font-size: 10px;">写作</a> <a href="/tags/%E5%9B%B4%E6%A3%8B/" style="font-size: 10px;">围棋</a> <a href="/tags/%E5%A8%B1%E4%B9%90/" style="font-size: 11px;">娱乐</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" style="font-size: 11px;">学习之路</a> <a href="/tags/%E6%84%9F%E6%83%B3/" style="font-size: 18px;">感想</a> <a href="/tags/%E6%A3%8B%E7%89%8C/" style="font-size: 13px;">棋牌</a> <a href="/tags/%E7%8E%8B%E5%AE%B6%E6%A0%8B%E7%9A%84%E6%96%87%E7%AB%A0/" style="font-size: 11px;">王家栋的文章</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" style="font-size: 20px;">生活经历</a> <a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 15px;">编程</a> <a href="/tags/%E8%8B%B1%E8%AF%AD/" style="font-size: 16px;">英语</a> <a href="/tags/%E8%B5%84%E8%AE%AF/" style="font-size: 10px;">资讯</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 19px;">阅读</a>
+      <a href="/tags/Game/" style="font-size: 11px;">Game</a> <a href="/tags/IOS/" style="font-size: 11px;">IOS</a> <a href="/tags/IT/" style="font-size: 12px;">IT</a> <a href="/tags/Linux/" style="font-size: 12px;">Linux</a> <a href="/tags/PC/" style="font-size: 10px;">PC</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Word/" style="font-size: 10px;">Word</a> <a href="/tags/timetrack/" style="font-size: 17px;">timetrack</a> <a href="/tags/%E4%B9%A6%E5%8D%95%E6%8E%A8%E8%8D%90/" style="font-size: 10px;">书单推荐</a> <a href="/tags/%E4%B9%A6%E6%91%98/" style="font-size: 18px;">书摘</a> <a href="/tags/%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90/" style="font-size: 14px;">书籍推荐</a> <a href="/tags/%E4%BD%93%E4%BC%9A/" style="font-size: 11px;">体会</a> <a href="/tags/%E5%86%99%E4%BD%9C/" style="font-size: 10px;">写作</a> <a href="/tags/%E5%9B%B4%E6%A3%8B/" style="font-size: 10px;">围棋</a> <a href="/tags/%E5%A8%B1%E4%B9%90/" style="font-size: 11px;">娱乐</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" style="font-size: 11px;">学习之路</a> <a href="/tags/%E6%84%9F%E6%83%B3/" style="font-size: 18px;">感想</a> <a href="/tags/%E6%A3%8B%E7%89%8C/" style="font-size: 13px;">棋牌</a> <a href="/tags/%E7%8E%8B%E5%AE%B6%E6%A0%8B%E7%9A%84%E6%96%87%E7%AB%A0/" style="font-size: 11px;">王家栋的文章</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 12px;">生活</a> <a href="/tags/%E7%94%9F%E6%B4%BB%E7%BB%8F%E5%8E%86/" style="font-size: 20px;">生活经历</a> <a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 15px;">编程</a> <a href="/tags/%E8%8B%B1%E8%AF%AD/" style="font-size: 16px;">英语</a> <a href="/tags/%E8%B5%84%E8%AE%AF/" style="font-size: 10px;">资讯</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 19px;">阅读</a>
     </div>
   </div>
 
@@ -701,7 +686,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12/">December 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03/">March 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11/">November 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10/">October 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07/">July 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06/">June 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05/">May 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04/">April 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03/">March 2008</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">September 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12/">December 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03/">March 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/11/">November 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10/">October 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07/">July 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/06/">June 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05/">May 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04/">April 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03/">March 2008</a></li></ul>
     </div>
   </div>
 
@@ -714,23 +699,23 @@
       <ul>
         
           <li>
-            <a href="/2023/01/03/LifeReview/230103%E3%80%90%E5%B2%81%E6%9C%AB%E7%9B%98%E7%82%B9%E3%80%91%E6%88%91%E7%9A%842022/">2022岁末盘点</a>
+            <a href="/2024/01/21/Read/240121%E3%80%90%E9%98%85%E8%AF%BB%E3%80%91%E3%80%8A%E8%A7%81%E8%AF%86%E3%80%8B/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2022/12/03/Python/221203%E3%80%90%E3%80%91%E7%A6%BB%E7%BA%BF%E9%85%8D%E7%BD%AEIDE%E7%8E%AF%E5%A2%83/">如何离线安装python包</a>
+            <a href="/2023/12/26/LifeReview/231226%E3%80%90%E5%B9%B4%E5%BA%A6%E5%B0%8F%E7%BB%93%E3%80%91%E9%97%B2%E5%BA%AD%E4%BF%A1%E6%AD%A5%E7%9A%84%E4%B8%80%E5%B9%B4/">闲庭信步的一年</a>
           </li>
         
           <li>
-            <a href="/2022/11/29/Game/221129%E3%80%90%E3%80%91%E9%87%8D%E5%90%AF%E8%B1%A1%E6%A3%8B%E4%B9%8B%E6%97%85/">2022年象棋生活</a>
+            <a href="/2023/12/19/LifeReview/231219%E9%97%B2%E6%9A%87%EF%BC%8C%E9%98%85%E8%AF%BB%E4%B8%8E%E7%8B%AC%E7%AB%8B%E6%80%9D%E8%80%83/">闲暇，阅读与思考</a>
           </li>
         
           <li>
-            <a href="/2022/11/28/Read/221128%E3%80%90R%E3%80%91%E4%B8%AD%E5%9B%BD%E6%80%9D%E6%83%B3%E5%8F%B2&%E4%BA%BA%E7%94%9F%E5%93%B2%E5%AD%A6/">读钱穆《中国思想史》和《人生十论》</a>
+            <a href="/2023/12/17/Diary/231217%E3%80%90W%E3%80%91%E5%87%8C%E4%B9%B1%E7%9A%84%E4%B8%80%E5%91%A8/">凌乱的一周，通关仙剑四</a>
           </li>
         
           <li>
-            <a href="/2022/11/13/Diary/221113%E3%80%90%E3%80%91S%E5%A4%9C%E8%B0%88/">S成长会夜谈（11月）</a>
+            <a href="/2023/11/05/Diary/231105%E3%80%90%E7%94%9F%E6%B4%BB%E9%80%9F%E5%86%99%E3%80%91%E4%BB%99%E5%89%914%E5%BC%95%E5%8F%91%E7%9A%84%E6%B7%B7%E4%B9%B1/">仙剑4引发的混乱</a>
           </li>
         
       </ul>
@@ -746,7 +731,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       
-      &copy; 2023 go2chess<br>
+      &copy; 2024 go2chess<br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
